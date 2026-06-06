@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UrbanNest Realty | Luxury Modern Real Estate & Estates</title>
+  <meta name="description" content="UrbanNest Realty represents elite luxury modern properties. Schedule private viewings, browse high-end villas and penthouses, and connect with elite brokers.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind Production CSS Variables -->
+  <style>
+    :root {
+      --color-brand: #C5A880;
+      --color-brand-dark: #A68D68;
+      --color-brand-light: #E3CDB0;
+      --color-brand-glow: rgba(197, 168, 128, 0.08);
+      --color-dark: #1F1F1F;
+      --color-light-bg: #FAF8F5;
+    }
+  </style>
+  
+  <!-- Production Compiled Stylesheet -->
+  <link rel="stylesheet" href="tailwind-built.css">
+</head>
+<body class="bg-white text-dark font-sans selection:bg-brand selection:text-white antialiased">
+
+  <!-- Custom Trailing Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-dot"></div>
+
+
+
+  <!-- Ambient Luxury Background Blur Orbs -->
+  <div class="fixed top-[-5%] right-[-5%] w-[45vw] h-[45vw] rounded-full bg-green-50/30 blur-[130px] pointer-events-none z-0 animate-float-slow"></div>
+  <div class="fixed bottom-[-5%] left-[-5%] w-[50vw] h-[50vw] rounded-full bg-emerald-50/20 blur-[140px] pointer-events-none z-0 animate-float-medium"></div>
+
+  <!-- ==========================================================================
+     HEADER / NAVIGATION
+     ========================================================================== */ -->
+  <header class="fixed top-0 left-0 w-full py-5 z-40 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 text-dark font-bold font-space text-xl tracking-tight z-50">
+        <span class="w-10 h-10 rounded-xl bg-brand text-white flex items-center justify-center shadow-lg shadow-green-500/10 text-lg">
+          <i class="fa-solid fa-hotel"></i>
+        </span>
+        <span class="tracking-wide">UrbanNest<span class="text-brand font-light">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-5 bg-gray-50/60 border border-gray-100/80 rounded-full px-6 py-1.5 backdrop-blur-md shadow-sm">
+        <a href="#properties" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Properties</a>
+        <a href="#agents" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Agents</a>
+        <a href="#testimonials" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Reviews</a>
+        <a href="#contact" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Inquire</a>
+      </nav>
+
+      <!-- Desktop Call To Action -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#contact" class="btn-spring px-6 py-2.5 rounded-full bg-brand text-white font-semibold text-sm shadow-md shadow-green-500/10 hover:bg-brand-dark transition-all duration-200">
+          Book Showing
+        </a>
+      </div>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-menu-btn" class="lg:!hidden flex items-center justify-center w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 z-50 text-dark hover:bg-gray-100 transition-colors" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Menu Drawer -->
+  <div id="mobile-menu" class="fixed top-0 right-0 w-80 h-screen bg-white/95 backdrop-blur-lg border-l border-gray-100 shadow-2xl z-40 transform translate-x-full transition-transform duration-500 flex flex-col pt-28 px-8 pb-12 justify-between">
+    <nav class="flex flex-col gap-6 font-space text-lg text-dark">
+      <a href="#properties" class="hover:text-brand transition-colors">Properties</a>
+      <a href="#agents" class="hover:text-brand transition-colors">Agents</a>
+      <a href="#testimonials" class="hover:text-brand transition-colors">Reviews</a>
+      <a href="#contact" class="hover:text-brand transition-colors">Inquire</a>
+    </nav>
+    <div class="flex flex-col gap-4">
+      <a href="#contact" class="w-full text-center py-3.5 rounded-xl bg-brand text-white font-semibold shadow-lg shadow-green-500/10 hover:bg-brand-dark transition-colors">
+        Book Showing
+      </a>
+      <p class="text-xs text-gray-400 text-center font-medium">&copy; 2026 UrbanNest Realty.</p>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     HERO SECTION & PROPERTY SHOWCASE
+     ========================================================================== */ -->
+  <section class="relative min-h-screen pt-28 sm:pt-36 pb-20 flex items-center justify-center overflow-x-hidden bg-mesh-grid bg-[#FAF8F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center w-full z-10">
+      
+      <!-- Copy Details (Left) -->
+      <div class="lg:col-span-5 flex flex-col gap-8 text-left reveal-left">
+        
+        <!-- Welcome badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand/10 border border-brand/25 w-fit">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
+          <span class="text-xs font-bold text-brand uppercase tracking-widest font-space">Elite Properties</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-[1.08] text-dark tracking-tight">
+          Discover Refined <br />
+          <span class="text-brand font-serif italic">Living Spaces</span> <br />
+          Tailored For You
+        </h1>
+
+        <p class="text-gray-500 font-serif text-sm md:text-base leading-relaxed">
+          UrbanNest Realty curates high-end luxury penthouses, modern glass villas, and vineyard estates globally. Schedule private showings with elite brokers.
+        </p>
+
+        <!-- CTA buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 w-full lg:w-auto">
+          <a href="#properties" class="btn-spring px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#1F1F1F] text-white font-semibold shadow-xl shadow-black/10 hover:bg-black flex items-center justify-center gap-2 w-full sm:w-auto">
+            <span>Explore Estates</span>
+            <i class="fa-solid fa-building-user text-xs text-brand"></i>
+          </a>
+          <a href="#contact" class="btn-spring px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#FAF8F5] border border-brand text-dark font-semibold shadow-sm hover:border-[#1F1F1F] flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">
+            <span>Speak to Broker</span>
+          </a>
+        </div>
+
+        <!-- Trust factors -->
+        <div class="flex items-center gap-8 mt-6 pt-6 border-t border-brand/20 max-w-sm font-serif">
+          <div class="flex flex-col">
+            <span class="text-xl font-bold text-dark">$1.4B+</span>
+            <span class="text-[9px] text-[#A68D68] font-bold uppercase tracking-wider">Volume Sold</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-bold text-dark">280+</span>
+            <span class="text-[9px] text-[#A68D68] font-bold uppercase tracking-wider">Elite Listings</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-bold text-dark">99.4%</span>
+            <span class="text-[9px] text-[#A68D68] font-bold uppercase tracking-wider">Client Rating</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sophisticated Masonry Gallery Grid Mockup (Right) -->
+      <div class="lg:col-span-7 relative reveal-right">
+        <!-- Glow Backing -->
+        <div class="absolute w-[80%] h-[80%] bg-brand/5 blur-[120px] rounded-full left-10 top-10 -z-10"></div>
+        
+        <!-- Masonry Collage Frame -->
+        <div class="grid grid-cols-12 gap-4 items-end">
+          <!-- Main Masonry Image (Grid span 8) -->
+          <div class="col-span-8 rounded-none border border-[#C5A880] p-2 bg-[#FAF8F5] shadow-2xl relative">
+            <div class="relative overflow-hidden aspect-[4/5]">
+              <img src="assets/urbannest_hero.png" alt="UrbanNest Luxury Architecture Mockup Grid" class="w-full h-full object-cover">
+            </div>
+            <div class="mt-3 text-left">
+              <span class="text-[8px] text-[#A68D68] font-bold uppercase tracking-widest font-mono">Featured Collective</span>
+              <h3 class="text-xs font-bold text-[#1F1F1F] font-serif mt-0.5">Signature Modern Penthouses</h3>
+            </div>
+          </div>
+
+          <!-- Small Offset Architectural close-up image (Grid span 4) -->
+          <div class="col-span-4 flex flex-col gap-4">
+            <div class="rounded-none border border-[#C5A880] p-1.5 bg-[#FAF8F5] shadow-xl">
+              <div class="overflow-hidden aspect-square">
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=300&auto=format&fit=crop" alt="Villa pool" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="rounded-none border border-[#C5A880] p-1.5 bg-[#FAF8F5] shadow-xl">
+              <div class="overflow-hidden aspect-[3/4]">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=300&auto=format&fit=crop" alt="Hotel luxury" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     PROPERTY SEARCH FILTER UI
+     ========================================================================== */ -->
+  <section class="py-12 bg-lightBg/50 relative z-20">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative">
+      
+      <!-- Filter panel -->
+      <div class="bg-white border border-gray-150 shadow-xl rounded-2xl p-5 md:p-6 grid grid-cols-1 sm:grid-cols-4 gap-4 items-end text-left reveal-scale">
+        <div class="flex flex-col gap-2">
+          <label for="filter-location" class="text-[10px] font-bold text-gray-400 uppercase font-space">Location</label>
+          <select id="filter-location" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-gray-50/50 text-xs focus:border-brand focus:bg-white focus:outline-none cursor-none text-gray-700 font-semibold">
+            <option value="all">All Locations</option>
+            <option value="malibu">Malibu, CA</option>
+            <option value="london">London, UK</option>
+            <option value="tuscany">Tuscany, Italy</option>
+          </select>
+        </div>
+        
+        <div class="flex flex-col gap-2">
+          <label for="filter-type" class="text-[10px] font-bold text-gray-400 uppercase font-space">Estate Type</label>
+          <select id="filter-type" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-gray-50/50 text-xs focus:border-brand focus:bg-white focus:outline-none cursor-none text-gray-700 font-semibold">
+            <option value="all">All Types</option>
+            <option value="villa">Waterfront Villa</option>
+            <option value="penthouse">Penthouse Suite</option>
+            <option value="mansion">Vineyard Mansion</option>
+          </select>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label for="filter-price" class="text-[10px] font-bold text-gray-400 uppercase font-space">Price Range</label>
+          <select id="filter-price" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-gray-50/50 text-xs focus:border-brand focus:bg-white focus:outline-none cursor-none text-gray-700 font-semibold">
+            <option value="all">All Prices</option>
+            <option value="under5">Under $5.0M</option>
+            <option value="above5">Above $5.0M</option>
+          </select>
+        </div>
+
+        <button id="search-estates-btn" class="btn-spring py-3 rounded-xl bg-brand text-white font-bold text-xs shadow-xl shadow-green-500/10 hover:bg-brand-dark flex items-center justify-center gap-2 cursor-none">
+          <span>Search Estates</span>
+          <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FEATURED PROPERTIES SECTION
+     ========================================================================== */ -->
+  <section id="properties" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal-up">
+        <div class="text-left">
+          <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Exquisite Listings</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Featured Luxury Estates</h2>
+          <div class="w-16 h-1 bg-brand my-4 rounded-full"></div>
+        </div>
+        <p class="text-gray-500 text-sm md:text-base max-w-md leading-relaxed md:mb-2 text-left">
+          Browse our selected active listings representing the height of luxury, architecture, and interior design.
+        </p>
+      </div>
+
+      <!-- Properties Grid (3 Listings) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Listing 1 (Malibu Glasshouse Villa) -->
+        <div class="spotlight-card rounded-3xl overflow-hidden border border-gray-100 flex flex-col justify-between group reveal-up delay-100 estate-card" data-location="malibu" data-type="villa" data-price="under5">
+          <div class="relative h-56 overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=600&auto=format&fit=crop')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-brand text-white text-[9px] font-bold uppercase tracking-wider font-space px-2.5 py-1 rounded-full">Waterfront Villa</span>
+          </div>
+          <div class="p-6 flex flex-col gap-4 text-left">
+            <div class="flex justify-between items-start">
+              <div class="flex flex-col">
+                <span class="text-[9px] text-slate-400 font-bold uppercase font-mono">Malibu, California</span>
+                <h3 class="text-base font-bold font-space text-dark mt-1">The Glasshouse Villa</h3>
+              </div>
+              <span class="text-base font-bold font-space text-brand">$4,850,000</span>
+            </div>
+            <div class="h-px bg-gray-150"></div>
+            <div class="grid grid-cols-3 gap-4 text-xs font-semibold text-slate-500 font-space">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-brand"></i> 5 Beds</span>
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-bath text-brand"></i> 6 Baths</span>
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-maximize text-brand"></i> 6,200 sqft</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Listing 2 (London Penthouse) -->
+        <div class="spotlight-card rounded-3xl overflow-hidden border border-gray-100 flex flex-col justify-between group reveal-up delay-200 estate-card" data-location="london" data-type="penthouse" data-price="under5">
+          <div class="relative h-56 overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=600&auto=format&fit=crop')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-brand text-white text-[9px] font-bold uppercase tracking-wider font-space px-2.5 py-1 rounded-full">Penthouse Suite</span>
+          </div>
+          <div class="p-6 flex flex-col gap-4 text-left">
+            <div class="flex justify-between items-start">
+              <div class="flex flex-col">
+                <span class="text-[9px] text-slate-400 font-bold uppercase font-mono">London, United Kingdom</span>
+                <h3 class="text-base font-bold font-space text-dark mt-1">Mayfair Heights Suite</h3>
+              </div>
+              <span class="text-base font-bold font-space text-brand">$3,200,000</span>
+            </div>
+            <div class="h-px bg-gray-150"></div>
+            <div class="grid grid-cols-3 gap-4 text-xs font-semibold text-slate-500 font-space">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-brand"></i> 3 Beds</span>
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-bath text-brand"></i> 4 Baths</span>
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-maximize text-brand"></i> 3,800 sqft</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Listing 3 (Tuscany Vineyard Mansion) -->
+        <div class="spotlight-card rounded-3xl overflow-hidden border border-gray-100 flex flex-col justify-between group reveal-up delay-300 estate-card" data-location="tuscany" data-type="mansion" data-price="above5">
+          <div class="relative h-56 overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=600&auto=format&fit=crop')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-brand text-white text-[9px] font-bold uppercase tracking-wider font-space px-2.5 py-1 rounded-full">Vineyard Mansion</span>
+          </div>
+          <div class="p-6 flex flex-col gap-4 text-left">
+            <div class="flex justify-between items-start">
+              <div class="flex flex-col">
+                <span class="text-[9px] text-slate-400 font-bold uppercase font-mono">Tuscany, Italy</span>
+                <h3 class="text-base font-bold font-space text-dark mt-1">Villa di Vigneti Mansion</h3>
+              </div>
+              <span class="text-base font-bold font-space text-brand">$5,900,000</span>
+            </div>
+            <div class="h-px bg-gray-150"></div>
+            <div class="grid grid-cols-3 gap-4 text-xs font-semibold text-slate-500 font-space">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-brand"></i> 7 Beds</span>
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-bath text-brand"></i> 8 Baths</span>
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-maximize text-brand"></i> 9,400 sqft</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     AGENT PROFILES SECTION
+     ========================================================================== */ -->
+  <section id="agents" class="py-24 bg-lightBg/50 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Elite Team</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Principal Advisers</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+          Connect with elite real estate consultants committed to securing high-value transactions.
+        </p>
+      </div>
+
+      <!-- Agents grid (2 Columns) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        
+        <!-- Agent 1 -->
+        <div class="spotlight-card bg-white border border-gray-100 p-6 rounded-3xl flex flex-col sm:flex-row gap-6 text-left reveal-up delay-100">
+          <div class="w-full sm:w-44 h-56 rounded-2xl overflow-hidden flex-shrink-0">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&auto=format&fit=crop" alt="Sarah Vance" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col justify-between">
+            <div class="flex flex-col">
+              <span class="text-xs text-brand font-bold uppercase tracking-wider font-space">Principal Partner Broker</span>
+              <h3 class="text-lg font-bold font-space text-dark mt-1">Sarah Vance</h3>
+              <p class="text-gray-400 text-xs leading-relaxed mt-2.5">
+                Over 12 years coordinating malibu waterfront assets transactions. Dedicated advisory for private clients.
+              </p>
+            </div>
+            <a href="mailto:sarah@urbannest.com" class="text-xs font-bold text-brand hover:underline mt-4 cursor-none">Contact Broker <i class="fa-solid fa-angle-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Agent 2 -->
+        <div class="spotlight-card bg-white border border-gray-100 p-6 rounded-3xl flex flex-col sm:flex-row gap-6 text-left reveal-up delay-200">
+          <div class="w-full sm:w-44 h-56 rounded-2xl overflow-hidden flex-shrink-0">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300&auto=format&fit=crop" alt="Alexander Gray" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col justify-between">
+            <div class="flex flex-col">
+              <span class="text-xs text-brand font-bold uppercase tracking-wider font-space">International Investment Partner</span>
+              <h3 class="text-lg font-bold font-space text-dark mt-1">Alexander Gray</h3>
+              <p class="text-gray-400 text-xs leading-relaxed mt-2.5">
+                Specialized in European castle estates, corporate acquisitions, and high-value private estate placement portfolios.
+              </p>
+            </div>
+            <a href="mailto:alex@urbannest.com" class="text-xs font-bold text-brand hover:underline mt-4 cursor-none">Contact Broker <i class="fa-solid fa-angle-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     TESTIMONIALS SECTION
+     ========================================================================== */ -->
+  <section id="testimonials" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center flex flex-col items-center gap-10">
+      
+      <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Testimonials</span>
+      
+      <!-- Big Quote -->
+      <div class="max-w-4xl reveal-scale">
+        <p class="text-2xl md:text-3xl font-bold font-space text-dark leading-relaxed italic">
+          "The advisory service Alexander provided throughout the Tuscany vineyard purchase was impeccable. His attention to contract details, layout grids, and historical background assets made our choice safe and simple."
+        </p>
+        <div class="flex items-center justify-center gap-3.5 mt-8 border-t border-gray-100 pt-6 max-w-sm mx-auto">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="Giovanni Rossi" class="w-10 h-10 rounded-full object-cover">
+          <div class="text-left flex flex-col">
+            <span class="text-xs font-bold text-dark font-space">Giovanni Rossi</span>
+            <span class="text-[10px] text-gray-400 font-semibold font-mono">Real Estate Investor (Milan, Italy)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     CONTACT / INQUIRY FORM SECTION
+     ========================================================================== */ -->
+  <section id="contact" class="py-24 bg-lightBg/50 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+        
+        <!-- Left details (5 col) -->
+        <div class="lg:col-span-5 flex flex-col gap-6 justify-between text-left reveal-left">
+          
+          <div class="flex flex-col gap-5">
+            <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full w-fit">Inquiries</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold font-space text-dark leading-tight">Schedule Private Showings</h2>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Interested in any of our listings, or want to register property assets for private sale? Submit details, and a broker will connect within 12 hours.
+            </p>
+            
+            <div class="flex flex-col gap-4 mt-4">
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-white border border-gray-100 flex items-center justify-center text-brand"><i class="fa-solid fa-envelope"></i></span>
+                <div class="flex flex-col">
+                  <span class="text-[9px] text-gray-400 font-bold uppercase">Email Brokerage</span>
+                  <a href="mailto:inquire@urbannest.com" class="text-xs font-semibold text-dark hover:text-brand cursor-none">inquire@urbannest.com</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-white border border-gray-100 flex items-center justify-center text-brand"><i class="fa-solid fa-building"></i></span>
+                <div class="flex flex-col">
+                  <span class="text-[9px] text-gray-400 font-bold uppercase">Principal Office</span>
+                  <span class="text-xs font-semibold text-dark">One Luxury Plaza, Suite 900, Miami, FL, USA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom copyright details -->
+          <div class="text-xs text-gray-450 border-t border-gray-250/50 pt-6 mt-6 lg:mt-0 font-mono">
+            License ID: RE-8842-FL
+          </div>
+
+        </div>
+
+        <!-- Form panel (7 col) -->
+        <div class="lg:col-span-7 reveal-right">
+          
+          <div class="bg-white border border-gray-150/60 shadow-2xl rounded-3xl p-6 md:p-10 flex flex-col gap-6 text-left">
+            <h3 class="text-xl font-bold font-space text-dark">Inquiry Form</h3>
+            
+            <form id="contact-form" class="flex flex-col gap-4">
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-2">
+                  <label for="form-name" class="text-[10px] font-bold text-gray-400 uppercase font-space">Full Name</label>
+                  <input type="text" id="form-name" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-gray-50/50 text-xs focus:border-brand focus:bg-white focus:outline-none cursor-none" placeholder="e.g. John Doe" required>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="form-email" class="text-[10px] font-bold text-gray-400 uppercase font-space">Email Address</label>
+                  <input type="email" id="form-email" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-gray-50/50 text-xs focus:border-brand focus:bg-white focus:outline-none cursor-none" placeholder="e.g. john@example.com" required>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <label for="form-details" class="text-[10px] font-bold text-gray-400 uppercase font-space">Requirements Details</label>
+                <textarea id="form-details" rows="5" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-gray-50/50 text-xs focus:border-brand focus:bg-white focus:outline-none cursor-none" placeholder="Please list listing ID or property type requirements..." required></textarea>
+              </div>
+
+              <button type="submit" id="contact-submit" class="btn-spring w-full py-4 rounded-xl bg-brand text-white font-bold text-xs shadow-xl shadow-green-500/10 hover:bg-brand-dark flex items-center justify-center gap-2 mt-2 cursor-none">
+                <span>Book Showing</span>
+                <i class="fa-solid fa-envelope-open-text text-[10px]"></i>
+              </button>
+
+              <div id="contact-response-message" class="hidden"></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FOOTER
+     ========================================================================== */ -->
+  <footer class="py-12 bg-white border-t border-gray-100 text-center">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2 text-dark font-bold font-space text-lg">
+        <span class="w-8 h-8 rounded-lg bg-brand text-white flex items-center justify-center text-sm shadow-md shadow-green-500/10">
+          <i class="fa-solid fa-hotel"></i>
+        </span>
+        <span class="tracking-wide">UrbanNest<span class="text-brand font-light">.</span></span>
+      </a>
+
+      <p class="text-gray-450 text-xs font-semibold font-mono">
+        &copy; 2026 UrbanNest Realty. Licensed elite brokerage.
+      </p>
+
+      <ul class="flex items-center gap-4 text-xs font-bold text-gray-400 font-space">
+        <li><a href="#properties" class="hover:text-brand cursor-none">Estates</a></li>
+        <li><a href="#agents" class="hover:text-brand cursor-none">Brokers</a></li>
+        <li><a href="#testimonials" class="hover:text-brand cursor-none">Reviews</a></li>
+        <li><a href="#contact" class="hover:text-brand cursor-none">Inquire</a></li>
+      </ul>
+
+    </div>
+  </footer>
+
+  <!-- Custom shared JS -->
+  <script src="script.js"></script>
+
+  <!-- Real Estate Filter logic in JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const searchBtn = document.getElementById('search-estates-btn');
+      const filterLoc = document.getElementById('filter-location');
+      const filterType = document.getElementById('filter-type');
+      const filterPrice = document.getElementById('filter-price');
+      const estateCards = document.querySelectorAll('.estate-card');
+
+      if (searchBtn && estateCards.length > 0) {
+        searchBtn.addEventListener('click', () => {
+          const loc = filterLoc.value;
+          const type = filterType.value;
+          const price = filterPrice.value;
+
+          estateCards.forEach(card => {
+            const cardLoc = card.getAttribute('data-location');
+            const cardType = card.getAttribute('data-type');
+            const cardPrice = card.getAttribute('data-price');
+
+            const matchLoc = (loc === 'all' || cardLoc === loc);
+            const matchType = (type === 'all' || cardType === type);
+            const matchPrice = (price === 'all' || cardPrice === price);
+
+            if (matchLoc && matchType && matchPrice) {
+              card.style.display = 'flex';
+              setTimeout(() => { card.style.opacity = '1'; }, 50);
+            } else {
+              card.style.display = 'none';
+              card.style.opacity = '0';
+            }
+          });
+        });
+      }
+
+    });
+  </script>
+
+</body>
+</html>
