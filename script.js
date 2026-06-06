@@ -569,6 +569,18 @@ document.addEventListener('DOMContentLoaded', () => {
       solution: "I authored a highly semantic layout, using CSS flexbox/grid exclusively to achieve layouts without heavy libraries. I integrated EmailJS directly into the frontend, enabling direct client messaging without a complex backend server.",
       results: "Alex received multiple job invitations immediately after sharing the site, citing the smooth animations and premium typography choices.",
       liveUrl: "alexcarter.html"
+    },
+    growthedge: {
+      title: "GrowthEdge Consulting",
+      category: "Corporate Business",
+      image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      client: "GrowthEdge LLC (New York)",
+      duration: "5 Days",
+      stack: ["HTML5", "Tailwind CSS", "JavaScript", "Intersection Observer"],
+      challenge: "The client needed a premium, trust-building corporate website with dynamic sections, modern scroll animations, and a fully responsive professional layout.",
+      solution: "I built a highly performant static site using Tailwind CSS for rapid styling and custom JavaScript intersection observers for smooth scroll-reveal animations. The design utilizes a clean emerald green and slate color palette.",
+      results: "The new website successfully established a premium brand identity, leading to a significant increase in client inquiries through the optimized contact form.",
+      liveUrl: "growthedge.html"
     }
   };
 
