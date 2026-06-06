@@ -581,6 +581,18 @@ document.addEventListener('DOMContentLoaded', () => {
       solution: "I built a highly performant static site using Tailwind CSS for rapid styling and custom JavaScript intersection observers for smooth scroll-reveal animations. The design utilizes a clean emerald green and slate color palette.",
       results: "The new website successfully established a premium brand identity, leading to a significant increase in client inquiries through the optimized contact form.",
       liveUrl: "growthedge.html"
+    },
+    greencart: {
+      title: "GreenCart Store",
+      category: "E-Commerce",
+      image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80",
+      client: "GreenCart Organics (Canada)",
+      duration: "8 Days",
+      stack: ["HTML5", "Tailwind CSS", "Vanilla JS", "DOM Manipulation"],
+      challenge: "The client needed a responsive, modern e-commerce front-end for their organic grocery store. Key requirements included a dynamic sliding shopping cart, functional product filtering, a quick-view modal, and a clean white/green aesthetic.",
+      solution: "I developed a highly interactive UI using Vanilla JavaScript for all cart logic and modals to ensure maximum performance. I used Tailwind CSS to rapidly build out the complex product grids, custom hover states, and smooth CSS transitions.",
+      results: "The fast interface significantly improved the user shopping experience. The quick-view modal and smooth cart drawer reduced friction, leading to a projected 30% increase in cart completion rates.",
+      liveUrl: "greencart.html"
     }
   };
 
