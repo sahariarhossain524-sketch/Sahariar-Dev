@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerFit Gym | Premium High-Energy Fitness & Training Center</title>
+  <meta name="description" content="Join PowerFit Gym to unleash your limits. Explore custom athletic training programs, certified trainers, and calculated BMI guidance. Standard memberships available.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind Production CSS Variables -->
+  <style>
+    :root {
+      --color-brand: #CCFF00;
+      --color-brand-dark: #B5E600;
+      --color-brand-light: #DBFF4D;
+      --color-brand-glow: rgba(204, 255, 0, 0.15);
+      --color-brand-glow-deep: rgba(204, 255, 0, 0.3);
+      --color-dark-bg: #070A10;
+      --color-card-bg: #101520;
+      --color-light: #F8FAFC;
+    }
+  </style>
+  
+  <!-- Production Compiled Stylesheet -->
+  <link rel="stylesheet" href="assets/css/tailwind-built.css?v=1.0.4">
+</head>
+<body class="bg-darkBg text-white font-sans selection:bg-brand selection:text-white antialiased">
+
+  <!-- Custom Trailing Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-dot"></div>
+
+
+
+  <!-- Ambient Neon Background Blur Orbs -->
+  <div class="fixed top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-green-950/20 blur-[130px] pointer-events-none z-0 animate-float-slow"></div>
+  <div class="fixed bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-emerald-950/30 blur-[140px] pointer-events-none z-0 animate-float-medium"></div>
+
+  <!-- ==========================================================================
+     HEADER / NAVIGATION
+     ========================================================================== */ -->
+  <header class="fixed top-0 left-0 w-full py-5 z-40 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 text-white font-bold font-space text-xl tracking-tight z-50">
+        <span class="w-10 h-10 rounded-xl bg-brand text-white flex items-center justify-center shadow-lg shadow-green-500/20 text-lg">
+          <i class="fa-solid fa-dumbbell"></i>
+        </span>
+        <span class="tracking-wide">PowerFit<span class="text-brand">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-5 bg-slate-900/60 border border-slate-800/80 rounded-full px-6 py-1.5 backdrop-blur-md shadow-sm">
+        <a href="#programs" class="nav-link text-xs font-medium transition-colors hover:text-brand text-slate-300">Programs</a>
+        <a href="#trainers" class="nav-link text-xs font-medium transition-colors hover:text-brand text-slate-300">Trainers</a>
+        <a href="#bmi" class="nav-link text-xs font-medium transition-colors hover:text-brand text-slate-300">BMI Calculator</a>
+        <a href="#pricing" class="nav-link text-xs font-medium transition-colors hover:text-brand text-slate-300">Membership</a>
+        <a href="#testimonials" class="nav-link text-xs font-medium transition-colors hover:text-brand text-slate-300">Reviews</a>
+      </nav>
+
+      <!-- Desktop Call To Action -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#pricing" class="btn-spring px-6 py-2.5 rounded-full bg-brand text-white font-semibold text-sm shadow-md shadow-green-500/10 hover:bg-brand-dark transition-all duration-200">
+          Join Now
+        </a>
+      </div>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-menu-btn" class="lg:!hidden flex items-center justify-center w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 z-50 text-white hover:bg-slate-750 transition-colors" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Menu Drawer -->
+  <div id="mobile-menu" class="fixed top-0 right-0 w-80 h-screen bg-slate-950/95 backdrop-blur-lg border-l border-slate-800 shadow-2xl z-40 transform translate-x-full transition-transform duration-500 flex flex-col pt-28 px-8 pb-12 justify-between">
+    <nav class="flex flex-col gap-6 font-space text-lg text-white">
+      <a href="#programs" class="hover:text-brand transition-colors">Programs</a>
+      <a href="#trainers" class="hover:text-brand transition-colors">Trainers</a>
+      <a href="#bmi" class="hover:text-brand transition-colors">BMI Calculator</a>
+      <a href="#pricing" class="hover:text-brand transition-colors">Membership</a>
+      <a href="#testimonials" class="hover:text-brand transition-colors">Reviews</a>
+    </nav>
+    <div class="flex flex-col gap-4">
+      <a href="#pricing" class="w-full text-center py-3.5 rounded-xl bg-brand text-white font-semibold shadow-lg shadow-green-500/10 hover:bg-brand-dark transition-colors">
+        Join Now
+      </a>
+      <p class="text-xs text-slate-500 text-center font-medium">&copy; 2026 PowerFit Gym.</p>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     HERO SECTION
+     ========================================================================== */ -->
+  <section class="relative min-h-screen pt-28 sm:pt-36 pb-20 flex items-center justify-center overflow-x-hidden" style="background: radial-gradient(#101520 15%, transparent 16%) 0 0, radial-gradient(#101520 15%, transparent 16%) 8px 8px, radial-gradient(rgba(204,255,0,0.03) 15%, transparent 20%) 0 1px, radial-gradient(rgba(204,255,0,0.03) 15%, transparent 20%) 8px 9px; background-size: 16px 16px; background-color: #070a10;">
+    <!-- Overlay Action Masque -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#070a10] via-[#070a10]/95 to-transparent pointer-events-none z-0"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center w-full z-10 relative">
+      
+      <!-- Text contents (Left) -->
+      <div class="lg:col-span-6 flex flex-col gap-6 text-left reveal-left">
+        
+        <!-- Welcome badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand/10 border border-brand/35 w-fit">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
+          <span class="text-xs font-bold text-brand uppercase tracking-widest font-space">Unleash Your Limits</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-space leading-[0.98] text-white italic uppercase tracking-tighter">
+          Forged Strength. <br />
+          Build Your <br />
+          <span class="text-brand text-glow">Ultimate</span> Body
+        </h1>
+
+        <p class="text-slate-400 text-base md:text-lg max-w-lg leading-relaxed font-sans">
+          Step into a state-of-the-art training atmosphere. Certified coaches, advanced athletic equipment, and high-energy workout programs tailored to your goals.
+        </p>
+
+        <!-- CTA buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 w-full lg:w-auto">
+          <a href="#pricing" class="btn-spring px-6 sm:px-8 py-3.5 sm:py-4 rounded-none bg-brand text-darkBg font-extrabold uppercase tracking-wider shadow-xl shadow-brand/20 hover:bg-brand-light flex items-center justify-center gap-2 border-2 border-brand transition-all w-full lg:w-auto">
+            <span>Start Training</span>
+            <i class="fa-solid fa-fire text-xs"></i>
+          </a>
+          <a href="#programs" class="btn-spring px-6 sm:px-8 py-3.5 sm:py-4 rounded-none bg-transparent border-2 border-slate-750 text-slate-300 font-bold uppercase tracking-wider shadow-sm hover:border-brand hover:text-white flex items-center justify-center gap-2 transition-all w-full lg:w-auto">
+            <span>Explore Programs</span>
+          </a>
+        </div>
+
+        <!-- Trust factors -->
+        <div class="flex items-center gap-8 mt-6 pt-6 border-t border-slate-800/80 max-w-sm">
+          <div class="flex flex-col">
+            <span class="text-xl font-bold font-space text-white">12+</span>
+            <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wide">Elite Trainers</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-bold font-space text-white">40+</span>
+            <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wide">Weekly Classes</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-bold font-space text-white">1,500+</span>
+            <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wide">Active Members</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Athletic plate image/card visual (Right) -->
+      <div class="lg:col-span-6 flex justify-center items-center relative reveal-right">
+        
+        <!-- Glow backer -->
+        <div class="absolute w-[80%] h-[80%] bg-brand/5 blur-[90px] rounded-full -z-10 animate-pulse"></div>
+        
+        <div class="relative max-w-md w-full p-4">
+          <!-- Main visual element: sharp borders (rounded-none), glowing borders, neon accents -->
+          <div class="rounded-none overflow-hidden border-4 border-brand shadow-2xl relative aspect-[4/5] w-full">
+            <img src="assets/powerfit_hero.png" alt="PowerFit Heavy Equipment Cutout & Glowing Accents" class="w-full h-full object-cover">
+            <!-- Neon borders overlay -->
+            <div class="absolute inset-0 border-2 border-brand/40 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent"></div>
+          </div>
+          
+          <!-- Floating UI card 1: Calories -->
+          <div class="absolute top-10 -left-6 bg-slate-950 border-2 border-brand/60 rounded-none p-3.5 flex items-center gap-3.5 animate-float-slow text-left shadow-[4px_4px_0px_0px_rgba(204,255,0,0.4)]">
+            <span class="w-10 h-10 rounded-none bg-brand/10 text-brand flex items-center justify-center text-lg shadow-sm"><i class="fa-solid fa-heart-pulse"></i></span>
+            <div class="flex flex-col">
+              <span class="text-xs font-bold text-white font-space">Workout Intensity</span>
+              <span class="text-[9px] text-brand font-bold font-mono">680 Kcal Burn / Hr</span>
+            </div>
+          </div>
+
+          <!-- Floating UI card 2: Body Fat -->
+          <div class="absolute -bottom-6 -right-6 bg-slate-950 border-2 border-brand rounded-none p-4 flex items-center gap-4 animate-float-medium text-left shadow-[4px_4px_0px_0px_rgba(255,255,255,0.25)]">
+            <span class="w-10 h-10 rounded-none bg-brand text-darkBg flex items-center justify-center text-lg font-bold"><i class="fa-solid fa-chart-line"></i></span>
+            <div class="flex flex-col">
+              <span class="text-xs font-bold text-white font-space">Transformation</span>
+              <span class="text-[9px] text-brand font-bold font-mono">Average -8% Body Fat</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     WORKOUT PROGRAMS SECTION
+     ========================================================================== */ -->
+  <section id="programs" class="py-28 bg-cardBg/30 border-t border-b border-slate-900/60 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-950/40 border border-green-800/40 px-3 py-1 rounded-full">Fitness Tracks</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-white mt-4">Programs Built to Deliver</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+          From strength conditioning to cardio sprints, select a tracks plan matching your target layout.
+        </p>
+      </div>
+
+      <!-- Programs cards grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Program 1 -->
+        <div class="spotlight-card-dark p-7 rounded-2xl flex flex-col gap-4 justify-between reveal-up delay-100">
+          <div class="flex flex-col gap-3">
+            <span class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-dumbbell"></i></span>
+            <h3 class="text-lg font-bold font-space text-white">Strength & Conditioning</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Focus on progressive overload weightlifting, compound movements, and muscle hypertrophy guidance.
+            </p>
+          </div>
+          <span class="text-[9px] font-bold text-brand uppercase tracking-widest font-space">Hypertrophy</span>
+        </div>
+
+        <!-- Program 2 -->
+        <div class="spotlight-card-dark p-7 rounded-2xl flex flex-col gap-4 justify-between reveal-up delay-200">
+          <div class="flex flex-col gap-3">
+            <span class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-person-running"></i></span>
+            <h3 class="text-lg font-bold font-space text-white">HIIT & Burnout</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              High-intensity interval training designed to accelerate metabolism, burn fat, and raise cardiovascular endurance.
+            </p>
+          </div>
+          <span class="text-[9px] font-bold text-brand uppercase tracking-widest font-space">Cardiovascular</span>
+        </div>
+
+        <!-- Program 3 -->
+        <div class="spotlight-card-dark p-7 rounded-2xl flex flex-col gap-4 justify-between reveal-up delay-300">
+          <div class="flex flex-col gap-3">
+            <span class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-bolt"></i></span>
+            <h3 class="text-lg font-bold font-space text-white">Athletic Agility</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Focus on speed cones, plyometrics, explosive power jumps, and functional core strength.
+            </p>
+          </div>
+          <span class="text-[9px] font-bold text-brand uppercase tracking-widest font-space">Performance</span>
+        </div>
+
+        <!-- Program 4 -->
+        <div class="spotlight-card-dark p-7 rounded-2xl flex flex-col gap-4 justify-between reveal-up delay-400">
+          <div class="flex flex-col gap-3">
+            <span class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-spa"></i></span>
+            <h3 class="text-lg font-bold font-space text-white">Power Yoga & Recovery</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Enhance flexibilty, coordinate core stability, release tension, and optimize recovery parameters.
+            </p>
+          </div>
+          <span class="text-[9px] font-bold text-brand uppercase tracking-widest font-space">Flexibility</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     TRAINERS SECTION
+     ========================================================================== */ -->
+  <section id="trainers" class="py-28 bg-darkBg relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-950/40 border border-green-800/40 px-3 py-1 rounded-full">Our Coaches</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-white mt-4">Certified Elite Trainers</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+          Work with professional specialists focused on tracking your performance achievements.
+        </p>
+      </div>
+
+      <!-- Trainers grid (3 Columns) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Trainer 1 -->
+        <div class="spotlight-card-dark bg-cardBg/40 border border-slate-800/50 p-5 rounded-3xl flex flex-col gap-4 text-left reveal-up delay-100">
+          <div class="h-64 rounded-2xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=300&auto=format&fit=crop" alt="Coach Tyson" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xs text-brand font-bold uppercase tracking-wider font-space">Strength Conditioning</span>
+            <h3 class="text-lg font-bold font-space text-white mt-1">Coach Tyson</h3>
+            <p class="text-slate-400 text-xs leading-relaxed mt-2">
+              Over 8 years training powerlifters, specialized in compound movements and physical bulking schemes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Trainer 2 -->
+        <div class="spotlight-card-dark bg-cardBg/40 border border-slate-800/50 p-5 rounded-3xl flex flex-col gap-4 text-left reveal-up delay-200">
+          <div class="h-64 rounded-2xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=300&auto=format&fit=crop" alt="Coach Maya" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xs text-brand font-bold uppercase tracking-wider font-space">HIIT Specialist</span>
+            <h3 class="text-lg font-bold font-space text-white mt-1">Coach Maya</h3>
+            <p class="text-slate-400 text-xs leading-relaxed mt-2">
+              Specialized in athletic high-intensity interval conditioning and body fat fat-loss strategies.
+            </p>
+          </div>
+        </div>
+
+        <!-- Trainer 3 -->
+        <div class="spotlight-card-dark bg-cardBg/40 border border-slate-800/50 p-5 rounded-3xl flex flex-col gap-4 text-left reveal-up delay-300">
+          <div class="h-64 rounded-2xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=300&auto=format&fit=crop" alt="Coach Leo" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xs text-brand font-bold uppercase tracking-wider font-space">Performance Analyst</span>
+            <h3 class="text-lg font-bold font-space text-white mt-1">Coach Leo</h3>
+            <p class="text-slate-400 text-xs leading-relaxed mt-2">
+              Utilizes data analytics and plyometrics to help clients improve acceleration, speed, and vertical jumps.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     BMI CALCULATOR SECTION
+     ========================================================================== */ -->
+  <section id="bmi" class="py-28 bg-cardBg/20 border-t border-b border-slate-900/60 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      
+      <!-- Calculator Description (5 col) -->
+      <div class="lg:col-span-5 flex flex-col gap-6 text-left reveal-left">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-950/40 border border-green-800/40 px-3 py-1 rounded-full w-fit">Fitness Calculator</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-white leading-tight">Check Your Body Mass Index (BMI)</h2>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          BMI is a quick assessment of body fat based on height and weight. Use our interactive calculator to find your starting track metric.
+        </p>
+        
+        <!-- BMI Table helper -->
+        <table class="w-full text-xs text-slate-400 font-semibold mt-2 border border-slate-800/50 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-slate-900/60 text-slate-300 border-b border-slate-800">
+              <th class="p-3 text-left">BMI Range</th>
+              <th class="p-3 text-left">Classification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-slate-800/40">
+              <td class="p-3">Under 18.5</td>
+              <td class="p-3">Underweight</td>
+            </tr>
+            <tr class="border-b border-slate-800/40 text-brand">
+              <td class="p-3">18.5 - 24.9</td>
+              <td class="p-3">Normal Weight</td>
+            </tr>
+            <tr class="border-b border-slate-800/40">
+              <td class="p-3">25.0 - 29.9</td>
+              <td class="p-3">Overweight</td>
+            </tr>
+            <tr>
+              <td class="p-3">30.0 or Higher</td>
+              <td class="p-3">Obese</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Calculator Box (7 col) -->
+      <div class="lg:col-span-7 reveal-right">
+        
+        <div class="bg-cardBg border border-slate-800/60 shadow-2xl rounded-3xl p-6 md:p-10 flex flex-col gap-6 text-left">
+          <h3 class="text-xl font-bold font-space text-white">BMI Calculator</h3>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex flex-col gap-2">
+              <label for="bmi-height" class="text-[10px] font-bold text-slate-400 uppercase font-space">Height (cm)</label>
+              <input type="number" id="bmi-height" class="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-900 text-white text-xs focus:border-brand focus:outline-none cursor-none" placeholder="e.g. 175" required>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="bmi-weight" class="text-[10px] font-bold text-slate-400 uppercase font-space">Weight (kg)</label>
+              <input type="number" id="bmi-weight" class="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-900 text-white text-xs focus:border-brand focus:outline-none cursor-none" placeholder="e.g. 70" required>
+            </div>
+          </div>
+
+          <button id="calculate-bmi-btn" class="btn-spring w-full py-4 rounded-xl bg-brand text-white font-bold text-xs shadow-xl shadow-green-500/10 hover:bg-brand-dark flex items-center justify-center gap-2 mt-2 cursor-none">
+            <span>Calculate BMI</span>
+            <i class="fa-solid fa-calculator text-[10px]"></i>
+          </button>
+          
+          <!-- Result Container (Hidden until computed) -->
+          <div id="bmi-result-box" class="hidden mt-4 p-4 rounded-xl border border-slate-800 bg-slate-900/60 flex flex-col gap-2 relative overflow-hidden">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-400 font-space uppercase">Your BMI score</span>
+              <span class="text-lg font-extrabold text-white font-space" id="bmi-score-val">0.0</span>
+            </div>
+            <div class="flex items-center justify-between mt-1">
+              <span class="text-xs text-slate-500 font-medium">Classification:</span>
+              <span class="text-xs font-bold text-brand uppercase tracking-wider font-space" id="bmi-status-val">Normal</span>
+            </div>
+            <!-- Glow background overlay depending on classification -->
+            <div class="absolute -right-10 -bottom-10 w-24 h-24 rounded-full bg-brand/10 blur-xl"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     MEMBERSHIP PRICING SECTION
+     ========================================================================== */ -->
+  <section id="pricing" class="py-28 bg-darkBg relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-950/40 border border-green-800/40 px-3 py-1 rounded-full">Pricing</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-white mt-4">Membership Plans</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+          Select a level that fits your training requirements. No contract lock-ins.
+        </p>
+      </div>
+
+      <!-- Pricing cards grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto">
+        
+        <!-- Card 1: Starter -->
+        <div class="spotlight-card-dark bg-cardBg/40 border border-slate-800/60 p-8 rounded-3xl flex flex-col justify-between reveal-up delay-100">
+          <div class="flex flex-col gap-6 text-left">
+            <div>
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-widest font-space">Basic Pass</span>
+              <h3 class="text-3xl font-extrabold font-space text-white mt-2">
+                $39<span class="text-xs text-slate-500 font-normal"> / mo</span>
+              </h3>
+              <p class="text-slate-500 text-xs mt-2 leading-relaxed">Access to gym floors, standard hours.</p>
+            </div>
+            
+            <div class="h-px bg-slate-800"></div>
+            
+            <ul class="flex flex-col gap-3.5 text-xs text-slate-400 font-semibold font-space">
+              <li><i class="fa-solid fa-circle-check text-brand mr-2"></i> Gym floor access</li>
+              <li><i class="fa-solid fa-circle-check text-brand mr-2"></i> Standard lockers usage</li>
+              <li><i class="fa-solid fa-circle-check text-brand mr-2"></i> 1 Free trainer briefing</li>
+              <li class="text-slate-600 line-through"><i class="fa-solid fa-circle-xmark mr-2"></i> Group classes access</li>
+              <li class="text-slate-600 line-through"><i class="fa-solid fa-circle-xmark mr-2"></i> Custom nutrition guides</li>
+            </ul>
+          </div>
+          
+          <a href="#" class="btn-spring w-full py-3.5 rounded-xl border border-slate-800 text-center text-xs font-bold text-slate-400 hover:border-slate-700 hover:text-white mt-8 cursor-none">
+            Get Basic Pass
+          </a>
+        </div>
+
+        <!-- Card 2: Power Pass (Highlighted) -->
+        <div class="spotlight-card-dark bg-slate-900 border-2 border-brand p-8 rounded-3xl flex flex-col justify-between relative shadow-2xl reveal-up delay-200">
+          <span class="absolute top-4 right-4 bg-brand text-white text-[9px] font-bold uppercase tracking-wider font-space px-2.5 py-0.5 rounded-full shadow-md shadow-green-500/20 animate-pulse">Most Popular</span>
+          
+          <div class="flex flex-col gap-6 text-left">
+            <div>
+              <span class="text-xs font-bold text-brand uppercase tracking-widest font-space">Power Pass</span>
+              <h3 class="text-3xl font-extrabold font-space text-white mt-2">
+                $59<span class="text-xs text-slate-500 font-normal"> / mo</span>
+              </h3>
+              <p class="text-slate-400 text-xs mt-2 leading-relaxed">Full access, custom schedules.</p>
+            </div>
+            
+            <div class="h-px bg-slate-800"></div>
+            
+            <ul class="flex flex-col gap-3.5 text-xs text-slate-300 font-semibold font-space">
+              <li><i class="fa-solid fa-circle-check text-brand mr-2"></i> 24/7 Gym floor access</li>
+              <li><i class="fa-solid fa-circle-check text-brand mr-2"></i> Standard lockers usage</li>
+              <li><i class="fa-solid fa-circle-check text-brand mr-2"></i> Unlimited group classes</li>
+              <li><i class="fa-solid fa-circle-check text-brand mr-2"></i> Custom nutrition templates</li>
+              <li class="text-slate-600 line-through"><i class="fa-solid fa-circle-xmark mr-2"></i> 1-on-1 Dedicated coach</li>
+            </ul>
+          </div>
+          
+          <a href="#" class="btn-spring w-full py-3.5 rounded-xl bg-brand text-white text-center text-xs font-bold hover:bg-brand-dark shadow-lg shadow-green-500/20 mt-8 cursor-none">
+            Get Power Pass
+          </a>
+        </div>
+
+        <!-- Card 3: Elite Club -->
+        <div class="spotlight-card-dark bg-cardBg/40 border border-slate-800/60 p-8 rounded-3xl flex flex-col justify-between reveal-up delay-300">
+          <div class="flex flex-col gap-6 text-left">
+            <div>
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-widest font-space">Elite Club</span>
+              <h3 class="text-3xl font-extrabold font-space text-white mt-2">
+                $99<span class="text-xs text-slate-500 font-normal"> / mo</span>
+              </h3>
+              <p class="text-slate-500 text-xs mt-2 leading-relaxed">Total access, dedicated coach.</p>
+            </div>
+            
+            <div class="h-px bg-slate-800"></div>
+            
+            <ul class="flex flex-col gap-3.5 text-xs text-slate-400 font-semibold font-space">
+              <li><i class="fa-solid fa-circle-check text-brand mr-2"></i> 24/7 Gym floor access</li>
+              <li><i class="fa-solid fa-circle-check text-brand mr-2"></i> Premium private locker</li>
+              <li><i class="fa-solid fa-circle-check text-brand mr-2"></i> Unlimited group classes</li>
+              <li><i class="fa-solid fa-circle-check text-brand mr-2"></i> Custom nutrition templates</li>
+              <li><i class="fa-solid fa-circle-check text-brand mr-2"></i> 1-on-1 Dedicated elite coach</li>
+            </ul>
+          </div>
+          
+          <a href="#" class="btn-spring w-full py-3.5 rounded-xl border border-slate-800 text-center text-xs font-bold text-slate-400 hover:border-slate-700 hover:text-white mt-8 cursor-none">
+            Get Elite Pass
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     TESTIMONIALS SECTION
+     ========================================================================== */ -->
+  <section id="testimonials" class="py-28 bg-cardBg/20 border-t border-slate-900/60 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-950/40 border border-green-800/40 px-3 py-1 rounded-full">Testimonials</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-white mt-4">Transformations Stories</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+      </div>
+
+      <!-- Testimonials grid (3 Columns) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Review 1 -->
+        <div class="bg-cardBg border border-slate-800/50 p-6 rounded-2xl flex flex-col justify-between gap-6 text-left reveal-up delay-100">
+          <p class="text-slate-400 text-xs leading-relaxed italic">
+            "PowerFit transformed my fitness lifestyle. Under Tyson's strength track program, I gained 8kg of muscle weight and corrected my compound lift posture in just 4 months."
+          </p>
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" alt="Jordan Blake" class="w-10 h-10 rounded-full object-cover">
+            <div class="flex flex-col">
+              <span class="text-xs font-bold text-white font-space">Jordan Blake</span>
+              <span class="text-[9px] text-slate-500 font-bold font-mono">Member / -8% Body Fat</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-cardBg border border-slate-800/50 p-6 rounded-2xl flex flex-col justify-between gap-6 text-left reveal-up delay-200">
+          <p class="text-slate-400 text-xs leading-relaxed italic">
+            "The HIIT sprints weekly classes fit perfectly into my busy schedule. Evelyn's nutritional outlines combined with high energy sprints helped me drop 12kg of fat."
+          </p>
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="Emily Davis" class="w-10 h-10 rounded-full object-cover">
+            <div class="flex flex-col">
+              <span class="text-xs font-bold text-white font-space">Emily Davis</span>
+              <span class="text-[9px] text-slate-500 font-bold font-mono">Member / Active Runner</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-cardBg border border-slate-800/50 p-6 rounded-2xl flex flex-col justify-between gap-6 text-left reveal-up delay-300">
+          <p class="text-slate-400 text-xs leading-relaxed italic">
+            "The athletic agility program and coaching raised my vertical jump by 12cm. Having calculated progress statistics makes a major impact on motivation."
+          </p>
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop" alt="Liam Carter" class="w-10 h-10 rounded-full object-cover">
+            <div class="flex flex-col">
+              <span class="text-xs font-bold text-white font-space">Liam Carter</span>
+              <span class="text-[9px] text-slate-500 font-bold font-mono">Member / Basketball Player</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FOOTER
+     ========================================================================== */ -->
+  <footer class="py-16 bg-slate-950 text-white border-t border-slate-900/60 text-center">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-10 text-left">
+      
+      <!-- Brand & Info (5 col) -->
+      <div class="md:col-span-5 flex flex-col gap-6">
+        <a href="#" class="flex items-center gap-2.5 text-white font-bold font-space text-lg">
+          <span class="w-8 h-8 rounded-lg bg-brand text-white flex items-center justify-center text-sm shadow-md shadow-green-500/10">
+            <i class="fa-solid fa-dumbbell"></i>
+          </span>
+          <span class="tracking-wide">PowerFit<span class="text-brand">.</span></span>
+        </a>
+        <p class="text-slate-400 text-xs leading-relaxed max-w-xs">
+          A premium high-energy training center connecting athletes to elite coaching and responsive workout tracking platforms.
+        </p>
+      </div>
+
+      <!-- Directories (7 col) -->
+      <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
+        
+        <div class="flex flex-col gap-4">
+          <span class="text-[10px] font-bold text-brand uppercase tracking-widest font-space">Information</span>
+          <ul class="flex flex-col gap-2.5 text-xs text-slate-400 font-semibold font-space">
+            <li><a href="#programs" class="hover:text-brand transition-colors cursor-none">Workout Tracks</a></li>
+            <li><a href="#trainers" class="hover:text-brand transition-colors cursor-none">Certified Coaches</a></li>
+            <li><a href="#bmi" class="hover:text-brand transition-colors cursor-none">BMI Calculator</a></li>
+            <li><a href="#pricing" class="hover:text-brand transition-colors cursor-none">Memberships</a></li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <span class="text-[10px] font-bold text-brand uppercase tracking-widest font-space">Hotline Directions</span>
+          <ul class="flex flex-col gap-2.5 text-xs text-slate-450 font-semibold font-space">
+            <li><span class="font-mono text-slate-400">+1 (800) 840-PFTY</span></li>
+            <li><span class="leading-relaxed text-slate-450">404 Agility Drive, Silicon Valley, CA, USA</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Copyright bottom -->
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 mt-16 pt-8 border-t border-slate-900/60 text-slate-500 text-xs">
+      <span>&copy; 2026 PowerFit Gym Inc. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- Custom shared JS -->
+  <script src="script.js"></script>
+
+  <!-- PowerFit BMI calculation specific script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const calcBtn = document.getElementById('calculate-bmi-btn');
+      const heightInput = document.getElementById('bmi-height');
+      const weightInput = document.getElementById('bmi-weight');
+      const resultBox = document.getElementById('bmi-result-box');
+      const scoreVal = document.getElementById('bmi-score-val');
+      const statusVal = document.getElementById('bmi-status-val');
+
+      if (calcBtn && heightInput && weightInput && resultBox) {
+        calcBtn.addEventListener('click', () => {
+          const height = parseFloat(heightInput.value);
+          const weight = parseFloat(weightInput.value);
+
+          if (height > 50 && weight > 10) {
+            // BMI formula: weight (kg) / height (m)^2
+            const bmi = weight / Math.pow(height / 100, 2);
+            const scoreFormatted = bmi.toFixed(1);
+            
+            let classification = "";
+            let colorClass = "text-brand";
+
+            if (bmi < 18.5) {
+              classification = "Underweight";
+              colorClass = "text-blue-400";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+              classification = "Normal weight";
+              colorClass = "text-green-500";
+            } else if (bmi >= 25.0 && bmi <= 29.9) {
+              classification = "Overweight";
+              colorClass = "text-yellow-500";
+            } else {
+              classification = "Obese";
+              colorClass = "text-red-500";
+            }
+
+            // Update UI values
+            scoreVal.textContent = scoreFormatted;
+            statusVal.textContent = classification;
+            statusVal.className = `text-xs font-bold uppercase tracking-wider font-space ${colorClass}`;
+            
+            // Show result block
+            resultBox.classList.remove('hidden');
+          }
+        });
+      }
+
+    });
+  </script>
+
+</body>
+</html>

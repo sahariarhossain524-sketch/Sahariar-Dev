@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaCam Pro | Futuristic AI DSLR Camera UI</title>
+  <meta name="description" content="NovaCam Pro is an ultra-premium, AI-powered DSLR camera interface designed for creators. Experience professional manual controls, real-time AI tools, and App Store quality visuals.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind Production CSS Variables -->
+  <style>
+    :root {
+      --color-brand: #00E5FF;
+      --color-brand-dark: #00B8D4;
+      --color-brand-light: #84FFFF;
+      --color-brand-glow: rgba(0, 229, 255, 0.15);
+      --color-brand-glow-deep: rgba(0, 229, 255, 0.3);
+      --color-accent-magenta: #FF1744;
+      --color-accent-neonGreen: #00E676;
+      --color-accent-amber: #FFD700;
+      --color-dark: #0A0A0C;
+      --color-dark-card: #121216;
+      --color-dark-border: #1E1E24;
+      --color-dark-glass: rgba(10, 10, 12, 0.75);
+    }
+  </style>
+  
+  <!-- Production Compiled Stylesheet -->
+  <link rel="stylesheet" href="assets/css/tailwind-built.css?v=1.0.4">
+  
+  <style>
+    /* Premium custom styling */
+    html {
+      scroll-behavior: smooth;
+      cursor: none;
+    }
+    body {
+      background-color: #050507;
+      color: #F3F4F6;
+      cursor: none;
+    }
+
+    /* Selection Color */
+    ::selection {
+      background-color: #00E5FF;
+      color: #050507;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0A0C;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E1E24;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00E5FF;
+    }
+
+    /* Cursor */
+    .custom-cursor {
+      width: 28px;
+      height: 28px;
+      border: 1.5px solid #00E5FF;
+      border-radius: 50%;
+      position: fixed;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 9999;
+      transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+      opacity: 0;
+    }
+    .custom-cursor-dot {
+      width: 4px;
+      height: 4px;
+      background-color: #00E5FF;
+      border-radius: 50%;
+      position: fixed;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0;
+    }
+    .custom-cursor.hovering {
+      width: 44px;
+      height: 44px;
+      background-color: rgba(0, 229, 255, 0.05);
+      border-color: #00E5FF;
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+    }
+    .custom-cursor.clicking {
+      width: 20px;
+      height: 20px;
+      background-color: rgba(0, 229, 255, 0.2);
+    }
+    @media (max-width: 1024px) {
+      html, body { cursor: auto !important; }
+      .custom-cursor, .custom-cursor-dot { display: none !important; }
+    }
+
+    /* Glassmorphism Panel styles */
+    .neon-panel {
+      background: rgba(18, 18, 22, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .neon-panel-glow {
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.05), inset 0 0 12px rgba(0, 229, 255, 0.05);
+    }
+
+    /* iPhone Frame chassis simulation */
+    .iphone-frame {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 9 / 19.5;
+      background: #1F2026;
+      border-radius: 54px;
+      box-shadow: 
+        0px 0px 0px 4px #2D2F38,
+        0px 0px 0px 10px #0F1013,
+        0px 25px 50px -12px rgba(0, 0, 0, 0.8),
+        0px 0px 40px rgba(0, 229, 255, 0.1);
+      padding: 12px;
+      overflow: hidden;
+    }
+    .iphone-screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #000000;
+      border-radius: 42px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .dynamic-island {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 30px;
+      background: #000000;
+      border-radius: 20px;
+      z-index: 100;
+      box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    /* Viewfinder video & visual controls */
+    .viewfinder {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: filter 0.3s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Digital noise / grain overlay */
+    .noise-grain {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.02;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+      z-index: 10;
+      transition: opacity 0.3s ease;
+    }
+
+    /* DSLR settings sliders styling */
+    input[type=range] {
+      -webkit-appearance: none;
+      background: transparent;
+      width: 100%;
+    }
+    input[type=range]:focus {
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      border: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      height: 14px;
+      width: 14px;
+      border-radius: 50%;
+      background: #00E5FF;
+      cursor: none;
+      -webkit-appearance: none;
+      margin-top: -5px;
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+      transition: transform 0.1s ease;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    /* Shutter Flash Animation */
+    @keyframes flash {
+      0% { opacity: 0; }
+      20% { opacity: 1; background-color: #FFFFFF; }
+      100% { opacity: 0; }
+    }
+    .flash-active {
+      animation: flash 0.35s ease-out forwards;
+    }
+
+    /* Audio Meter bouncing animation */
+    @keyframes bounce-meter {
+      0%, 100% { height: 10%; }
+      50% { height: 75%; }
+    }
+    .audio-bar-anim-1 { animation: bounce-meter 1.2s ease-in-out infinite; }
+    .audio-bar-anim-2 { animation: bounce-meter 0.8s ease-in-out infinite; }
+    .audio-bar-anim-3 { animation: bounce-meter 1.4s ease-in-out infinite; }
+    .audio-bar-anim-4 { animation: bounce-meter 1.0s ease-in-out infinite; }
+
+    /* Floating blobs */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+    .animate-float-slow {
+      animation: float 12s infinite ease-in-out;
+    }
+
+    /* Before After Slider Container */
+    .ba-slider {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .ba-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      pointer-events: none;
+    }
+    .ba-slider-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #00E5FF;
+      left: 50%;
+      cursor: ew-resize;
+      z-index: 30;
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+    }
+    .ba-slider-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      background: #0A0A0C;
+      border: 2px solid #00E5FF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00E5FF;
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+      pointer-events: none;
+      z-index: 31;
+    }
+
+    /* Object Erase Animation Scanline */
+    @keyframes scan {
+      0% { top: 0%; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { top: 100%; opacity: 0; }
+    }
+    .scan-line {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, rgba(0,229,255,0), rgba(0,229,255,0.8), rgba(0,229,255,0));
+      box-shadow: 0 0 8px #00E5FF;
+      pointer-events: none;
+      display: none;
+    }
+    .scan-active {
+      display: block;
+      animation: scan 1.2s ease-in-out infinite;
+    }
+
+    /* Pulse recording indicator */
+    @keyframes pulse-rec {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .pulse-rec {
+      animation: pulse-rec 1s infinite;
+    }
+  </style>
+</head>
+<body class="bg-[#050507] text-[#F3F4F6] font-sans antialiased overflow-x-hidden animate-fade-in">
+
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-dot"></div>
+
+  <!-- Ambient Blurred Orbs background -->
+  <div class="fixed top-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-brand/5 blur-[140px] pointer-events-none z-0 animate-float-slow"></div>
+  <div class="fixed bottom-[-15%] left-[-15%] w-[60vw] h-[60vw] rounded-full bg-accent-magenta/5 blur-[150px] pointer-events-none z-0"></div>
+
+  <!-- ==========================================================
+     HEADER / NAVIGATION
+     ========================================================== -->
+  <header class="fixed top-0 left-0 w-full py-4 z-40 transition-all duration-300 bg-dark-glass border-b border-white/5 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html#projects" class="flex items-center gap-2.5 text-white font-bold font-space text-lg z-50">
+        <span class="w-9 h-9 rounded-xl bg-dark-card border border-brand flex items-center justify-center shadow-lg shadow-brand/10 text-sm">
+          <i class="fa-solid fa-camera-retro text-brand animate-pulse"></i>
+        </span>
+        <span class="tracking-wide">NovaCam<span class="text-brand">.Pro</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 bg-dark-card/60 border border-white/5 rounded-full px-7 py-1.5 backdrop-blur-md text-xs">
+        <a href="#simulator" class="text-gray-400 hover:text-brand font-medium transition-colors">Interactive Viewfinder</a>
+        <a href="#ai-suite" class="text-gray-400 hover:text-brand font-medium transition-colors">AI Features</a>
+        <a href="#slider-section" class="text-gray-400 hover:text-brand font-medium transition-colors">Enhance Demo</a>
+        <a href="#specs" class="text-gray-400 hover:text-brand font-medium transition-colors">Technical Specs</a>
+      </nav>
+
+      <!-- Return Button -->
+      <a href="index.html#projects" class="px-5 py-2 rounded-full bg-dark-card hover:bg-brand/10 text-white font-semibold text-xs border border-white/10 hover:border-brand transition-all duration-200">
+        <i class="fa-solid fa-arrow-left mr-1.5"></i> Portfolio Hub
+      </a>
+      
+    </div>
+  </header>
+
+  <!-- ==========================================================
+     HERO SECTION
+     ========================================================== -->
+  <section class="relative pt-28 pb-16 overflow-hidden min-h-screen flex items-center">
+    <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Left Info Column -->
+      <div class="lg:col-span-6 flex flex-col gap-6 text-left relative">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 w-fit">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand animate-ping"></span>
+          <span class="text-[10px] font-bold text-brand uppercase tracking-wider font-mono">Next-Gen AI Camera App</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-space leading-[1.05] tracking-tight">
+          The Cinematic <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand via-brand-light to-accent-magenta">DSLR Engine</span> <br />
+          In Your Pocket.
+        </h1>
+
+        <p class="text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg">
+          NovaCam Pro fuses professional manual DSLR controls with real-time neural texture processing. Record in stunning 4K and 8K video formats, capture 2K RAW photographs, and utilize AI-driven workflow utilities to forge high-end visual masterpieces instantly.
+        </p>
+
+        <!-- Tech Spec Badges -->
+        <div class="flex flex-wrap gap-2.5 mt-2">
+          <span class="px-3 py-1 bg-dark-card border border-white/5 rounded-lg text-xs font-mono font-semibold flex items-center gap-1.5"><i class="fa-solid fa-film text-brand"></i> 8K ProRes</span>
+          <span class="px-3 py-1 bg-dark-card border border-white/5 rounded-lg text-xs font-mono font-semibold flex items-center gap-1.5"><i class="fa-solid fa-image text-accent-magenta"></i> 2K RAW Photo</span>
+          <span class="px-3 py-1 bg-dark-card border border-white/5 rounded-lg text-xs font-mono font-semibold flex items-center gap-1.5"><i class="fa-solid fa-microchip text-accent-neonGreen"></i> Neural Engine V3</span>
+          <span class="px-3 py-1 bg-dark-card border border-white/5 rounded-lg text-xs font-mono font-semibold flex items-center gap-1.5"><i class="fa-solid fa-sliders text-accent-amber"></i> Log-C Color</span>
+        </div>
+
+        <!-- Call to actions / Rating -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-4">
+          <a href="#simulator" class="px-7 py-3.5 rounded-xl bg-brand text-dark font-bold text-xs flex items-center justify-center gap-2 hover:bg-brand-light hover:shadow-lg hover:shadow-brand/20 transition-all duration-200">
+            <span>Launch Viewfinder Simulator</span>
+            <i class="fa-solid fa-gamepad text-[10px]"></i>
+          </a>
+          
+          <!-- Rating badge -->
+          <div class="flex items-center gap-3 p-3 bg-dark-card/40 border border-white/5 rounded-xl">
+            <div class="flex text-accent-amber text-xs">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="flex flex-col text-left">
+              <span class="text-xs font-bold text-white leading-none">4.9 / 5 Rating</span>
+              <span class="text-[9px] text-gray-500 font-mono mt-0.5">App Store Choice • 24K Reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Handset Emulator Column -->
+      <div id="simulator" class="lg:col-span-6 flex justify-center items-center py-6">
+        
+        <!-- iPhone chassis container -->
+        <div class="iphone-frame">
+          <div class="dynamic-island"></div>
+          <div class="iphone-screen bg-black">
+            
+            <!-- Viewfinder live container -->
+            <div class="viewfinder" id="vp-feed" style="background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=600&auto=format&fit=crop');">
+              <!-- Noise grain overlay -->
+              <div class="noise-grain" id="vp-grain"></div>
+              
+              <!-- Ambient light mask for white balance kelvin tint -->
+              <div class="absolute inset-0 z-10 pointer-events-none transition-colors duration-200" id="vp-tint" style="background-color: rgba(0, 229, 255, 0);"></div>
+
+              <!-- Viewfinder Flash Screen Overlay -->
+              <div class="absolute inset-0 z-30 pointer-events-none opacity-0" id="shutter-flash-overlay"></div>
+
+              <!-- 1. Top HUD Overlay Bar -->
+              <div class="absolute top-8 left-0 w-full px-4 z-20 flex justify-between items-center text-[10px] text-white/80 font-mono">
+                <!-- Recording dot and timecode -->
+                <div class="flex items-center gap-1.5 bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-sm border border-white/5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent-magenta pulse-rec"></span>
+                  <span id="timecode-display">00:00:00:00</span>
+                </div>
+                
+                <!-- Resolution/FPS -->
+                <div class="flex items-center gap-1 bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-sm border border-white/5">
+                  <span id="res-badge" class="font-bold text-brand">8K</span>
+                  <span>|</span>
+                  <span id="fps-badge">24 FPS</span>
+                  <span>|</span>
+                  <span class="text-accent-neonGreen font-semibold">RAW</span>
+                </div>
+              </div>
+
+              <!-- 2. Grid lines overlay -->
+              <div class="absolute inset-0 pointer-events-none grid grid-cols-3 grid-rows-3 border border-white/10 z-20 transition-opacity duration-300" id="grid-lines">
+                <div class="border-r border-b border-white/15"></div>
+                <div class="border-r border-b border-white/15"></div>
+                <div class="border-b border-white/15"></div>
+                <div class="border-r border-b border-white/15"></div>
+                <div class="border-r border-b border-white/15"></div>
+                <div class="border-b border-white/15"></div>
+                <div class="border-r border-white/15"></div>
+                <div class="border-r border-white/15"></div>
+                <div></div>
+              </div>
+
+              <!-- 3. Left Audio Level meters overlay -->
+              <div class="absolute left-3 top-1/4 h-[80px] w-1.5 z-20 flex flex-col gap-[2px] justify-end">
+                <div class="w-full bg-white/20 rounded-sm audio-bar-anim-1" style="height: 40%"></div>
+                <div class="w-full bg-white/20 rounded-sm audio-bar-anim-2" style="height: 60%"></div>
+                <div class="w-full bg-white/20 rounded-sm audio-bar-anim-3" style="height: 30%"></div>
+                <div class="w-full bg-white/20 rounded-sm audio-bar-anim-4" style="height: 50%"></div>
+              </div>
+
+              <!-- 4. Right Side Active Histogram -->
+              <div class="absolute right-3 top-1/4 w-12 h-6 bg-black/35 backdrop-blur-sm border border-white/10 z-20 rounded p-1 overflow-hidden flex items-end">
+                <svg viewBox="0 0 100 50" class="w-full h-full text-brand fill-brand/20 opacity-70">
+                  <path d="M0,50 L5,45 Q15,10 25,35 T45,15 T65,40 T85,20 L100,50 Z" stroke="currentColor" stroke-width="1" id="histo-path"></path>
+                </svg>
+              </div>
+
+              <!-- Object Eraser Targets -->
+              <div class="absolute inset-0 z-20 flex justify-center items-center pointer-events-none">
+                <!-- Scan sweep overlay -->
+                <div class="scan-line" id="erase-scanline"></div>
+
+                <!-- Floating bird target to click erase -->
+                <button class="absolute top-[28%] right-[22%] w-10 h-10 rounded-full border border-dashed border-brand/50 bg-brand/10 text-white flex items-center justify-center text-[10px] pointer-events-auto opacity-0 transition-opacity duration-300 cursor-none hover:bg-brand/20" id="erase-target" title="Click to AI Erase target">
+                  <i class="fa-solid fa-wand-magic-sparkles text-brand animate-pulse"></i>
+                </button>
+              </div>
+
+              <!-- AI overlays descriptors -->
+              <div class="absolute bottom-16 left-3 right-3 z-20 flex justify-between items-center pointer-events-none">
+                <div class="text-[9px] font-mono text-white bg-black/50 border border-white/10 px-1.5 py-0.5 rounded backdrop-blur-sm opacity-0 transition-all duration-300" id="ai-active-overlay">
+                  AI: Active
+                </div>
+                <div class="text-[9px] font-mono text-white/70" id="lens-badge">
+                  W 24mm (1x)
+                </div>
+              </div>
+
+              <!-- 5. DSLR dials dashboard Overlay (At the bottom of viewfinder) -->
+              <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/80 to-transparent p-4 pt-10 z-20 flex flex-col gap-3">
+                
+                <!-- Lens quick selectors -->
+                <div class="flex justify-center items-center gap-3.5 mb-1 text-[10px] font-mono font-bold">
+                  <button onclick="setLens(0.5, 'U 13mm')" class="text-white/60 hover:text-brand cursor-none" id="lens-05">0.5x</button>
+                  <button onclick="setLens(1.0, 'W 24mm')" class="text-brand font-bold cursor-none" id="lens-10">1x</button>
+                  <button onclick="setLens(3.0, 'T 77mm')" class="text-white/60 hover:text-brand cursor-none" id="lens-30">3x</button>
+                  <button onclick="setLens(10.0, 'Z 240mm')" class="text-white/60 hover:text-brand cursor-none" id="lens-100">10x</button>
+                </div>
+
+                <!-- Parameters dial HUD slider layout -->
+                <div class="grid grid-cols-4 gap-2 text-center text-[8px] font-mono font-semibold text-white/60 border-t border-white/5 pt-2">
+                  <button onclick="setActiveDial('focus')" id="dial-focus" class="flex flex-col items-center py-1 rounded bg-white/5 border border-brand/35 text-white cursor-none">
+                    <span class="text-white/50 text-[6px] uppercase tracking-wider">Focus</span>
+                    <span class="text-[9px] font-bold text-brand" id="dial-focus-val">Auto</span>
+                  </button>
+                  <button onclick="setActiveDial('iso')" id="dial-iso" class="flex flex-col items-center py-1 rounded hover:bg-white/5 cursor-none">
+                    <span class="text-white/50 text-[6px] uppercase tracking-wider">ISO</span>
+                    <span class="text-[9px] font-bold" id="dial-iso-val">100</span>
+                  </button>
+                  <button onclick="setActiveDial('shutter')" id="dial-shutter" class="flex flex-col items-center py-1 rounded hover:bg-white/5 cursor-none">
+                    <span class="text-white/50 text-[6px] uppercase tracking-wider">Shutter</span>
+                    <span class="text-[9px] font-bold" id="dial-shutter-val">1/250</span>
+                  </button>
+                  <button onclick="setActiveDial('kelvin')" id="dial-kelvin" class="flex flex-col items-center py-1 rounded hover:bg-white/5 cursor-none">
+                    <span class="text-white/50 text-[6px] uppercase tracking-wider">Kelvin</span>
+                    <span class="text-[9px] font-bold" id="dial-kelvin-val">5500K</span>
+                  </button>
+                </div>
+
+                <!-- Active parameter adjustment slider panel -->
+                <div class="h-6 flex items-center justify-between gap-3 text-[9px] font-mono" id="slider-panel">
+                  <!-- Focus dynamic slider -->
+                  <div class="w-full flex items-center gap-2" id="panel-focus">
+                    <span class="text-white/50">MF</span>
+                    <input type="range" min="0" max="100" value="100" id="input-focus" oninput="updateFocus(this.value)" class="cursor-none">
+                    <span class="text-brand w-5 text-right" id="val-focus">100</span>
+                  </div>
+
+                  <!-- ISO dynamic slider -->
+                  <div class="w-full hidden flex items-center gap-2" id="panel-iso">
+                    <span class="text-white/50">ISO</span>
+                    <input type="range" min="50" max="25600" step="50" value="100" id="input-iso" oninput="updateISO(this.value)" class="cursor-none">
+                    <span class="text-brand w-8 text-right" id="val-iso">100</span>
+                  </div>
+
+                  <!-- Shutter speed slider (1/8000s to 1s index simulated) -->
+                  <div class="w-full hidden flex items-center gap-2" id="panel-shutter">
+                    <span class="text-white/50">SHUT</span>
+                    <input type="range" min="1" max="12" value="6" id="input-shutter" oninput="updateShutter(this.value)" class="cursor-none">
+                    <span class="text-brand w-12 text-right" id="val-shutter">1/250s</span>
+                  </div>
+
+                  <!-- Kelvin temperature slider -->
+                  <div class="w-full hidden flex items-center gap-2" id="panel-kelvin">
+                    <span class="text-white/50">WB</span>
+                    <input type="range" min="2000" max="10000" step="100" value="5500" id="input-kelvin" oninput="updateKelvin(this.value)" class="cursor-none">
+                    <span class="text-brand w-9 text-right" id="val-kelvin">5500K</span>
+                  </div>
+                </div>
+
+                <!-- Viewfinder Bottom Control Bar: Gallery thumbnail, Trigger Shutter, Format trigger -->
+                <div class="flex items-center justify-between border-t border-white/5 pt-3.5">
+                  <!-- Gallery thumbnail click launcher -->
+                  <button onclick="openGalleryDrawer()" class="w-9 h-9 rounded-full bg-dark-card border border-white/10 overflow-hidden cursor-none flex items-center justify-center p-0.5 hover:border-brand transition-colors">
+                    <img id="gallery-thumb" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=150&auto=format&fit=crop" class="w-full h-full object-cover rounded-full" alt="Latest photo">
+                  </button>
+
+                  <!-- Shutter trigger button -->
+                  <button onclick="triggerShutter()" class="w-14 h-14 rounded-full border-[3px] border-white bg-transparent p-1 transition-transform active:scale-95 duration-100 flex items-center justify-center cursor-none">
+                    <div class="w-full h-full bg-white hover:bg-brand transition-colors rounded-full flex items-center justify-center">
+                      <!-- Inner dot representing photo/video current state -->
+                      <span id="shutter-dot" class="w-3.5 h-3.5 rounded bg-dark" style="display:none"></span>
+                    </div>
+                  </button>
+
+                  <!-- Mode selector toggle: Photo / Video -->
+                  <div class="flex bg-black/60 border border-white/5 rounded-full p-1 text-[8px] font-bold font-mono tracking-wider">
+                    <button id="mode-photo-btn" onclick="setMode('photo')" class="px-2.5 py-1 rounded-full bg-brand text-dark cursor-none">PHOTO</button>
+                    <button id="mode-video-btn" onclick="setMode('video')" class="px-2.5 py-1 rounded-full text-white/50 hover:text-white cursor-none">VIDEO</button>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+     AI TOOLS SUITE SPEC SECTION
+     ========================================================== -->
+  <section id="ai-suite" class="py-24 border-y border-white/5 bg-dark-card/20 relative">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-brand/10 border border-brand/20 px-3 py-1 rounded-full">Automated Engine</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-white mt-4">AI-Driven Creator Tools</h2>
+        <div class="w-12 h-0.5 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Toggle the indicators inside the panel below to test real-time AI image manipulations simulated inside the camera emulator viewfinder.
+        </p>
+      </div>
+
+      <!-- AI Suite Grid Controller -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Tool 1: Sky Replacement -->
+        <div class="neon-panel p-6 rounded-2xl flex flex-col gap-4 justify-between transition-all hover:border-brand/40 group">
+          <div class="flex flex-col gap-3">
+            <span class="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-cloud-sun-rain"></i></span>
+            <h3 class="text-base font-bold font-space text-white">Smart Sky Replacer</h3>
+            <p class="text-gray-500 text-xs leading-relaxed">
+              Dynamically detect the horizon lines and swap clouds for dramatic sunsets or vivid aurora night skies.
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 pt-2 border-t border-white/5">
+            <span class="text-[9px] font-mono text-gray-500 font-semibold uppercase">Toggle Viewfinder Sky</span>
+            <div class="flex gap-1.5 text-[9px] font-mono font-bold">
+              <button onclick="setSky('forest')" id="sky-forest-btn" class="px-2 py-1 rounded bg-brand text-dark cursor-none">Day Forest</button>
+              <button onclick="setSky('sunset')" id="sky-sunset-btn" class="px-2 py-1 rounded bg-white/5 text-white hover:bg-white/10 cursor-none">Sunset</button>
+              <button onclick="setSky('aurora')" id="sky-aurora-btn" class="px-2 py-1 rounded bg-white/5 text-white hover:bg-white/10 cursor-none">Aurora</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tool 2: Object Eraser -->
+        <div class="neon-panel p-6 rounded-2xl flex flex-col gap-4 justify-between transition-all hover:border-brand/40 group">
+          <div class="flex flex-col gap-3">
+            <span class="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-eraser"></i></span>
+            <h3 class="text-base font-bold font-space text-white">AI Object Eraser</h3>
+            <p class="text-gray-500 text-xs leading-relaxed">
+              Erase tourists, power cables, and visual artifacts with standard pixel-fill in-painting algorithms.
+            </p>
+          </div>
+          <div class="pt-2 border-t border-white/5">
+            <button onclick="toggleObjectEraser()" id="eraser-toggle-btn" class="w-full py-2 rounded bg-white/5 hover:bg-brand/10 border border-white/10 hover:border-brand text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-none">
+              <i class="fa-solid fa-crosshairs text-[10px]"></i>
+              <span id="eraser-btn-text">Enable Eraser Mode</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tool 3: AI Night Vision -->
+        <div class="neon-panel p-6 rounded-2xl flex flex-col gap-4 justify-between transition-all hover:border-brand/40 group">
+          <div class="flex flex-col gap-3">
+            <span class="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-moon"></i></span>
+            <h3 class="text-base font-bold font-space text-white">Neural Night Vision</h3>
+            <p class="text-gray-500 text-xs leading-relaxed">
+              Enhance visibility in ultra-low-light settings using real-time ISO amplifications and neural noise removal.
+            </p>
+          </div>
+          <div class="pt-2 border-t border-white/5">
+            <button onclick="toggleNightVision()" id="nv-toggle-btn" class="w-full py-2 rounded bg-white/5 hover:bg-brand/10 border border-white/10 hover:border-brand text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-none">
+              <i class="fa-regular fa-eye text-[10px]"></i>
+              <span id="nv-btn-text">Activate Night Vision</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tool 4: Professional Creative LUTs -->
+        <div class="neon-panel p-6 rounded-2xl flex flex-col gap-4 justify-between transition-all hover:border-brand/40 group">
+          <div class="flex flex-col gap-3">
+            <span class="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-palette"></i></span>
+            <h3 class="text-base font-bold font-space text-white">Film LUT Presets</h3>
+            <p class="text-gray-500 text-xs leading-relaxed">
+              Apply high-end cinematic color profiles inspired by standard IMAX film stock and modern cyberpunk neon styles.
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 pt-2 border-t border-white/5">
+            <span class="text-[9px] font-mono text-gray-500 font-semibold uppercase">Choose Color Space LUT</span>
+            <select onchange="applyLUT(this.value)" class="w-full bg-[#0A0A0C] border border-white/10 rounded px-2 py-1.5 text-xs text-white/80 focus:border-brand focus:outline-none cursor-none" id="lut-selector">
+              <option value="none">Standard Log-C (No LUT)</option>
+              <option value="teal-orange">Cinematic Teal & Orange</option>
+              <option value="cyber-neon">Cyberpunk Electric Neon</option>
+              <option value="vintage-chrome">Vintage warm Chrome</option>
+              <option value="moody-forest">Deep Moody Forest</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+     BEFORE AFTER DRAG COMPARISON SLIDER
+     ========================================================== -->
+  <section id="slider-section" class="py-24 bg-dark/40 relative">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Side: Copywriting -->
+        <div class="lg:col-span-5 flex flex-col gap-5 text-left">
+          <span class="text-xs font-bold text-brand uppercase tracking-wider bg-brand/10 border border-brand/20 px-3 py-1 rounded-full w-fit font-mono">Real-Time Enhancer</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold font-space text-white">AI Raw Auto-Enhancing</h2>
+          <div class="w-12 h-0.5 bg-brand my-2 rounded-full"></div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Drag the central slider handle left and right to inspect the stunning enhancements provided by NovaCam's custom neural engine. The RAW sensor data is balanced in microseconds, evening shadows, bringing details out of highlights, and denoising gradients perfectly.
+          </p>
+          <div class="flex flex-col gap-3 mt-2 text-xs font-mono">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-circle-check text-accent-neonGreen"></i>
+              <span class="text-gray-300">Intelligent HDR Shadows recovery</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-circle-check text-accent-neonGreen"></i>
+              <span class="text-gray-300">Dynamic range compensation (15 stops)</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-circle-check text-accent-neonGreen"></i>
+              <span class="text-gray-300">Bayer-sensor Demosaicing and Denoise</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: The interactive Slider -->
+        <div class="lg:col-span-7 flex justify-center">
+          <div class="ba-slider w-full" id="ba-slider-container">
+            
+            <!-- Before Image (Left side) -->
+            <div class="ba-image" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000&auto=format&fit=crop'); filter: grayscale(40%) contrast(90%) brightness(85%);">
+              <span class="absolute top-4 left-4 bg-black/60 border border-white/10 rounded-lg px-2.5 py-1 text-[10px] font-mono font-bold text-white uppercase backdrop-blur">Before (RAW)</span>
+            </div>
+            
+            <!-- After Image (Right side overlays before and has width cut by clipping) -->
+            <div class="ba-image" id="ba-after-img" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000&auto=format&fit=crop'); clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);">
+              <span class="absolute top-4 right-4 bg-brand/35 border border-brand/50 rounded-lg px-2.5 py-1 text-[10px] font-mono font-bold text-white uppercase backdrop-blur-sm">After (AI Enhanced)</span>
+            </div>
+
+            <!-- Drag handles -->
+            <div class="ba-slider-handle" id="ba-handle"></div>
+            <div class="ba-slider-button" id="ba-btn">
+              <i class="fa-solid fa-arrows-left-right text-xs"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+     TECHNICAL SPECIFICATIONS GRID
+     ========================================================== -->
+  <section id="specs" class="py-24 bg-dark-card/10 relative">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-brand/10 border border-brand/20 px-3 py-1 rounded-full">Reference Architecture</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-white mt-4">Technical Specifications</h2>
+        <div class="w-12 h-0.5 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Crafted for high-end professional workflows, matching specifications found on elite DSLR gear.
+        </p>
+      </div>
+
+      <!-- Spec Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-space">
+        
+        <!-- Table Column 1: Video Engine -->
+        <div class="neon-panel p-8 rounded-3xl flex flex-col gap-6 text-left">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-video"></i></span>
+            <h3 class="text-lg font-bold text-white">Video Engine & Codecs</h3>
+          </div>
+          
+          <div class="flex flex-col gap-4 text-xs font-mono">
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span class="text-gray-500">Record Resolutions</span>
+              <span class="text-white">8K UHD (7680x4320) & 4K DCI (4096x2160)</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span class="text-gray-500">Video Compression</span>
+              <span class="text-white">Apple ProRes 422 HQ, ProRes LT, H.265 HEVC</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span class="text-gray-500">Color Sampling</span>
+              <span class="text-white">10-bit 4:2:2 Broadcast Quality</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span class="text-gray-500">Maximum Framerates</span>
+              <span class="text-white">8K @ 30 FPS, 4K @ 120 FPS, 1080p @ 240 FPS</span>
+            </div>
+            <div class="flex justify-between pb-2">
+              <span class="text-gray-500">Color Profiles</span>
+              <span class="text-white">Nova-Log, Log-C v4, Rec.2020 SDR/HDR</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table Column 2: Photo & Audio -->
+        <div class="neon-panel p-8 rounded-3xl flex flex-col gap-6 text-left">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-microphone-lines"></i></span>
+            <h3 class="text-lg font-bold text-white">Photo Sensor & Audio Processing</h3>
+          </div>
+          
+          <div class="flex flex-col gap-4 text-xs font-mono">
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span class="text-gray-500">Photo Capture Mode</span>
+              <span class="text-white">14-bit Bayer-RAW DNG, HEIF Pro, SuperJPEG</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span class="text-gray-500">Sensor ISO Bounds</span>
+              <span class="text-white">ISO 50 Native up to ISO 25,600 (Amplified)</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span class="text-gray-500">Shutter Ranges</span>
+              <span class="text-white">1/8000s electronic shutter up to 1.0s exposure</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span class="text-gray-500">Audio Compression</span>
+              <span class="text-white">24-bit LPCM Uncompressed Stereo, AAC 320kbps</span>
+            </div>
+            <div class="flex justify-between pb-2">
+              <span class="text-gray-500">AI Sound Isolator</span>
+              <span class="text-white">Neural wind-noise subtraction filters</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+     GALLERY DETAIL LIGHTBOX VIEW (Hidden by default)
+     ========================================================== -->
+  <div id="gallery-lightbox" class="fixed inset-0 z-50 bg-[#050507]/95 backdrop-blur-lg flex items-center justify-center p-6 hidden opacity-0 transition-opacity duration-300">
+    <div class="max-w-4xl w-full neon-panel border-brand/35 rounded-3xl overflow-hidden shadow-2xl shadow-brand/10 flex flex-col md:flex-row relative">
+      <!-- Close Button -->
+      <button onclick="closeGalleryDrawer()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 border border-white/10 hover:border-brand flex items-center justify-center text-white text-xs z-50 cursor-none transition-colors">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Left Side: Captured photo render -->
+      <div class="md:w-3/5 aspect-square md:aspect-auto bg-black flex items-center justify-center overflow-hidden relative">
+        <img id="lightbox-img" src="" class="w-full h-full object-cover transition-transform duration-300" alt="Captured view">
+        <!-- Visual watermarks -->
+        <span class="absolute bottom-4 left-4 text-[9px] font-mono text-white/50 bg-black/50 px-2 py-0.5 rounded border border-white/5">NovaCam Pro DNG RAW Capture</span>
+      </div>
+
+      <!-- Right Side: Shot DSLR Metadata -->
+      <div class="md:w-2/5 p-8 flex flex-col justify-between text-left font-space">
+        <div class="flex flex-col gap-6">
+          <div class="flex flex-col gap-1">
+            <span class="text-brand font-mono text-[10px] font-bold uppercase tracking-wider">Photo Captured</span>
+            <h3 class="text-xl font-bold text-white">Capture Session Metadata</h3>
+            <span class="text-xs text-gray-500 font-mono" id="capture-time">2026-05-28 08:56</span>
+          </div>
+
+          <div class="flex flex-col gap-3 font-mono text-xs border-y border-white/5 py-4 my-2">
+            <div class="flex justify-between"><span class="text-gray-500">Lens Size</span><span class="text-white" id="md-lens">W 24mm (1x)</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Exposure (ISO)</span><span class="text-white" id="md-iso">100</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Shutter Speed</span><span class="text-white" id="md-shutter">1/250s</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Kelvin Temperature</span><span class="text-white" id="md-kelvin">5500K</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Color LUT preset</span><span class="text-white" id="md-lut">Log-C Standard</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">AI Enhancer</span><span class="text-white text-accent-neonGreen" id="md-ai">Active</span></div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <button onclick="downloadCapturedPhoto()" class="w-full py-3 rounded-xl bg-brand text-dark font-bold text-xs flex items-center justify-center gap-1.5 hover:bg-brand-light transition-colors cursor-none">
+            <i class="fa-solid fa-arrow-down-long text-[10px]"></i> Export RAW DNG
+          </button>
+          <p class="text-[9px] text-gray-500 text-center font-mono">NovaCam ProRes pipeline encodes files in broadcast-ready DNG layers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================
+     FOOTER
+     ========================================================== -->
+  <footer class="py-12 bg-black border-t border-white/5 text-center">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand Logo -->
+      <a href="index.html#projects" class="flex items-center gap-2.5 text-white font-bold font-space text-lg">
+        <span class="w-8 h-8 rounded-lg bg-dark border border-brand/50 flex items-center justify-center text-xs">
+          <i class="fa-solid fa-camera-retro text-brand"></i>
+        </span>
+        <span class="tracking-wide">NovaCam<span class="text-brand">.Pro</span></span>
+      </a>
+
+      <!-- Copyright -->
+      <p class="text-gray-500 text-xs font-semibold font-mono">
+        &copy; 2026 Sahariar Dev UI/UX Projects. Built for Apple-level presentation.
+      </p>
+
+      <!-- Anchors -->
+      <ul class="flex items-center gap-4 text-xs font-bold text-gray-400 font-space">
+        <li><a href="#simulator" class="hover:text-brand cursor-none">Simulator</a></li>
+        <li><a href="#ai-suite" class="hover:text-brand cursor-none">AI Suite</a></li>
+        <li><a href="#specs" class="hover:text-brand cursor-none">Specs</a></li>
+        <li><a href="index.html#projects" class="hover:text-brand cursor-none">Portfolio Hub</a></li>
+      </ul>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================
+     JAVASCRIPT LOGIC BLOCK
+     ========================================================== -->
+  <script>
+    // 1. CURSOR ENGINE
+    const cursor = document.querySelector('.custom-cursor');
+    const cursorDot = document.querySelector('.custom-cursor-dot');
+    
+    if (cursor && cursorDot && window.innerWidth > 1024) {
+      cursor.style.opacity = '1';
+      cursorDot.style.opacity = '1';
+
+      let cursorX = 0, cursorY = 0;
+      let targetX = 0, targetY = 0;
+      const delay = 0.16;
+
+      document.addEventListener('mousemove', (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+        cursorDot.style.left = `${targetX}px`;
+        cursorDot.style.top = `${targetY}px`;
+      });
+
+      const animateCursor = () => {
+        cursorX += (targetX - cursorX) * delay;
+        cursorY += (targetY - cursorY) * delay;
+        cursor.style.left = `${cursorX}px`;
+        cursor.style.top = `${cursorY}px`;
+        requestAnimationFrame(animateCursor);
+      };
+      animateCursor();
+
+      const hoverables = 'a, button, select, input, textarea, select option, #erase-target';
+      document.querySelectorAll(hoverables).forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+        el.addEventListener('mousedown', () => cursor.classList.add('clicking'));
+        el.addEventListener('mouseup', () => cursor.classList.remove('clicking'));
+      });
+    }
+
+    // 2. SYNTHETIC AUDIO GENERATOR (Web Audio API)
+    // Avoids external audio file network dependencies, ensuring lightning performance
+    let audioCtx = null;
+
+    const playShutterSound = () => {
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        
+        // Shutter click sound synth: A white noise burst mixed with a quick high frequency click
+        const bufferSize = audioCtx.sampleRate * 0.12; // 0.12 seconds
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        
+        // Fill white noise
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+        
+        const noiseNode = audioCtx.createBufferSource();
+        noiseNode.buffer = buffer;
+        
+        const noiseFilter = audioCtx.createBiquadFilter();
+        noiseFilter.type = 'bandpass';
+        noiseFilter.frequency.setValueAtTime(1000, audioCtx.currentTime);
+        noiseFilter.Q.setValueAtTime(3, audioCtx.currentTime);
+        
+        const noiseGain = audioCtx.createGain();
+        noiseGain.gain.setValueAtTime(0.4, audioCtx.currentTime);
+        noiseGain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.09);
+        
+        noiseNode.connect(noiseFilter);
+        noiseFilter.connect(noiseGain);
+        noiseGain.connect(audioCtx.destination);
+        
+        // High frequency click oscillator
+        const osc = audioCtx.createOscillator();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(2800, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.04);
+        
+        const oscGain = audioCtx.createGain();
+        oscGain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+        oscGain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+        
+        osc.connect(oscGain);
+        oscGain.connect(audioCtx.destination);
+        
+        // Trigger nodes
+        noiseNode.start();
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.12);
+      } catch (err) {
+        console.warn("Web Audio sound generation failed:", err);
+      }
+    };
+
+    const playBeepSound = (freq, duration) => {
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        const osc = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        
+        osc.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {
+        console.warn("Beep failed:", e);
+      }
+    };
+
+    // 3. CAMERA EMULATOR STATE & CONTROL LOGIC
+    const state = {
+      mode: 'photo',
+      lensZoom: 1.0,
+      lensName: 'W 24mm',
+      focus: 'Auto',
+      iso: 100,
+      shutter: '1/250s',
+      shutterIndex: 6,
+      kelvin: 5500,
+      lut: 'none',
+      sky: 'forest',
+      objectEraserEnabled: false,
+      nightVision: false,
+      isRecording: false,
+      recordingSecs: 0,
+      recordTimer: null,
+      lastCapturedData: {
+        sky: 'forest',
+        lut: 'none',
+        nightVision: false,
+        focus: 'Auto',
+        iso: 100,
+        shutter: '1/250s',
+        kelvin: 5500,
+        lens: 'W 24mm'
+      }
+    };
+
+    const shutterSpeeds = [
+      '1/8000s', '1/4000s', '1/2000s', '1/1000s', '1/500s', '1/250s', 
+      '1/125s', '1/60s', '1/30s', '1/15s', '1/8s', '1s'
+    ];
+
+    // Live viewport image paths corresponding to Sky Selection
+    const skyImages = {
+      forest: 'https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=600&auto=format&fit=crop',
+      sunset: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=600&auto=format&fit=crop',
+      aurora: 'https://images.unsplash.com/photo-1579033461380-adb47c3eb938?q=80&w=600&auto=format&fit=crop'
+    };
+
+    // DOM Elements mapping
+    const vpFeed = document.getElementById('vp-feed');
+    const vpGrain = document.getElementById('vp-grain');
+    const vpTint = document.getElementById('vp-tint');
+    const flashOverlay = document.getElementById('shutter-flash-overlay');
+    const timecode = document.getElementById('timecode-display');
+    const modePhotoBtn = document.getElementById('mode-photo-btn');
+    const modeVideoBtn = document.getElementById('mode-video-btn');
+    const shutterDot = document.getElementById('shutter-dot');
+    const activeAIOverlay = document.getElementById('ai-active-overlay');
+
+    // Focus handler
+    const updateFocus = (val) => {
+      // Focus ranges: 0 - 100. Lower focus blurs the viewfinder.
+      // MF 100 or MF 95 is sharp, MF 0 is fully blurred.
+      state.focus = val;
+      const valEl = document.getElementById('dial-focus-val');
+      const specVal = document.getElementById('val-focus');
+      
+      if (val == 100) {
+        state.focus = 'Auto';
+        valEl.textContent = 'Auto';
+        specVal.textContent = '100';
+        applyViewportFilters();
+      } else {
+        valEl.textContent = `MF ${val}`;
+        specVal.textContent = val;
+        applyViewportFilters();
+      }
+    };
+
+    // Helper to calculate total exposure brightness combining Shutter speed and ISO
+    const getBrightness = () => {
+      // Standard brightness: 1 (100%)
+      // High ISO shifts brightness up
+      let isoMultiplier = 1.0;
+      if (state.iso > 1600) isoMultiplier = 1.15;
+      if (state.iso > 6400) isoMultiplier = 1.3;
+      if (state.iso > 12800) isoMultiplier = 1.45;
+      
+      // Night vision boosts brightness massively
+      if (state.nightVision) return 1.8;
+
+      // Slow shutter speed boosts brightness
+      let shutterMultiplier = 1.0;
+      if (state.shutterIndex > 8) shutterMultiplier = 1.25; // 1/15s, 1s
+      if (state.shutterIndex < 3) shutterMultiplier = 0.85; // 1/8000s, 1/4000s
+      
+      return isoMultiplier * shutterMultiplier;
+    };
+
+    // Apply adjustments to viewport style filters
+    const applyViewportFilters = () => {
+      // 1. Calculate blur
+      let blurRad = 0;
+      if (state.focus !== 'Auto') {
+        blurRad = (100 - parseInt(state.focus)) * 0.12;
+      }
+      
+      // 2. Brightness
+      let bright = getBrightness();
+      
+      // 3. Night vision hue
+      let nvFilter = "";
+      if (state.nightVision) {
+        nvFilter = "contrast(120%) sepia(80%) hue-rotate(80deg) saturate(160%)";
+      }
+
+      // 4. Color LUT mix
+      let lutFilter = "";
+      if (state.lut === 'teal-orange') {
+        lutFilter = "contrast(115%) saturate(120%) hue-rotate(-10deg)";
+      } else if (state.lut === 'cyber-neon') {
+        lutFilter = "contrast(125%) saturate(150%) hue-rotate(50deg)";
+      } else if (state.lut === 'vintage-chrome') {
+        lutFilter = "sepia(25%) contrast(95%) brightness(95%)";
+      } else if (state.lut === 'moody-forest') {
+        lutFilter = "contrast(110%) saturate(80%) hue-rotate(-20deg)";
+      }
+
+      // Build composite filter string
+      vpFeed.style.filter = `blur(${blurRad}px) brightness(${bright}) ${nvFilter} ${lutFilter}`;
+    };
+
+    // ISO slider update
+    const updateISO = (val) => {
+      state.iso = val;
+      document.getElementById('dial-iso-val').textContent = val;
+      document.getElementById('val-iso').textContent = val;
+      
+      // High ISO grain overlay simulation
+      if (val < 400) {
+        vpGrain.style.opacity = '0.015';
+      } else if (val < 1600) {
+        vpGrain.style.opacity = '0.04';
+      } else if (val < 6400) {
+        vpGrain.style.opacity = '0.08';
+      } else {
+        vpGrain.style.opacity = '0.15'; // Very grainy
+      }
+      
+      applyViewportFilters();
+    };
+
+    // Shutter speed slider update
+    const updateShutter = (val) => {
+      state.shutterIndex = parseInt(val) - 1;
+      state.shutter = shutterSpeeds[state.shutterIndex];
+      document.getElementById('dial-shutter-val').textContent = state.shutter.replace('s', '');
+      document.getElementById('val-shutter').textContent = state.shutter;
+      
+      applyViewportFilters();
+    };
+
+    // Kelvin Temperature update
+    const updateKelvin = (val) => {
+      state.kelvin = val;
+      document.getElementById('dial-kelvin-val').textContent = `${val}K`;
+      document.getElementById('val-kelvin').textContent = `${val}K`;
+      
+      // Shift Kelvin Overlay Tint color
+      if (val < 4000) {
+        const opacity = (4000 - val) / 4000 * 0.35; // max 35% opacity blue tint
+        vpTint.style.backgroundColor = `rgba(0, 150, 255, ${opacity})`;
+      } else if (val > 6500) {
+        const opacity = (val - 6500) / 3500 * 0.35; // max 35% opacity orange tint
+        vpTint.style.backgroundColor = `rgba(255, 120, 0, ${opacity})`;
+      } else {
+        vpTint.style.backgroundColor = `rgba(0, 0, 0, 0)`; // Neutral
+      }
+    };
+
+    // Tab dial selector panels toggler
+    const setActiveDial = (param) => {
+      playBeepSound(1200, 0.05);
+
+      // Hide all panels
+      document.getElementById('panel-focus').classList.add('hidden');
+      document.getElementById('panel-iso').classList.add('hidden');
+      document.getElementById('panel-shutter').classList.add('hidden');
+      document.getElementById('panel-kelvin').classList.add('hidden');
+      
+      // Remove selected class borders from all dials
+      document.getElementById('dial-focus').className = 'flex flex-col items-center py-1 rounded hover:bg-white/5 cursor-none';
+      document.getElementById('dial-iso').className = 'flex flex-col items-center py-1 rounded hover:bg-white/5 cursor-none';
+      document.getElementById('dial-shutter').className = 'flex flex-col items-center py-1 rounded hover:bg-white/5 cursor-none';
+      document.getElementById('dial-kelvin').className = 'flex flex-col items-center py-1 rounded hover:bg-white/5 cursor-none';
+
+      // Show selected panel
+      document.getElementById(`panel-${param}`).classList.remove('hidden');
+      document.getElementById(`dial-${param}`).className = 'flex flex-col items-center py-1 rounded bg-white/5 border border-brand/35 text-white cursor-none';
+    };
+
+    // Zoom Lens selector
+    const setLens = (zoom, name) => {
+      playBeepSound(1500, 0.06);
+
+      state.lensZoom = zoom;
+      state.lensName = name;
+      document.getElementById('lens-badge').textContent = name;
+      
+      // Viewfinder scale transform zoom simulation
+      vpFeed.style.transform = `scale(${zoom})`;
+      
+      // Update lens button visual focus
+      document.getElementById('lens-05').className = 'text-white/60 hover:text-brand cursor-none';
+      document.getElementById('lens-10').className = 'text-white/60 hover:text-brand cursor-none';
+      document.getElementById('lens-30').className = 'text-white/60 hover:text-brand cursor-none';
+      document.getElementById('lens-100').className = 'text-white/60 hover:text-brand cursor-none';
+      
+      if (zoom === 0.5) document.getElementById('lens-05').className = 'text-brand font-bold cursor-none';
+      else if (zoom === 1.0) document.getElementById('lens-10').className = 'text-brand font-bold cursor-none';
+      else if (zoom === 3.0) document.getElementById('lens-30').className = 'text-brand font-bold cursor-none';
+      else if (zoom === 10.0) document.getElementById('lens-100').className = 'text-brand font-bold cursor-none';
+    };
+
+    // Photo / Video mode selector toggler
+    const setMode = (mode) => {
+      playBeepSound(1000, 0.05);
+      state.mode = mode;
+      
+      const photoBtn = document.getElementById('mode-photo-btn');
+      const videoBtn = document.getElementById('mode-video-btn');
+      
+      if (mode === 'photo') {
+        photoBtn.className = 'px-2.5 py-1 rounded-full bg-brand text-dark cursor-none';
+        videoBtn.className = 'px-2.5 py-1 rounded-full text-white/50 hover:text-white cursor-none';
+        shutterDot.style.display = 'none';
+        document.getElementById('res-badge').textContent = '8K';
+        
+        // Stop recording if active
+        if (state.isRecording) {
+          stopVideoRecording();
+        }
+      } else {
+        videoBtn.className = 'px-2.5 py-1 rounded-full bg-accent-magenta text-white cursor-none';
+        photoBtn.className = 'px-2.5 py-1 rounded-full text-white/50 hover:text-white cursor-none';
+        shutterDot.style.display = 'block';
+        document.getElementById('res-badge').textContent = '4K';
+      }
+    };
+
+    // 4. AI TOOL INTEGRATION DETAILS
+    // Sky replacement
+    const setSky = (sky) => {
+      playBeepSound(1400, 0.06);
+      state.sky = sky;
+      
+      // Update background feed photo
+      vpFeed.style.backgroundImage = `url('${skyImages[sky]}')`;
+      
+      // Update sky button styles
+      document.getElementById('sky-forest-btn').className = 'px-2 py-1 rounded bg-white/5 text-white hover:bg-white/10 cursor-none';
+      document.getElementById('sky-sunset-btn').className = 'px-2 py-1 rounded bg-white/5 text-white hover:bg-white/10 cursor-none';
+      document.getElementById('sky-aurora-btn').className = 'px-2 py-1 rounded bg-white/5 text-white hover:bg-white/10 cursor-none';
+      
+      document.getElementById(`sky-${sky}-btn`).className = 'px-2 py-1 rounded bg-brand text-dark cursor-none';
+
+      // Update AI status overlay indicator
+      revealAIOverlay('Sky Morph applied');
+    };
+
+    const revealAIOverlay = (text) => {
+      activeAIOverlay.textContent = `AI: ${text}`;
+      activeAIOverlay.style.opacity = '1';
+      setTimeout(() => {
+        if (activeAIOverlay.textContent.includes(text)) {
+          activeAIOverlay.style.opacity = '0';
+        }
+      }, 3000);
+    };
+
+    // Object Eraser Toggle
+    const toggleObjectEraser = () => {
+      playBeepSound(1100, 0.05);
+      state.objectEraserEnabled = !state.objectEraserEnabled;
+      
+      const toggleBtn = document.getElementById('eraser-toggle-btn');
+      const targetBtn = document.getElementById('erase-target');
+      
+      if (state.objectEraserEnabled) {
+        toggleBtn.className = 'w-full py-2 rounded bg-brand/10 border border-brand text-brand font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-none';
+        document.getElementById('eraser-btn-text').textContent = 'Eraser Active';
+        
+        // Show target eraser button overlay on the viewfinder
+        targetBtn.style.opacity = '1';
+        targetBtn.style.pointerEvents = 'auto';
+        revealAIOverlay('Eraser Active. Tap target.');
+      } else {
+        toggleBtn.className = 'w-full py-2 rounded bg-white/5 hover:bg-brand/10 border border-white/10 hover:border-brand text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-none';
+        document.getElementById('eraser-btn-text').textContent = 'Enable Eraser Mode';
+        
+        targetBtn.style.opacity = '0';
+        targetBtn.style.pointerEvents = 'none';
+      }
+    };
+
+    // Trigger Object Eraser action scanning animation
+    document.getElementById('erase-target').addEventListener('click', function(e) {
+      e.stopPropagation();
+      playBeepSound(600, 0.1);
+      
+      const scanLine = document.getElementById('erase-scanline');
+      scanLine.classList.add('scan-active');
+      
+      this.style.pointerEvents = 'none';
+      this.style.opacity = '0.3';
+      
+      setTimeout(() => {
+        scanLine.classList.remove('scan-active');
+        this.style.opacity = '0';
+        
+        playBeepSound(400, 0.4);
+        revealAIOverlay('Target Erased');
+        
+        state.objectEraserEnabled = false;
+        const toggleBtn = document.getElementById('eraser-toggle-btn');
+        toggleBtn.className = 'w-full py-2 rounded bg-white/5 hover:bg-brand/10 border border-white/10 hover:border-brand text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-none';
+        document.getElementById('eraser-btn-text').textContent = 'Enable Eraser Mode';
+      }, 1200);
+    });
+
+    // Night vision toggle
+    const toggleNightVision = () => {
+      playBeepSound(1300, 0.05);
+      state.nightVision = !state.nightVision;
+      
+      const toggleBtn = document.getElementById('nv-toggle-btn');
+      
+      if (state.nightVision) {
+        toggleBtn.className = 'w-full py-2 rounded bg-accent-neonGreen/10 border border-accent-neonGreen text-accent-neonGreen font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-none';
+        document.getElementById('nv-btn-text').textContent = 'Night Vision Active';
+        revealAIOverlay('Night-Sight Active');
+      } else {
+        toggleBtn.className = 'w-full py-2 rounded bg-white/5 hover:bg-brand/10 border border-white/10 hover:border-brand text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-none';
+        document.getElementById('nv-btn-text').textContent = 'Activate Night Vision';
+      }
+      
+      applyViewportFilters();
+    };
+
+    // Color LUT presets selector
+    const applyLUT = (lut) => {
+      playBeepSound(1200, 0.05);
+      state.lut = lut;
+      
+      const lutDisplay = lut === 'none' ? 'Log-C Standard' : document.getElementById('lut-selector').options[document.getElementById('lut-selector').selectedIndex].text;
+      revealAIOverlay(`Color LUT: ${lutDisplay}`);
+      applyViewportFilters();
+    };
+
+    // 5. SHUTTER CLICK AND RECORDING CONTROLS
+    // Shutter Trigger handler
+    const triggerShutter = () => {
+      if (state.mode === 'photo') {
+        playShutterSound();
+        
+        flashOverlay.className = 'absolute inset-0 z-30 pointer-events-none bg-white opacity-0 flash-active';
+        setTimeout(() => {
+          flashOverlay.className = 'absolute inset-0 z-30 pointer-events-none opacity-0';
+        }, 360);
+
+        state.lastCapturedData = {
+          sky: state.sky,
+          lut: state.lut,
+          nightVision: state.nightVision,
+          focus: state.focus,
+          iso: state.iso,
+          shutter: state.shutter,
+          kelvin: state.kelvin,
+          lens: state.lensName
+        };
+
+        const thumb = document.getElementById('gallery-thumb');
+        thumb.src = skyImages[state.sky];
+        thumb.style.transform = 'scale(1.15)';
+        setTimeout(() => {
+          thumb.style.transform = 'scale(1)';
+        }, 150);
+
+        revealAIOverlay('RAW Photo Captured');
+      } else {
+        if (!state.isRecording) {
+          startVideoRecording();
+        } else {
+          stopVideoRecording();
+        }
+      }
+    };
+
+    // Video Recording loops
+    const startVideoRecording = () => {
+      state.isRecording = true;
+      playBeepSound(880, 0.15);
+      
+      shutterDot.className = 'w-4 h-4 rounded bg-accent-magenta animate-pulse';
+      document.getElementById('fps-badge').textContent = '24 FPS';
+      document.getElementById('res-badge').className = 'font-bold text-accent-magenta';
+      
+      state.recordingSecs = 0;
+      updateTimecode();
+      state.recordTimer = setInterval(() => {
+        state.recordingSecs++;
+        updateTimecode();
+      }, 1000);
+      
+      revealAIOverlay('ProRes Video Recording...');
+    };
+
+    const stopVideoRecording = () => {
+      state.isRecording = false;
+      playBeepSound(440, 0.15);
+      
+      clearInterval(state.recordTimer);
+      shutterDot.className = 'w-3.5 h-3.5 rounded bg-dark';
+      document.getElementById('res-badge').className = 'font-bold text-brand';
+      
+      revealAIOverlay('Video Exported to Log');
+    };
+
+    const updateTimecode = () => {
+      const hrs = Math.floor(state.recordingSecs / 3600).toString().padStart(2, '0');
+      const mins = Math.floor((state.recordingSecs % 3600) / 60).toString().padStart(2, '0');
+      const secs = (state.recordingSecs % 60).toString().padStart(2, '0');
+      const frames = Math.floor(Math.random() * 24).toString().padStart(2, '0');
+      
+      timecode.textContent = `${hrs}:${mins}:${secs}:${frames}`;
+    };
+
+    // 6. LIGHTBOX DETAILS POPUP GALLERY
+    const lightbox = document.getElementById('gallery-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const mdLens = document.getElementById('md-lens');
+    const mdIso = document.getElementById('md-iso');
+    const mdShutter = document.getElementById('md-shutter');
+    const mdKelvin = document.getElementById('md-kelvin');
+    const mdLut = document.getElementById('md-lut');
+    const mdAi = document.getElementById('md-ai');
+    const captureTime = document.getElementById('capture-time');
+
+    const openGalleryDrawer = () => {
+      playBeepSound(1200, 0.05);
+
+      lightboxImg.src = skyImages[state.lastCapturedData.sky];
+      
+      mdLens.textContent = state.lastCapturedData.lens;
+      mdIso.textContent = state.lastCapturedData.iso;
+      mdShutter.textContent = state.lastCapturedData.shutter;
+      mdKelvin.textContent = `${state.lastCapturedData.kelvin}K`;
+      
+      let lutName = "Log-C Standard";
+      if (state.lastCapturedData.lut === 'teal-orange') lutName = 'Teal & Orange';
+      else if (state.lastCapturedData.lut === 'cyber-neon') lutName = 'Cyber Neon';
+      else if (state.lastCapturedData.lut === 'vintage-chrome') lutName = 'Vintage Chrome';
+      else if (state.lastCapturedData.lut === 'moody-forest') lutName = 'Moody Forest';
+      mdLut.textContent = lutName;
+
+      let aiText = "Off";
+      if (state.lastCapturedData.nightVision) aiText = "Active (Night-Sight)";
+      else if (state.lastCapturedData.sky !== 'forest') aiText = "Active (Sky Morph)";
+      else aiText = "Active (Auto-HDR)";
+      mdAi.textContent = aiText;
+
+      const now = new Date();
+      captureTime.textContent = now.toISOString().slice(0, 19).replace('T', ' ');
+
+      let nvFilter = "";
+      if (state.lastCapturedData.nightVision) {
+        nvFilter = "contrast(120%) sepia(80%) hue-rotate(80deg) saturate(160%)";
+      }
+
+      let lutFilter = "";
+      if (state.lastCapturedData.lut === 'teal-orange') {
+        lutFilter = "contrast(115%) saturate(120%) hue-rotate(-10deg)";
+      } else if (state.lastCapturedData.lut === 'cyber-neon') {
+        lutFilter = "contrast(125%) saturate(150%) hue-rotate(50deg)";
+      } else if (state.lastCapturedData.lut === 'vintage-chrome') {
+        lutFilter = "sepia(25%) contrast(95%) brightness(95%)";
+      } else if (state.lastCapturedData.lut === 'moody-forest') {
+        lutFilter = "contrast(110%) saturate(80%) hue-rotate(-20deg)";
+      }
+      
+      lightboxImg.style.filter = `${nvFilter} ${lutFilter}`;
+
+      lightbox.classList.remove('hidden');
+      setTimeout(() => {
+        lightbox.style.opacity = '1';
+      }, 50);
+    };
+
+    const closeGalleryDrawer = () => {
+      playBeepSound(1000, 0.05);
+      lightbox.style.opacity = '0';
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+      }, 300);
+    };
+
+    const downloadCapturedPhoto = () => {
+      playBeepSound(1800, 0.1);
+      alert("RAW Photo exported to local logs storage!");
+    };
+
+    // 7. BEFORE / AFTER COMPARISON DRAG CONTROLLER
+    const baContainer = document.getElementById('ba-slider-container');
+    const baAfter = document.getElementById('ba-after-img');
+    const baHandle = document.getElementById('ba-handle');
+
+    if (baContainer && baAfter && baHandle) {
+      let isDragging = false;
+
+      const updateSliderPosition = (xPos) => {
+        const rect = baContainer.getBoundingClientRect();
+        let x = xPos - rect.left;
+        
+        if (x < 0) x = 0;
+        if (x > rect.width) x = rect.width;
+        
+        const percent = (x / rect.width) * 100;
+        
+        baAfter.style.clipPath = `polygon(${percent}% 0, 100% 0, 100% 100%, ${percent}% 100%)`;
+        baHandle.style.left = `${percent}%`;
+        document.getElementById('ba-btn').style.left = `${percent}%`;
+      };
+
+      baContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        updateSliderPosition(e.clientX);
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        updateSliderPosition(e.clientX);
+      });
+
+      window.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      baContainer.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        updateSliderPosition(e.touches[0].clientX);
+      }, { passive: true });
+
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        updateSliderPosition(e.touches[0].clientX);
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+    }
+
+    // 8. RANDOM HISTOGRAM SHIFT OSCILLATOR
+    const histoPath = document.getElementById('histo-path');
+    if (histoPath) {
+      setInterval(() => {
+        const p1 = Math.floor(Math.random() * 20) + 5;
+        const p2 = Math.floor(Math.random() * 30) + 15;
+        const p3 = Math.floor(Math.random() * 25) + 10;
+        const p4 = Math.floor(Math.random() * 35) + 15;
+        
+        histoPath.setAttribute('d', `M0,50 L5,45 Q15,${p1} 25,${p2} T45,${p3} T65,${p4} T85,15 L100,50 Z`);
+      }, 350);
+    }
+  </script>
+</body>
+</html>

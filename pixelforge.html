@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelForge Studio | Creative Design & Web Development Agency</title>
+  <meta name="description" content="PixelForge Studio is a luxury creative agency forging high-end digital masterpieces. Specialize in branding, visual UI/UX design, and interactive frontend development.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind Production CSS Variables -->
+  <style>
+    :root {
+      --color-brand: #00C853;
+      --color-brand-dark: #00A844;
+      --color-brand-light: #33D375;
+      --color-brand-glow: rgba(0, 200, 83, 0.08);
+      --color-brand-glow-deep: rgba(0, 200, 83, 0.15);
+      --color-dark: #111111;
+      --color-light-bg: #F9FAFB;
+    }
+  </style>
+  
+  <!-- Production Compiled Stylesheet -->
+  <link rel="stylesheet" href="assets/css/tailwind-built.css?v=1.0.4">
+</head>
+<body class="bg-white text-dark font-sans selection:bg-brand selection:text-white antialiased">
+
+  <!-- Custom Trailing Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-dot"></div>
+
+
+
+  <!-- Ambient Blurred Background Orbs -->
+  <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-green-50/20 blur-[130px] pointer-events-none z-0 animate-float-slow"></div>
+  <div class="fixed bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-emerald-50/30 blur-[130px] pointer-events-none z-0 animate-float-medium"></div>
+
+  <!-- ==========================================================================
+     HEADER / NAVIGATION
+     ========================================================================== */ -->
+  <header class="fixed top-0 left-0 w-full py-5 z-40 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 text-dark font-bold font-space text-xl tracking-tight z-50">
+        <span class="w-10 h-10 rounded-xl bg-dark text-white flex items-center justify-center shadow-lg shadow-black/10 text-lg border border-brand/20">
+          <i class="fa-solid fa-wand-magic-sparkles text-brand"></i>
+        </span>
+        <span class="tracking-wide">PixelForge<span class="text-brand">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-5 bg-gray-50/60 border border-gray-100/80 rounded-full px-6 py-1.5 backdrop-blur-md shadow-sm">
+        <a href="#services" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Services</a>
+        <a href="#works" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Works</a>
+        <a href="#team" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Team</a>
+        <a href="#process" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Process</a>
+        <a href="#contact" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Contact</a>
+      </nav>
+
+      <!-- Desktop Call To Action -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#contact" class="btn-spring px-6 py-2.5 rounded-full bg-brand text-white font-semibold text-sm shadow-md shadow-green-500/10 hover:bg-brand-dark transition-all duration-200">
+          Let's Talk
+        </a>
+      </div>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-menu-btn" class="lg:!hidden flex items-center justify-center w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 z-50 text-dark hover:bg-gray-100 transition-colors" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Menu Drawer -->
+  <div id="mobile-menu" class="fixed top-0 right-0 w-80 h-screen bg-white/95 backdrop-blur-lg border-l border-gray-100 shadow-2xl z-40 transform translate-x-full transition-transform duration-500 flex flex-col pt-28 px-8 pb-12 justify-between">
+    <nav class="flex flex-col gap-6 font-space text-lg">
+      <a href="#services" class="hover:text-brand transition-colors text-dark font-medium">Services</a>
+      <a href="#works" class="hover:text-brand transition-colors text-dark font-medium">Works</a>
+      <a href="#team" class="hover:text-brand transition-colors text-dark font-medium">Team</a>
+      <a href="#process" class="hover:text-brand transition-colors text-dark font-medium">Process</a>
+      <a href="#contact" class="hover:text-brand transition-colors text-dark font-medium">Contact</a>
+    </nav>
+    <div class="flex flex-col gap-4">
+      <a href="#contact" class="w-full text-center py-3.5 rounded-xl bg-brand text-white font-semibold shadow-lg shadow-green-500/10 hover:bg-brand-dark transition-colors">
+        Let's Talk
+      </a>
+      <p class="text-xs text-gray-400 text-center font-medium">&copy; 2026 PixelForge Studio.</p>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     HERO SECTION
+     ========================================================================== */ -->
+  <section class="relative pt-32 sm:pt-40 pb-20 sm:pb-28 overflow-x-hidden bg-mesh-grid">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
+      
+      <!-- Text & CTA Block (Asymmetrical Column 1) -->
+      <div class="lg:col-span-5 flex flex-col items-start text-left gap-6 reveal-left">
+        <!-- Premium Tag Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-100 shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
+          <span class="text-xs font-bold text-dark uppercase tracking-widest font-space">PixelForge Studio</span>
+        </div>
+
+        <!-- Large Typography Header -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-space leading-[1.05] text-dark tracking-tight">
+          We Forge <br />Digital <br />
+          <span class="text-brand text-glow font-black italic">Masterpieces.</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed max-w-md">
+          A boutique creative agency mapping high-end brand identities, immersive user interfaces, and advanced interactive frontend applications.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <a href="#contact" class="btn-spring px-8 py-4 rounded-xl bg-brand text-white font-semibold shadow-xl shadow-green-500/20 hover:bg-brand-dark flex items-center justify-center gap-2">
+            <span>Start a Project</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+          <a href="#works" class="btn-spring px-8 py-4 rounded-xl bg-white border border-gray-200 text-gray-700 font-semibold shadow-sm hover:border-gray-300 flex items-center justify-center gap-2">
+            <span>Explore Gallery</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Asymmetrical Portfolio Gallery Mockup Grid (Asymmetrical Columns 2-4) -->
+      <div class="lg:col-span-7 grid grid-cols-12 gap-4 relative reveal-right">
+        <!-- Glow Backing -->
+        <div class="absolute w-[80%] h-[80%] bg-brand/5 blur-[120px] rounded-full right-0 top-0 -z-10"></div>
+        
+        <!-- Large Asymmetrical Main Card (Grid span 8, offset) -->
+        <div class="col-span-8 rounded-3xl border-2 border-dark/95 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.95)] overflow-hidden bg-slate-900 group aspect-[4/5] relative translate-y-4">
+          <img src="assets/pixelforge_hero.png" alt="PixelForge Avant-Garde Asymmetrical Grid Showcase" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+            <span class="text-xs font-bold text-brand uppercase tracking-widest font-space mb-1">Visual Art</span>
+            <h3 class="text-xl font-bold text-white font-space">Avant-Garde Brand Assets</h3>
+          </div>
+        </div>
+
+        <!-- Overlapping Side Cards (Grid span 4) -->
+        <div class="col-span-4 flex flex-col gap-4 justify-center">
+          <!-- Overlapping Card 1 -->
+          <div class="rounded-2xl border border-dark/80 bg-white p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.8)] transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+            <div class="w-full h-24 rounded-lg overflow-hidden bg-slate-100 mb-3">
+              <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?q=80&w=300&auto=format&fit=crop" alt="Branding" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-xs font-extrabold text-dark font-space">Branding System</h4>
+          </div>
+
+          <!-- Overlapping Card 2 -->
+          <div class="rounded-2xl border border-dark/80 bg-slate-900 text-white p-4 shadow-[4px_4px_0px_0px_rgba(0,200,83,0.8)] transform rotate-3 hover:rotate-0 transition-transform duration-300">
+            <div class="w-full h-24 rounded-lg overflow-hidden bg-slate-950 mb-3">
+              <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=300&auto=format&fit=crop" alt="UIUX" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-xs font-extrabold text-brand font-space">Minimalist UI</h4>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     SERVICES SECTION
+     ========================================================================== */ -->
+  <section id="services" class="py-28 bg-lightBg/50 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 reveal-up">
+        <div class="text-left">
+          <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Capabilities</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Services We Specialize In</h2>
+          <div class="w-16 h-1 bg-brand my-4 rounded-full"></div>
+        </div>
+        <p class="text-gray-500 text-sm md:text-base max-w-md leading-relaxed md:mb-2 text-left">
+          Blending artistic vision, interactive technologies, and conversion layouts to forge memorable digital assets.
+        </p>
+      </div>
+
+      <!-- Services Cards (4 Columns) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Service 1: Brand Strategy -->
+        <div class="spotlight-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col gap-4 justify-between reveal-up delay-100">
+          <div class="flex flex-col gap-3">
+            <span class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-compass"></i></span>
+            <h3 class="text-lg font-bold font-space text-dark">Brand Strategy</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Formulating brand identities, core guidelines, typography rules, and logomarks that capture customer focus.
+            </p>
+          </div>
+          <span class="text-[10px] font-bold text-brand uppercase tracking-widest flex items-center gap-1 font-space">Strategy</span>
+        </div>
+
+        <!-- Service 2: Visual UI/UX -->
+        <div class="spotlight-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col gap-4 justify-between reveal-up delay-200">
+          <div class="flex flex-col gap-3">
+            <span class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-bezier-curve"></i></span>
+            <h3 class="text-lg font-bold font-space text-dark">Visual UI/UX</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Designing premium interfaces in Figma. Structuring layouts, templates, and style systems that minimize churn.
+            </p>
+          </div>
+          <span class="text-[10px] font-bold text-brand uppercase tracking-widest flex items-center gap-1 font-space">Design</span>
+        </div>
+
+        <!-- Service 3: Interactive Dev -->
+        <div class="spotlight-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col gap-4 justify-between reveal-up delay-300">
+          <div class="flex flex-col gap-3">
+            <span class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-laptop-code"></i></span>
+            <h3 class="text-lg font-bold font-space text-dark">Interactive Dev</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Engineering semantic, responsive codebases utilizing React, Next.js, and Tailwind CSS configuration layers.
+            </p>
+          </div>
+          <span class="text-[10px] font-bold text-brand uppercase tracking-widest flex items-center gap-1 font-space">Development</span>
+        </div>
+
+        <!-- Service 4: Motion & VFX -->
+        <div class="spotlight-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col gap-4 justify-between reveal-up delay-400">
+          <div class="flex flex-col gap-3">
+            <span class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+            <h3 class="text-lg font-bold font-space text-dark">Motion & VFX</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Creating fluid WebGL transitions, CSS loops, SVG animations, and spring physics micro-interactions.
+            </p>
+          </div>
+          <span class="text-[10px] font-bold text-brand uppercase tracking-widest flex items-center gap-1 font-space">Animation</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FEATURED WORKS GALLERY
+     ========================================================================== */ -->
+  <section id="works" class="py-28 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Gallery</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Selected Case Studies</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+      </div>
+
+      <!-- Gallery Grid (Interactive layout - alternate sizing) -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Work 1 (7 cols) -->
+        <div class="md:col-span-7 bg-gray-50 rounded-3xl border border-gray-100 overflow-hidden flex flex-col justify-between group spotlight-card reveal-up">
+          <div class="relative overflow-hidden h-72">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-102" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          </div>
+          <div class="p-8 flex items-end justify-between">
+            <div class="flex flex-col gap-1 text-left">
+              <span class="text-[10px] font-bold text-brand uppercase tracking-wider font-space">Creative Website / WebGL</span>
+              <h3 class="text-xl font-bold font-space text-dark mt-1">Aura Fintech Dashboard</h3>
+            </div>
+            <span class="w-11 h-11 rounded-full bg-dark text-white flex items-center justify-center text-sm transition-colors group-hover:bg-brand group-hover:text-white"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </div>
+        </div>
+
+        <!-- Work 2 (5 cols) -->
+        <div class="md:col-span-5 bg-gray-50 rounded-3xl border border-gray-100 overflow-hidden flex flex-col justify-between group spotlight-card reveal-up delay-150">
+          <div class="relative overflow-hidden h-72">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-102" style="background-image: url('https://images.unsplash.com/photo-1541462608143-67571c6738dd?q=80&w=800&auto=format&fit=crop')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          </div>
+          <div class="p-8 flex items-end justify-between">
+            <div class="flex flex-col gap-1 text-left">
+              <span class="text-[10px] font-bold text-brand uppercase tracking-wider font-space">Branding System / Figma</span>
+              <h3 class="text-xl font-bold font-space text-dark mt-1">CyberFort Branding</h3>
+            </div>
+            <span class="w-11 h-11 rounded-full bg-dark text-white flex items-center justify-center text-sm transition-colors group-hover:bg-brand group-hover:text-white"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </div>
+        </div>
+
+        <!-- Work 3 (5 cols) -->
+        <div class="md:col-span-5 bg-gray-50 rounded-3xl border border-gray-100 overflow-hidden flex flex-col justify-between group spotlight-card reveal-up">
+          <div class="relative overflow-hidden h-72">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-102" style="background-image: url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          </div>
+          <div class="p-8 flex items-end justify-between">
+            <div class="flex flex-col gap-1 text-left">
+              <span class="text-[10px] font-bold text-brand uppercase tracking-wider font-space">SaaS Platform / React</span>
+              <h3 class="text-xl font-bold font-space text-dark mt-1">FlowSync AI Layout</h3>
+            </div>
+            <span class="w-11 h-11 rounded-full bg-dark text-white flex items-center justify-center text-sm transition-colors group-hover:bg-brand group-hover:text-white"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </div>
+        </div>
+
+        <!-- Work 4 (7 cols) -->
+        <div class="md:col-span-7 bg-gray-50 rounded-3xl border border-gray-100 overflow-hidden flex flex-col justify-between group spotlight-card reveal-up delay-150">
+          <div class="relative overflow-hidden h-72">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-102" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          </div>
+          <div class="p-8 flex items-end justify-between">
+            <div class="flex flex-col gap-1 text-left">
+              <span class="text-[10px] font-bold text-brand uppercase tracking-wider font-space">Luxury Storefront / Shopify</span>
+              <h3 class="text-xl font-bold font-space text-dark mt-1">Nova Apparel Hub</h3>
+            </div>
+            <span class="w-11 h-11 rounded-full bg-dark text-white flex items-center justify-center text-sm transition-colors group-hover:bg-brand group-hover:text-white"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     TEAM SECTION
+     ========================================================================== */ -->
+  <section id="team" class="py-28 bg-lightBg/50 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Creatives</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Meet the Artisans</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+          The developers, UI designers, and creative strategists forging digital systems at PixelForge.
+        </p>
+      </div>
+
+      <!-- Team Grid (3 Columns) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Team member 1 -->
+        <div class="spotlight-card bg-white border border-gray-100 p-6 rounded-3xl flex flex-col gap-4 text-left reveal-up delay-100">
+          <div class="h-64 rounded-2xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop" alt="Chloe Mercer" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xs text-brand font-bold uppercase tracking-wider font-space">Co-Founder & UI Designer</span>
+            <h3 class="text-lg font-bold font-space text-dark mt-1">Chloe Mercer</h3>
+            <p class="text-gray-400 text-xs leading-relaxed mt-2">
+              Oversees visual layout pipelines, design rules, assets grids, and user journey structures.
+            </p>
+          </div>
+        </div>
+
+        <!-- Team member 2 -->
+        <div class="spotlight-card bg-white border border-gray-100 p-6 rounded-3xl flex flex-col gap-4 text-left reveal-up delay-200">
+          <div class="h-64 rounded-2xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop" alt="Marcus Thompson" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xs text-brand font-bold uppercase tracking-wider font-space">Interactive Lead Dev</span>
+            <h3 class="text-lg font-bold font-space text-dark mt-1">Marcus Thompson</h3>
+            <p class="text-gray-400 text-xs leading-relaxed mt-2">
+              Responsible for frontend compiling, component hierarchies, responsive frameworks, and webgl flows.
+            </p>
+          </div>
+        </div>
+
+        <!-- Team member 3 -->
+        <div class="spotlight-card bg-white border border-gray-100 p-6 rounded-3xl flex flex-col gap-4 text-left reveal-up delay-300">
+          <div class="h-64 rounded-2xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&auto=format&fit=crop" alt="Evelyn Thorne" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xs text-brand font-bold uppercase tracking-wider font-space">Brand Strategist</span>
+            <h3 class="text-lg font-bold font-space text-dark mt-1">Evelyn Thorne</h3>
+            <p class="text-gray-400 text-xs leading-relaxed mt-2">
+              Coordinates typography guides, brand logomarks, client marketing values, and project wireframes.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     TESTIMONIALS SECTION
+     ========================================================================== */ -->
+  <section class="py-28 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center flex flex-col items-center gap-10">
+      
+      <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Testimonials</span>
+      
+      <!-- Big Quote -->
+      <div class="max-w-4xl reveal-scale">
+        <p class="text-2xl md:text-3xl font-bold font-space text-dark leading-relaxed italic">
+          "Working with PixelForge transformed our product UX entirely. Our landing page speed scores hit 98%, and user metrics increased by 42% in under two weeks. They are visual perfectionists."
+        </p>
+        <div class="flex items-center justify-center gap-3.5 mt-8 border-t border-gray-100 pt-6 max-w-sm mx-auto">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop" alt="Sofia Reynolds" class="w-10 h-10 rounded-full object-cover">
+          <div class="text-left flex flex-col">
+            <span class="text-xs font-bold text-dark font-space">Sofia Reynolds</span>
+            <span class="text-[10px] text-gray-400 font-semibold font-mono">VP Design, Nova Apparel (UK)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     PROCESS SECTION
+     ========================================================================== */ -->
+  <section id="process" class="py-28 bg-lightBg/50 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Workflow</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Our Creative Timeline</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+          How we structure procedures to translate raw ideas into digital works of art.
+        </p>
+      </div>
+
+      <!-- Process timeline timeline (Zig-zag) -->
+      <div class="max-w-4xl mx-auto flex flex-col gap-12 relative">
+        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200/80 -translate-x-1/2 hidden md:block"></div>
+        
+        <!-- Step 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start reveal-up">
+          <div class="md:col-span-5 flex md:justify-end text-left md:text-right order-2 md:order-1">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm spotlight-card">
+              <span class="text-lg font-bold font-space text-brand font-mono">01. Concept Discovery</span>
+              <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                Defining brand requirements, visual references, target audiences, and mapping early flow wireframes.
+              </p>
+            </div>
+          </div>
+          <div class="md:col-span-2 flex justify-start md:justify-center order-1 md:order-2">
+            <div class="w-8 h-8 rounded-full bg-dark text-white border-2 border-white shadow flex items-center justify-center text-xs font-bold z-10">1</div>
+          </div>
+          <div class="md:col-span-5 hidden md:block order-3"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start reveal-up">
+          <div class="md:col-span-5 hidden md:block"></div>
+          <div class="md:col-span-2 flex justify-start md:justify-center">
+            <div class="w-8 h-8 rounded-full bg-dark text-white border-2 border-white shadow flex items-center justify-center text-xs font-bold z-10">2</div>
+          </div>
+          <div class="md:col-span-5 flex justify-start text-left">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm spotlight-card">
+              <span class="text-lg font-bold font-space text-brand font-mono">02. Creative Layouts</span>
+              <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                Drafting custom, high-fidelity UI screens in Figma. Iterating colors, grids, and assets models.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start reveal-up">
+          <div class="md:col-span-5 flex md:justify-end text-left md:text-right order-2 md:order-1">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm spotlight-card">
+              <span class="text-lg font-bold font-space text-brand font-mono">03. Frontend Compilation</span>
+              <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                Translating figma screens into clean React/Tailwind code bases. Implementing speed rules and loaders.
+              </p>
+            </div>
+          </div>
+          <div class="md:col-span-2 flex justify-start md:justify-center order-1 md:order-2">
+            <div class="w-8 h-8 rounded-full bg-dark text-white border-2 border-white shadow flex items-center justify-center text-xs font-bold z-10">3</div>
+          </div>
+          <div class="md:col-span-5 hidden md:block order-3"></div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start reveal-up">
+          <div class="md:col-span-5 hidden md:block"></div>
+          <div class="md:col-span-2 flex justify-start md:justify-center">
+            <div class="w-8 h-8 rounded-full bg-dark text-white border-2 border-white shadow flex items-center justify-center text-xs font-bold z-10">4</div>
+          </div>
+          <div class="md:col-span-5 flex justify-start text-left">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm spotlight-card">
+              <span class="text-lg font-bold font-space text-brand font-mono">04. Deliver Masterpiece</span>
+              <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                QA auditing cross-browser responsiveness and testing animations before final client handover.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     CONTACT SECTION
+     ========================================================================== */ -->
+  <section id="contact" class="py-28 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+        
+        <!-- Info Column (5 cols) -->
+        <div class="lg:col-span-5 flex flex-col gap-6 justify-between text-left reveal-left">
+          
+          <div class="flex flex-col gap-5">
+            <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full w-fit">Get In Touch</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold font-space text-dark leading-tight">Let's Forge a New Masterpiece</h2>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Have a project requiring premium visual design and high-end frontend craftsmanship? Share a project brief, and let's coordinate details.
+            </p>
+            
+            <div class="flex flex-col gap-4 mt-4">
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-brand"><i class="fa-solid fa-envelope"></i></span>
+                <div class="flex flex-col">
+                  <span class="text-[9px] text-gray-400 font-bold uppercase">Email Studio</span>
+                  <a href="mailto:hello@pixelforge.studio" class="text-xs font-semibold text-dark hover:text-brand cursor-none">hello@pixelforge.studio</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-brand"><i class="fa-solid fa-location-dot"></i></span>
+                <div class="flex flex-col">
+                  <span class="text-[9px] text-gray-400 font-bold uppercase">HQ Studio</span>
+                  <span class="text-xs font-semibold text-dark">London Creative Space / Global Base</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-3 pt-6 border-t border-gray-100 mt-6 lg:mt-0">
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Connect Socially</span>
+            <div class="flex gap-3">
+              <a href="#" class="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 hover:text-brand hover:border-brand flex items-center justify-center text-sm text-gray-500 transition-colors cursor-none"><i class="fa-brands fa-dribbble"></i></a>
+              <a href="#" class="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 hover:text-brand hover:border-brand flex items-center justify-center text-sm text-gray-500 transition-colors cursor-none"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 hover:text-brand hover:border-brand flex items-center justify-center text-sm text-gray-500 transition-colors cursor-none"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Form Column (7 cols) -->
+        <div class="lg:col-span-7 reveal-right">
+          <div class="bg-gray-50 border border-gray-100/80 shadow-xl rounded-3xl p-6 md:p-10 flex flex-col gap-6">
+            <h3 class="text-xl font-bold font-space text-dark">Submit Project Brief</h3>
+            
+            <form id="contact-form" class="flex flex-col gap-4 text-left">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-2">
+                  <label for="form-name" class="text-[10px] font-bold text-gray-400 uppercase font-space">Name / Company</label>
+                  <input type="text" id="form-name" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-white text-xs focus:border-brand focus:outline-none cursor-none" placeholder="e.g. Nova Inc." required>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="form-email" class="text-[10px] font-bold text-gray-400 uppercase font-space">Email Address</label>
+                  <input type="email" id="form-email" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-white text-xs focus:border-brand focus:outline-none cursor-none" placeholder="e.g. hello@nova.com" required>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <label for="form-details" class="text-[10px] font-bold text-gray-400 uppercase font-space">Project Scope Details</label>
+                <textarea id="form-details" rows="5" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-white text-xs focus:border-brand focus:outline-none cursor-none" placeholder="Briefly describe your design/dev requirements..." required></textarea>
+              </div>
+
+              <button type="submit" id="contact-submit" class="btn-spring w-full py-4 rounded-xl bg-dark text-white font-bold text-xs shadow-xl shadow-black/10 hover:bg-black flex items-center justify-center gap-2 mt-2 cursor-none">
+                <span>Send Brief</span>
+                <i class="fa-solid fa-paper-plane text-[10px] text-brand"></i>
+              </button>
+              
+              <div id="contact-response-message" class="hidden"></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FOOTER
+     ========================================================================== */ -->
+  <footer class="py-12 bg-white border-t border-gray-100 text-center">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 text-dark font-bold font-space text-lg">
+        <span class="w-8 h-8 rounded-lg bg-dark text-white flex items-center justify-center text-sm shadow-md shadow-black/10 border border-brand/20">
+          <i class="fa-solid fa-wand-magic-sparkles text-brand"></i>
+        </span>
+        <span class="tracking-wide">PixelForge<span class="text-brand">.</span></span>
+      </a>
+
+      <!-- Copyright -->
+      <p class="text-gray-400 text-xs font-semibold font-mono">
+        &copy; 2026 PixelForge Studio. Forging high-end digital solutions.
+      </p>
+
+      <!-- Anchors -->
+      <ul class="flex items-center gap-4 text-xs font-bold text-gray-400 font-space">
+        <li><a href="#services" class="hover:text-brand cursor-none">Services</a></li>
+        <li><a href="#works" class="hover:text-brand cursor-none">Works</a></li>
+        <li><a href="#team" class="hover:text-brand cursor-none">Team</a></li>
+        <li><a href="#contact" class="hover:text-brand cursor-none">Contact</a></li>
+      </ul>
+
+    </div>
+  </footer>
+
+  <!-- Custom shared JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>

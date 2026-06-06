@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenBite | Elegant Organic Dining & Fine Culinary Art</title>
+  <meta name="description" content="GreenBite Restaurant offers a luxury organic fine dining experience. Indulge in gourmet chef signatures, sustainable organic farm ingredients, and elegant spaces.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind Production CSS Variables -->
+  <style>
+    :root {
+      --color-brand: #4A5D4E;
+      --color-brand-dark: #3A4B3E;
+      --color-brand-light: #6B7E6F;
+      --color-brand-glow: rgba(74, 93, 78, 0.08);
+      --color-accent: #D4AF37;
+      --color-accent-dark: #B8901C;
+      --color-accent-light: #E6C25E;
+      --color-accent-warm: #F59E0B;
+      --color-dark: #1B2418;
+      --color-light-bg: #F4F7F3;
+    }
+  </style>
+  
+  <!-- Production Compiled Stylesheet -->
+  <link rel="stylesheet" href="assets/css/tailwind-built.css?v=1.0.4">
+</head>
+<body class="bg-white text-dark font-sans selection:bg-brand selection:text-white antialiased">
+
+  <!-- Custom Trailing Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-dot"></div>
+
+
+
+  <!-- Ambient Herb Background Blur Orbs -->
+  <div class="fixed top-[-5%] left-[-5%] w-[45vw] h-[45vw] rounded-full bg-green-50/40 blur-[130px] pointer-events-none z-0 animate-float-slow"></div>
+  <div class="fixed bottom-[-5%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-yellow-50/20 blur-[140px] pointer-events-none z-0 animate-float-medium"></div>
+
+  <!-- ==========================================================================
+     HEADER / NAVIGATION
+     ========================================================================== */ -->
+  <header class="fixed top-0 left-0 w-full py-5 z-40 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2 text-dark font-bold font-space text-xl tracking-tight z-50">
+        <span class="w-10 h-10 rounded-xl bg-brand text-white flex items-center justify-center shadow-md shadow-green-500/10 text-lg">
+          <i class="fa-solid fa-leaf"></i>
+        </span>
+        <span class="tracking-wide">GreenBite<span class="text-accent font-light">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-5 bg-gray-50/60 border border-gray-100/80 rounded-full px-6 py-1.5 backdrop-blur-md shadow-sm">
+        <a href="#featured" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Featured</a>
+        <a href="#menu" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Menu</a>
+        <a href="#reservation" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Reservation</a>
+        <a href="#chef" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Our Chef</a>
+        <a href="#gallery" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Gallery</a>
+      </nav>
+
+      <!-- Desktop Call To Action -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#reservation" class="btn-spring px-6 py-2.5 rounded-full bg-accent text-white font-semibold text-sm shadow-md shadow-amber-500/10 hover:bg-accent-dark transition-all duration-200">
+          Book Table
+        </a>
+      </div>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-menu-btn" class="lg:!hidden flex items-center justify-center w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 z-50 text-dark hover:bg-gray-100 transition-colors" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Menu Drawer -->
+  <div id="mobile-menu" class="fixed top-0 right-0 w-80 h-screen bg-white/95 backdrop-blur-lg border-l border-gray-100 shadow-2xl z-40 transform translate-x-full transition-transform duration-500 flex flex-col pt-28 px-8 pb-12 justify-between">
+    <nav class="flex flex-col gap-6 font-space text-lg">
+      <a href="#featured" class="hover:text-brand transition-colors text-dark font-medium">Featured</a>
+      <a href="#menu" class="hover:text-brand transition-colors text-dark font-medium">Menu</a>
+      <a href="#reservation" class="hover:text-brand transition-colors text-dark font-medium">Reservation</a>
+      <a href="#chef" class="hover:text-brand transition-colors text-dark font-medium">Our Chef</a>
+      <a href="#gallery" class="hover:text-brand transition-colors text-dark font-medium">Gallery</a>
+    </nav>
+    <div class="flex flex-col gap-4">
+      <a href="#reservation" class="w-full text-center py-3.5 rounded-xl bg-accent text-white font-semibold shadow-lg shadow-amber-500/10 hover:bg-accent-dark transition-colors">
+        Book Table
+      </a>
+      <p class="text-xs text-gray-400 text-center font-medium">&copy; 2026 GreenBite Culinary. Est. 2024.</p>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     HERO SECTION
+     ========================================================================== */ -->
+  <section class="relative min-h-screen flex items-stretch overflow-x-hidden bg-[#F4F2EE]">
+    <!-- Split Layout Grid -->
+    <div class="w-full grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-screen">
+      
+      <!-- Left side: Warm Cream Editorial Column (6 cols) -->
+      <div class="col-span-12 lg:col-span-6 bg-[#FAF8F5] px-6 py-24 md:px-12 lg:px-24 flex flex-col justify-center items-start gap-6 md:gap-8 z-10 relative">
+        <!-- Welcome badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand/10 border border-brand/20 w-fit">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
+          <span class="text-xs font-bold text-brand uppercase tracking-widest font-space">Organic Fine Dining</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold leading-[1.1] text-[#1B2418]">
+          Savor the Art of <br />
+          <span class="text-brand italic font-semibold">Sustainable</span> <br />
+          Culinary Craft
+        </h1>
+
+        <p class="text-gray-500 font-serif text-base md:text-lg max-w-lg leading-relaxed">
+          Indulge in a premium gastronomic journey where sustainable farming meets gourmet Michelin signatures. Crafted by hand, sourced with integrity.
+        </p>
+
+        <!-- CTA buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <a href="#reservation" class="btn-spring px-8 py-4 rounded-xl bg-brand text-white font-semibold shadow-xl shadow-brand/20 hover:bg-brand-dark flex items-center justify-center gap-2">
+            <span>Book A Table</span>
+            <i class="fa-solid fa-chair text-xs"></i>
+          </a>
+          <a href="#menu" class="btn-spring px-8 py-4 rounded-xl bg-[#FAF8F5] border-2 border-brand text-brand font-semibold hover:bg-brand hover:text-white flex items-center justify-center gap-2 transition-all">
+            <span>Explore Menu</span>
+            <i class="fa-solid fa-utensils text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Trust factors -->
+        <div class="flex items-center gap-8 mt-6 pt-6 border-t border-brand/20 w-full max-w-md">
+          <div class="flex flex-col">
+            <span class="text-xl font-bold font-serif text-[#1B2418]">100%</span>
+            <span class="text-[9px] text-[#4A5D4E] font-bold uppercase tracking-wider">Organic Sourced</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-bold font-serif text-[#1B2418]">5.0 <i class="fa-solid fa-star text-amber-500 text-sm align-middle ml-0.5"></i></span>
+            <span class="text-[9px] text-[#4A5D4E] font-bold uppercase tracking-wider">Review Rating</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-bold font-serif text-[#1B2418]">Michelin</span>
+            <span class="text-[9px] text-[#4A5D4E] font-bold uppercase tracking-wider">Signatures</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Giant Organic Image Mask bleeding off-screen (6 cols) -->
+      <div class="col-span-12 lg:col-span-6 relative flex items-center justify-center overflow-hidden py-16 lg:py-0">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 bg-[#F4F2EE] -z-10"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <!-- Giant Fluid Organic Mask revealing the salad bowl image -->
+        <div class="relative w-[110%] md:w-[95%] lg:w-[130%] aspect-square lg:translate-x-12 select-none">
+          <!-- Fluid SVG Mask shape -->
+          <div class="w-full h-full p-4 transform scale-90 md:scale-95 lg:scale-105">
+            <div class="w-full h-full rounded-[40%_60%_70%_30%_/_40%_50%_60%_50%] overflow-hidden shadow-2xl border-4 border-white transform hover:rotate-3 transition-transform duration-700">
+              <img src="assets/greenbite_hero.png" alt="GreenBite Vibrant Close-up Gourmet Salad Bowl" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="absolute top-1/4 left-10 bg-white/95 backdrop-blur shadow-2xl rounded-2xl p-4 flex items-center gap-3.5 border border-white/40 animate-float-slow">
+            <span class="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-lg"><i class="fa-solid fa-seedling"></i></span>
+            <div class="flex flex-col">
+              <span class="text-xs font-bold text-[#1B2418] font-space">100% Organic</span>
+              <span class="text-[9px] text-gray-400 font-bold font-mono">Harvested Daily</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FEATURED DISHES SECTION
+     ========================================================================== */ -->
+  <section id="featured" class="py-24 bg-lightBg/50 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Gourmet Choices</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Our Signature Creations</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+          Crafted with locally sourced sustainable harvests, designed to please your senses.
+        </p>
+      </div>
+
+      <!-- Dishes grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Dish 1 -->
+        <div class="spotlight-card bg-white p-6 rounded-3xl border border-gray-100 flex flex-col gap-4 reveal-up delay-100">
+          <div class="h-48 rounded-2xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=400&auto=format&fit=crop" alt="Truffle Herb Salad" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 bg-brand text-white text-[9px] font-bold uppercase tracking-wider font-space px-2 py-0.5 rounded shadow-sm">Vegan</span>
+          </div>
+          <div class="flex flex-col gap-1 text-left">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold font-space text-dark">Truffle Herb Salad</h3>
+              <span class="text-base font-bold font-space text-brand">$16.00</span>
+            </div>
+            <p class="text-gray-400 text-xs mt-1.5 leading-relaxed">
+              Wild forest greens, shaved white truffles, toasted walnuts, and a cold-pressed olive dressing.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dish 2 -->
+        <div class="spotlight-card bg-white p-6 rounded-3xl border border-gray-100 flex flex-col gap-4 reveal-up delay-200">
+          <div class="h-48 rounded-2xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400&auto=format&fit=crop" alt="Wild Avocado Mousse Bowl" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 bg-accent text-white text-[9px] font-bold uppercase tracking-wider font-space px-2 py-0.5 rounded shadow-sm">Gluten Free</span>
+          </div>
+          <div class="flex flex-col gap-1 text-left">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold font-space text-dark">Avocado Mousse Bowl</h3>
+              <span class="text-base font-bold font-space text-brand">$18.50</span>
+            </div>
+            <p class="text-gray-400 text-xs mt-1.5 leading-relaxed">
+              Crisp raw quinoa, avocado mousse dollops, pickled ginger radishes, and organic black sesame.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dish 3 -->
+        <div class="spotlight-card bg-white p-6 rounded-3xl border border-gray-100 flex flex-col gap-4 reveal-up delay-300">
+          <div class="h-48 rounded-2xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=400&auto=format&fit=crop" alt="Glazed Salmon Fillet" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 bg-brand text-white text-[9px] font-bold uppercase tracking-wider font-space px-2 py-0.5 rounded shadow-sm">Organic</span>
+          </div>
+          <div class="flex flex-col gap-1 text-left">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold font-space text-dark">Maple Glazed Salmon</h3>
+              <span class="text-base font-bold font-space text-brand">$28.00</span>
+            </div>
+            <p class="text-gray-400 text-xs mt-1.5 leading-relaxed">
+              Sustainable pan-seared salmon fillet, organic maple glaze glaze, and steamed baby asparagus.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     DIGITAL MENU SYSTEM
+     ========================================================================== */ -->
+  <section id="menu" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Menus</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">The GreenBite Digital Menu</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        
+        <!-- Menu Categories Nav Tabs -->
+        <div class="flex items-center justify-center gap-4 md:gap-8 mt-8 flex-wrap">
+          <button class="menu-tab-btn active text-sm font-bold font-space border-b-2 border-brand text-brand pb-1.5 cursor-none" data-category="starters">Starters</button>
+          <button class="menu-tab-btn text-sm font-bold font-space border-b-2 border-transparent text-gray-400 hover:text-dark pb-1.5 cursor-none" data-category="mains">Main Entrées</button>
+          <button class="menu-tab-btn text-sm font-bold font-space border-b-2 border-transparent text-gray-400 hover:text-dark pb-1.5 cursor-none" data-category="desserts">Desserts</button>
+        </div>
+      </div>
+
+      <!-- Menu Grid list -->
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 text-left reveal-up" id="menu-items-grid">
+        
+        <!-- Starters (Active by default) -->
+        <div class="menu-item-row flex justify-between items-start gap-4 starters-item">
+          <div class="flex flex-col">
+            <h4 class="text-base font-bold font-space text-dark">Herb Grilled Mushrooms <span class="bg-green-50 text-green-700 text-[8px] px-1.5 py-0.5 rounded ml-2 font-mono">Vegan</span></h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Balsamic glazed portobello caps, garlic confit, fresh rosemary.</p>
+          </div>
+          <span class="text-sm font-bold font-space text-brand">$12.50</span>
+        </div>
+
+        <div class="menu-item-row flex justify-between items-start gap-4 starters-item">
+          <div class="flex flex-col">
+            <h4 class="text-base font-bold font-space text-dark">Truffle Asparagus Soup <span class="bg-amber-50 text-amber-700 text-[8px] px-1.5 py-0.5 rounded ml-2 font-mono">GF</span></h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Steamed organic asparagus purée, cashew cream, truffle oil drizzle.</p>
+          </div>
+          <span class="text-sm font-bold font-space text-brand">$14.00</span>
+        </div>
+
+        <div class="menu-item-row flex justify-between items-start gap-4 starters-item">
+          <div class="flex flex-col">
+            <h4 class="text-base font-bold font-space text-dark">Heirloom Bruschetta</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Sourdough crisp, marinated cherry tomatoes, basil shreds, organic cheese.</p>
+          </div>
+          <span class="text-sm font-bold font-space text-brand">$11.00</span>
+        </div>
+
+        <div class="menu-item-row flex justify-between items-start gap-4 starters-item">
+          <div class="flex flex-col">
+            <h4 class="text-base font-bold font-space text-dark">Quinoa Spinach Cakes</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Pan-fried quinoa patties, baby spinach layers, herbal dip sauce.</p>
+          </div>
+          <span class="text-sm font-bold font-space text-brand">$13.50</span>
+        </div>
+
+        <!-- Mains (Hidden by default) -->
+        <div class="menu-item-row justify-between items-start gap-4 mains-item hidden">
+          <div class="flex flex-col">
+            <h4 class="text-base font-bold font-space text-dark">Roasted Forest Squash <span class="bg-green-50 text-green-700 text-[8px] px-1.5 py-0.5 rounded ml-2 font-mono">Vegan</span></h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Butternut squash halves, wild rice blend, cranberries, sage oil.</p>
+          </div>
+          <span class="text-sm font-bold font-space text-brand">$22.00</span>
+        </div>
+
+        <div class="menu-item-row justify-between items-start gap-4 mains-item hidden">
+          <div class="flex flex-col">
+            <h4 class="text-base font-bold font-space text-dark">Wild Herb Salmon <span class="bg-amber-50 text-amber-700 text-[8px] px-1.5 py-0.5 rounded ml-2 font-mono">GF</span></h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Pan-seared salmon steak, herb-infused quinoa bedding, steamed greens.</p>
+          </div>
+          <span class="text-sm font-bold font-space text-brand">$28.00</span>
+        </div>
+
+        <div class="menu-item-row justify-between items-start gap-4 mains-item hidden">
+          <div class="flex flex-col">
+            <h4 class="text-base font-bold font-space text-dark">Truffle Tagliatelle</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Handmade pasta noodles, creamy organic cheese sauce, freshly shaved black truffles.</p>
+          </div>
+          <span class="text-sm font-bold font-space text-brand">$29.50</span>
+        </div>
+
+        <div class="menu-item-row justify-between items-start gap-4 mains-item hidden">
+          <div class="flex flex-col">
+            <h4 class="text-base font-bold font-space text-dark">Glazed Tofu Plate</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Spiced sesame organic tofu blocks, ginger broccoli stir-fry, brown rice bowl.</p>
+          </div>
+          <span class="text-sm font-bold font-space text-brand">$21.00</span>
+        </div>
+
+        <!-- Desserts (Hidden by default) -->
+        <div class="menu-item-row justify-between items-start gap-4 desserts-item hidden">
+          <div class="flex flex-col">
+            <h4 class="text-base font-bold font-space text-dark">Chocolate Avocado Tart <span class="bg-green-50 text-green-700 text-[8px] px-1.5 py-0.5 rounded ml-2 font-mono">Vegan</span></h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Dates-almond crust, raw cacao filling, fresh raspberry decor.</p>
+          </div>
+          <span class="text-sm font-bold font-space text-brand">$9.50</span>
+        </div>
+
+        <div class="menu-item-row justify-between items-start gap-4 desserts-item hidden">
+          <div class="flex flex-col">
+            <h4 class="text-base font-bold font-space text-dark">Lemon Matcha Sorbet <span class="bg-amber-50 text-amber-700 text-[8px] px-1.5 py-0.5 rounded ml-2 font-mono">GF</span></h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Cold pressed lemon juice, high-grade Uji matcha whip, mint leaf extract.</p>
+          </div>
+          <span class="text-sm font-bold font-space text-brand">$8.00</span>
+        </div>
+
+        <div class="menu-item-row justify-between items-start gap-4 desserts-item hidden">
+          <div class="flex flex-col">
+            <h4 class="text-base font-bold font-space text-dark">Berry Organic Crumble</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Mixed forest berries, rolled oats crumble topping, raw honey drizzle.</p>
+          </div>
+          <span class="text-sm font-bold font-space text-brand">$10.00</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     RESERVATION SECTION
+     ========================================================================== */ -->
+  <section id="reservation" class="py-24 bg-lightBg/50 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      
+      <!-- Copy Side (5 col) -->
+      <div class="lg:col-span-5 flex flex-col gap-6 text-left reveal-left">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full w-fit">Reservation</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark leading-tight">Secure Your Dining Space</h2>
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+          Due to limited seating structures designed to ensure custom chef service, we recommend scheduling tables 24-48 hours in advance.
+        </p>
+        <div class="flex flex-col gap-4 mt-2">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl bg-white border border-gray-100 flex items-center justify-center text-brand"><i class="fa-solid fa-phone"></i></span>
+            <div class="flex flex-col">
+              <span class="text-[9px] text-gray-400 font-bold uppercase">Direct Phone Hotline</span>
+              <span class="text-xs font-semibold text-dark font-mono">+1 (800) 489-GITE</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl bg-white border border-gray-100 flex items-center justify-center text-brand"><i class="fa-solid fa-clock"></i></span>
+            <div class="flex flex-col">
+              <span class="text-[9px] text-gray-400 font-bold uppercase">Serving Hours</span>
+              <span class="text-xs font-semibold text-dark">Tuesday - Sunday (12:00 PM - 10:00 PM)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Side (7 col) -->
+      <div class="lg:col-span-7 reveal-right">
+        
+        <!-- Glass panel wrapper -->
+        <div class="bg-white border border-gray-150/60 shadow-2xl rounded-3xl p-6 md:p-10 flex flex-col gap-6">
+          <h3 class="text-xl font-bold font-space text-dark text-left">Book Table Online</h3>
+          
+          <form id="contact-form" class="flex flex-col gap-4 text-left">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex flex-col gap-2">
+                <label for="form-name" class="text-[10px] font-bold text-gray-400 uppercase font-space">Full Name</label>
+                <input type="text" id="form-name" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-gray-50/50 text-xs focus:border-brand focus:bg-white focus:outline-none cursor-none" placeholder="e.g. John Doe" required>
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="form-email" class="text-[10px] font-bold text-gray-400 uppercase font-space">Email Address</label>
+                <input type="email" id="form-email" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-gray-50/50 text-xs focus:border-brand focus:bg-white focus:outline-none cursor-none" placeholder="e.g. john@example.com" required>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="flex flex-col gap-2">
+                <label for="res-date" class="text-[10px] font-bold text-gray-400 uppercase font-space">Date</label>
+                <input type="date" id="res-date" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-gray-50/50 text-xs focus:border-brand focus:bg-white focus:outline-none cursor-none text-gray-500 font-medium" required>
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="res-time" class="text-[10px] font-bold text-gray-400 uppercase font-space">Time</label>
+                <select id="res-time" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-gray-50/50 text-xs focus:border-brand focus:bg-white focus:outline-none cursor-none text-gray-500 font-medium" required>
+                  <option value="" disabled selected>Select Time</option>
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="1:30 PM">1:30 PM</option>
+                  <option value="6:00 PM">6:00 PM</option>
+                  <option value="7:30 PM">7:30 PM</option>
+                  <option value="9:00 PM">9:00 PM</option>
+                </select>
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="res-guests" class="text-[10px] font-bold text-gray-400 uppercase font-space">Guests</label>
+                <select id="res-guests" class="w-full px-4 py-3 rounded-xl border border-gray-150 bg-gray-50/50 text-xs focus:border-brand focus:bg-white focus:outline-none cursor-none text-gray-500 font-medium" required>
+                  <option value="" disabled selected>Guests count</option>
+                  <option value="1 Guest">1 Guest</option>
+                  <option value="2 Guests">2 Guests</option>
+                  <option value="4 Guests">4 Guests</option>
+                  <option value="6 Guests">6 Guests</option>
+                  <option value="8+ Guests">8+ Guests</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" id="contact-submit" class="btn-spring w-full py-4 rounded-xl bg-brand text-white font-bold text-xs shadow-xl shadow-green-500/10 hover:bg-brand-dark flex items-center justify-center gap-2 mt-2 cursor-none">
+              <span>Book Table</span>
+              <i class="fa-solid fa-calendar-check text-[10px]"></i>
+            </button>
+            
+            <div id="contact-response-message" class="hidden"></div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     OUR CHEF SECTION
+     ========================================================================== */ -->
+  <section id="chef" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      
+      <!-- Chef Visual Image (5 col) -->
+      <div class="lg:col-span-5 flex justify-center items-center relative reveal-left">
+        <div class="absolute w-[80%] h-[80%] bg-accent/5 blur-[80px] rounded-full -z-10 animate-pulse"></div>
+        <div class="max-w-sm rounded-3xl overflow-hidden border border-gray-100 shadow-2xl relative">
+          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=400&auto=format&fit=crop" alt="Chef Julian Green" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- Chef Text Content (7 col) -->
+      <div class="lg:col-span-7 flex flex-col gap-6 text-left reveal-right">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full w-fit">Culinary Director</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark leading-tight">Chef Julian Green</h2>
+        <div class="w-16 h-1 bg-brand my-2 rounded-full"></div>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          With over 15 years directing Michelin starred spaces in London and Paris, Julian has committed to bridging gourmet techniques with sustainable organic farming.
+        </p>
+        
+        <!-- Signature Quote -->
+        <div class="bg-lightBg/60 border-l-4 border-brand p-5 rounded-r-2xl italic text-slate-600 font-space text-sm">
+          "I believe sustainable ingredients should hold the spotlight in fine dining. Every dish we cook represents the organic harmony between soil, seasons, and plates."
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     TESTIMONIALS & CULINARY GALLERY
+     ========================================================================== */ -->
+  <section id="gallery" class="py-24 bg-lightBg/50 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Visual Gallery</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">The GreenBite Space</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+      </div>
+
+      <!-- Gallery Grid (6 Images) -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 items-stretch reveal-up">
+        
+        <!-- Image 1 -->
+        <div class="h-48 rounded-2xl overflow-hidden shadow-sm border border-gray-150 group relative">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=400&auto=format&fit=crop')"></div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="h-48 rounded-2xl overflow-hidden shadow-sm border border-gray-150 group relative">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=400&auto=format&fit=crop')"></div>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="h-48 rounded-2xl overflow-hidden shadow-sm border border-gray-150 group relative">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=400&auto=format&fit=crop')"></div>
+        </div>
+
+        <!-- Image 4 -->
+        <div class="h-48 rounded-2xl overflow-hidden shadow-sm border border-gray-150 group relative">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400&auto=format&fit=crop')"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FOOTER & CONTACT
+     ========================================================================== */ -->
+  <footer class="py-16 bg-dark text-white relative border-t border-emerald-950/60">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-10 relative z-10">
+      
+      <!-- Column 1: Logo & Hours (5 col) -->
+      <div class="md:col-span-5 flex flex-col gap-6 text-left">
+        <a href="#" class="flex items-center gap-2 text-white font-bold font-space text-lg">
+          <span class="w-8 h-8 rounded-lg bg-brand text-white flex items-center justify-center text-sm shadow-md shadow-green-500/10">
+            <i class="fa-solid fa-leaf"></i>
+          </span>
+          <span class="tracking-wide">GreenBite<span class="text-accent font-light">.</span></span>
+        </a>
+        <p class="text-slate-400 text-xs leading-relaxed max-w-xs">
+          Sustainable organic fine dining where gourmet culinary signatures meet sustainable harvest resources.
+        </p>
+        <div class="flex flex-col gap-1.5 text-xs text-slate-500 font-semibold font-mono">
+          <span>Tuesday - Sunday (12:00 PM - 10:00 PM)</span>
+          <span>Monday Closed</span>
+        </div>
+      </div>
+
+      <!-- Column 2: Directions (7 col) -->
+      <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8 text-left">
+        
+        <!-- Details -->
+        <div class="flex flex-col gap-4">
+          <span class="text-[10px] font-bold text-accent uppercase tracking-widest font-space">Contacts</span>
+          <ul class="flex flex-col gap-2.5 text-xs text-slate-400 font-semibold font-space">
+            <li><a href="mailto:reserve@greenbite.com" class="hover:text-brand transition-colors cursor-none">reserve@greenbite.com</a></li>
+            <li><span class="font-mono text-slate-500">+1 (800) 489-GITE</span></li>
+            <li><span class="leading-relaxed">104 Organic Boulevard, West End, London, UK</span></li>
+          </ul>
+        </div>
+
+        <!-- Social Anchors -->
+        <div class="flex flex-col gap-4">
+          <span class="text-[10px] font-bold text-accent uppercase tracking-widest font-space">Follow Culinary</span>
+          <div class="flex items-center gap-3.5">
+            <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800/80 hover:text-brand hover:border-brand flex items-center justify-center text-sm text-slate-400 transition-colors cursor-none"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800/80 hover:text-brand hover:border-brand flex items-center justify-center text-sm text-slate-400 transition-colors cursor-none"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800/80 hover:text-brand hover:border-brand flex items-center justify-center text-sm text-slate-400 transition-colors cursor-none"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom copyrights -->
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 mt-16 pt-8 border-t border-slate-800/40 text-slate-500 text-xs">
+      <span>&copy; 2026 GreenBite Restaurant. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- Custom shared JS -->
+  <script src="script.js"></script>
+
+  <!-- GreenBite Digital Menu Tab Switcher JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const menuBtns = document.querySelectorAll('.menu-tab-btn');
+      const menuItems = document.querySelectorAll('.menu-item-row');
+
+      if (menuBtns.length > 0 && menuItems.length > 0) {
+        menuBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            // Remove active from buttons
+            menuBtns.forEach(b => {
+              b.classList.remove('active', 'border-brand', 'text-brand');
+              b.classList.add('border-transparent', 'text-gray-400');
+            });
+
+            // Set active on clicked
+            btn.classList.add('active', 'border-brand', 'text-brand');
+            btn.classList.remove('border-transparent', 'text-gray-400');
+
+            const category = btn.getAttribute('data-category');
+
+            // Toggle item visibility
+            menuItems.forEach(item => {
+              if (item.classList.contains(`${category}-item`)) {
+                item.classList.remove('hidden');
+                item.classList.add('flex');
+              } else {
+                item.classList.remove('flex');
+                item.classList.add('hidden');
+              }
+            });
+          });
+        });
+      }
+
+    });
+  </script>
+
+</body>
+</html>

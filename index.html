@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sahariar Dev | Premium Web Designer, Front-End Developer & Fiverr Specialist</title>
+  <meta name="description" content="Premium freelance web design and development portfolio of Sahariar Dev. Specializing in high-performance, modern, responsive websites that grow brands and convert clients.">
+  <meta name="keywords" content="web developer, freelance, web designer, fiverr developer, responsive web design, interactive front-end, UI/UX design, custom websites, fiverr web developer, landing page designer, wordpress developer, bug fix expert, speed optimization">
+  <meta name="author" content="Sahariar Dev">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sahariar Dev | Premium Fiverr Web Designer & Developer">
+  <meta property="og:description" content="High-performance, clean code, and premium aesthetics. Get your custom landing page, corporate website, or Figma design engineered flawlessly.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Sahariar Dev | Premium Fiverr Web Designer & Developer">
+  <meta property="twitter:description" content="High-performance, clean code, and premium aesthetics. Get your custom landing page, corporate website, or Figma design engineered flawlessly.">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind Production CSS Variables -->
+  <style>
+    :root {
+      --color-brand: #00C853;
+      --color-brand-dark: #00A844;
+      --color-brand-light: #33D375;
+      --color-brand-glow: rgba(0, 200, 83, 0.08);
+      --color-brand-glow-deep: rgba(0, 200, 83, 0.15);
+      --color-dark: #111111;
+      --color-light-bg: #F9FAFB;
+      --color-card-bg: #FFFFFF;
+    }
+  </style>
+  
+  <!-- Production Compiled Stylesheet -->
+  <link rel="stylesheet" href="assets/css/tailwind-built.css?v=1.0.4">
+
+  <!-- Custom loading styles -->
+  <style>
+    @keyframes loading-bar {
+      0% { left: -33%; }
+      100% { left: 100%; }
+    }
+    .animate-loading {
+      animation: loading-bar 1.5s infinite ease-in-out;
+    }
+  </style>
+
+  <!-- JSON-LD Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sahariar Dev",
+    "url": "http://sahariar-dev.com",
+    "jobTitle": "Premium Web Designer & Developer",
+    "description": "Premium Fiverr Web Designer, Front-End Developer, and WordPress Specialist. Engineering responsive, high-converting websites.",
+    "sameAs": [
+      "https://github.com/sahariar-dev",
+      "https://linkedin.com/in/sahariar-dev",
+      "https://www.fiverr.com/sahariar_dev"
+    ],
+    "knowsAbout": [
+      "HTML5", "CSS3", "JavaScript", "React", "Next.js", "Tailwind CSS", "WordPress", "Figma", "UI/UX Design", "PageSpeed Optimization"
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-dark font-sans selection:bg-brand selection:text-white antialiased">
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-brand z-50 transition-all duration-75" style="width: 0%;"></div>
+
+  <!-- Loading Preloader Overlay -->
+  <div id="preloader" class="fixed inset-0 z-50 bg-[#F9FAFB]/95 backdrop-blur-md flex flex-col items-center justify-center transition-opacity duration-500">
+    <div class="flex flex-col items-center gap-4">
+      <div class="w-20 h-20 flex items-center justify-center animate-bounce">
+        <img src="assets/logo_icon.png" alt="Sahariar.Dev Icon" class="w-16 h-16 object-contain [filter:drop-shadow(0px_2px_4px_rgba(0,0,0,0.1))]">
+      </div>
+      <img src="assets/logo_full.png" alt="Sahariar.Dev Logo" class="h-8 w-auto [filter:drop-shadow(0px_1px_2px_rgba(0,0,0,0.08))]">
+      <div class="w-20 h-1 bg-gray-200 rounded-full overflow-hidden relative">
+        <div class="h-full bg-brand rounded-full absolute left-0 top-0 w-1/3 animate-loading"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Trailing Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-dot"></div>
+
+  <!-- Ambient Blurred Background Shapes -->
+  <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-green-100/30 blur-[120px] pointer-events-none z-0 animate-float-slow"></div>
+  <div class="fixed bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-green-50/40 blur-[140px] pointer-events-none z-0 animate-float-medium"></div>
+
+  <!-- ==========================================================================
+     HEADER / NAVIGATION
+     ========================================================================== */ -->
+  <header class="fixed top-0 left-0 w-full py-5 z-40 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center z-50">
+        <img src="assets/logo_full.png" alt="Sahariar.Dev Logo" class="h-9 md:h-10 w-auto hover:scale-[1.03] transition-transform duration-200 [filter:drop-shadow(0px_1px_2px_rgba(0,0,0,0.1))]">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-5 bg-gray-50/60 border border-gray-100/80 rounded-full px-6 py-1.5 backdrop-blur-md shadow-sm">
+        <a href="#home" class="nav-link text-xs font-medium transition-colors hover:text-brand text-green-500 font-semibold">Home</a>
+        <a href="#about" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">About</a>
+        <a href="#skills" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Skills</a>
+        <a href="#services" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Services</a>
+        <a href="#projects" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Projects</a>
+        <a href="#why-me" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Why Me</a>
+        <a href="#contact" class="nav-link text-xs font-medium transition-colors hover:text-brand text-gray-600">Contact</a>
+      </nav>
+      
+      <!-- Desktop Call To Action -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#contact" class="btn-spring px-6 py-2.5 rounded-full bg-brand text-white font-semibold text-sm shadow-md shadow-green-500/10 hover:bg-brand-dark transition-all duration-200">
+          Hire Me
+        </a>
+      </div>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-menu-btn" class="lg:!hidden flex items-center justify-center w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 z-50 text-dark hover:bg-gray-100 transition-colors" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Menu Drawer -->
+  <div id="mobile-menu" class="fixed top-0 right-0 w-80 h-screen bg-white/95 backdrop-blur-lg border-l border-gray-100 shadow-2xl z-40 transform translate-x-full transition-transform duration-500 flex flex-col pt-28 px-8 pb-12 justify-between">
+    <nav class="flex flex-col gap-6 font-space text-lg">
+      <a href="#home" class="hover:text-brand transition-colors text-dark font-medium">Home</a>
+      <a href="#about" class="hover:text-brand transition-colors text-dark font-medium">About</a>
+      <a href="#skills" class="hover:text-brand transition-colors text-dark font-medium">Skills</a>
+      <a href="#services" class="hover:text-brand transition-colors text-dark font-medium">Services</a>
+      <a href="#projects" class="hover:text-brand transition-colors text-dark font-medium">Projects</a>
+      <a href="#why-me" class="hover:text-brand transition-colors text-dark font-medium">Why Me</a>
+      <a href="#contact" class="hover:text-brand transition-colors text-dark font-medium">Contact</a>
+    </nav>
+    <div class="flex flex-col gap-4">
+      <a href="#contact" class="w-full text-center py-3.5 rounded-xl bg-brand text-white font-semibold shadow-lg shadow-green-500/10 hover:bg-brand-dark transition-colors">
+        Hire Me
+      </a>
+      <p class="text-xs text-gray-400 text-center font-medium">&copy; 2026 Sahariar Dev. Global Freelance.</p>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     HERO SECTION
+     ========================================================================== */ -->
+  <section id="home" class="relative min-h-screen pt-28 sm:pt-32 pb-20 flex items-center justify-center overflow-x-hidden bg-mesh-grid">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center w-full z-10">
+      
+      <!-- Text content -->
+      <div class="lg:col-span-6 flex flex-col gap-6 text-left reveal-left">
+        
+        <!-- Fiverr Availability & Client Trust Badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-green-50 border border-green-100/50 w-fit">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand"></span>
+          </span>
+          <span class="text-xs font-semibold text-green-700 uppercase tracking-wider">Available on Fiverr</span>
+          <span class="text-gray-300">|</span>
+          <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded flex items-center gap-1">
+            <i class="fa-solid fa-star text-amber-400 text-[9px]"></i> 5.0 Rated Seller
+          </span>
+        </div>
+
+        <!-- Big Headline -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold font-space leading-[1.1] text-dark">
+          I Design &amp; Develop <br class="hidden sm:inline" />
+          <span class="relative inline-block text-brand text-glow">
+            Modern Websites
+          </span> <br class="hidden sm:inline" />
+          That Convert Clients
+        </h1>
+
+        <!-- Short Subtitle -->
+        <p class="text-gray-600 text-base md:text-lg max-w-lg leading-relaxed">
+          Hi, I am Sahariar. A passionate freelance web designer and front-end developer.
+          I engineer ultra-fast, high-converting custom landing pages and websites with sleek UI/UX design.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 w-full lg:w-auto">
+          <a href="#contact" class="btn-spring px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-brand text-white font-semibold shadow-xl shadow-green-500/20 hover:bg-brand-dark flex items-center justify-center gap-2 w-full sm:w-auto">
+            <span>Hire Me on Fiverr</span>
+            <i class="fa-solid fa-comments text-sm opacity-90"></i>
+          </a>
+          <a href="#projects" class="btn-spring px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-white border border-gray-200 text-gray-700 font-semibold shadow-sm hover:border-gray-300 flex items-center justify-center gap-2 w-full sm:w-auto">
+            <span>View Projects</span>
+            <i class="fa-solid fa-arrow-right text-sm opacity-90"></i>
+          </a>
+        </div>
+
+        <!-- Stats Strip -->
+        <div id="stats-strip" class="grid grid-cols-4 gap-4 pt-6 border-t border-gray-100 max-w-lg">
+          <div class="flex flex-col">
+            <span class="text-xl md:text-2xl font-bold font-space text-dark"><span class="counter-number font-space" data-target="10">0</span>+</span>
+            <span class="text-[10px] text-gray-400 font-semibold font-sans leading-tight">Projects Done</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl md:text-2xl font-bold font-space text-dark"><span class="counter-number font-space" data-target="100">0</span>%</span>
+            <span class="text-[10px] text-gray-400 font-semibold font-sans leading-tight">Responsive</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl md:text-2xl font-bold font-space text-dark"><span class="counter-number font-space" data-target="24">0</span>h</span>
+            <span class="text-[10px] text-gray-400 font-semibold font-sans leading-tight">Fast Delivery</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl md:text-2xl font-bold font-space text-dark"><span class="counter-number font-space" data-target="99">0</span>%</span>
+            <span class="text-[10px] text-gray-400 font-semibold font-sans leading-tight">Modern UI/UX</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Dashboard Mockup -->
+      <div class="lg:col-span-6 flex justify-center items-center relative reveal-right">
+        
+        <!-- Decorative Glow Under Mockup -->
+        <div class="absolute w-[80%] h-[80%] bg-brand/5 blur-[80px] rounded-full -z-10"></div>
+        
+        <!-- Mockup Parent Wrapper to prevent clipping from overflow-hidden -->
+        <div class="relative w-full max-w-xl">
+          
+          <!-- Main Browser Frame -->
+          <div class="w-full glass-panel rounded-2xl shadow-2xl border border-gray-200/40 overflow-hidden flex flex-col">
+            
+            <!-- Mockup Header -->
+            <div class="bg-gray-100/60 border-b border-gray-200/30 px-4 py-3 flex items-center justify-between">
+              <div class="flex gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                <span class="w-3 h-3 rounded-full bg-green-400"></span>
+              </div>
+              <div class="text-[10px] text-gray-400 font-mono bg-white px-8 py-0.5 rounded border border-gray-200/50 flex items-center gap-1.5">
+                <i class="fa-solid fa-lock text-[8px] text-green-500"></i> sahariar-dev.com
+              </div>
+              <div class="w-8"></div> <!-- Spacer -->
+            </div>
+            
+            <!-- Mockup Body (SaaS UI Interface Simulation) -->
+            <div class="p-6 bg-white/40 flex flex-col gap-4">
+              
+              <!-- Mockup Dashboard Stats -->
+              <div class="grid grid-cols-3 gap-3">
+                <div class="bg-white/80 p-3.5 rounded-xl border border-gray-100 shadow-sm flex flex-col gap-1">
+                  <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Visits</span>
+                  <span class="text-lg font-bold font-space text-dark">+148%</span>
+                  <div class="w-full bg-gray-100 h-1 rounded-full overflow-hidden">
+                    <div class="bg-brand h-full w-[75%] rounded-full"></div>
+                  </div>
+                </div>
+                <div class="bg-white/80 p-3.5 rounded-xl border border-gray-100 shadow-sm flex flex-col gap-1">
+                  <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Conversion</span>
+                  <span class="text-lg font-bold font-space text-dark">4.82%</span>
+                  <div class="w-full bg-gray-100 h-1 rounded-full overflow-hidden">
+                    <div class="bg-brand h-full w-[90%] rounded-full"></div>
+                  </div>
+                </div>
+                <div class="bg-white/80 p-3.5 rounded-xl border border-gray-100 shadow-sm flex flex-col gap-1">
+                  <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Bounce</span>
+                  <span class="text-lg font-bold font-space text-dark">22.4%</span>
+                  <div class="w-full bg-gray-100 h-1 rounded-full overflow-hidden">
+                    <div class="bg-red-400 h-full w-[25%] rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mockup Analytics Chart Box -->
+              <div class="bg-white/80 p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold text-dark font-space">Revenue Growth Rate</span>
+                  <span class="text-[10px] font-semibold text-green-600 bg-green-50 px-2 py-0.5 rounded">+34.8% YoY</span>
+                </div>
+                <!-- Mini SVG Line Graph -->
+                <svg viewBox="0 0 400 120" class="w-full h-24 overflow-visible">
+                  <defs>
+                    <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#00C853" stop-opacity="0.25"></stop>
+                      <stop offset="100%" stop-color="#00C853" stop-opacity="0.00"></stop>
+                    </linearGradient>
+                  </defs>
+                  <path d="M 0,100 C 50,90 80,40 120,45 C 160,50 180,10 220,15 C 260,20 300,75 340,65 C 380,55 400,20 400,20 L 400,120 L 0,120 Z" fill="url(#chartGlow)"></path>
+                  <path d="M 0,100 C 50,90 80,40 120,45 C 160,50 180,10 220,15 C 260,20 300,75 340,65 C 380,55 400,20 400,20" fill="none" stroke="#00C853" stroke-width="2.5" stroke-linecap="round"></path>
+                  <circle cx="220" cy="15" r="4.5" fill="#FFFFFF" stroke="#00C853" stroke-width="3"></circle>
+                  <circle cx="400" cy="20" r="4.5" fill="#FFFFFF" stroke="#00C853" stroke-width="3"></circle>
+                </svg>
+              </div>
+              
+            </div>
+            
+          </div>
+          
+          <!-- Floating Mockup Overlay Badge 1: Speed Score (outside frame to prevent clipping) -->
+          <div class="absolute top-10 -left-6 bg-white/90 backdrop-blur border border-gray-100 shadow-xl rounded-xl p-3 flex items-center gap-3 animate-float-slow z-20">
+            <span class="w-10 h-10 rounded-lg bg-green-500/10 text-brand flex items-center justify-center text-lg font-bold">
+              100
+            </span>
+            <div class="flex flex-col">
+              <span class="text-xs font-bold text-dark font-space">Google PageSpeed</span>
+              <span class="text-[10px] text-gray-400 font-semibold">Perfect optimization score</span>
+            </div>
+          </div>
+
+          <!-- Floating Mockup Overlay Badge 2: Lead Gen (outside frame to prevent clipping) -->
+          <div class="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur border border-gray-100 shadow-xl rounded-xl p-3.5 flex items-center gap-3.5 animate-float-medium z-20">
+            <span class="w-10 h-10 rounded-lg bg-green-500 text-white flex items-center justify-center text-lg">
+              <i class="fa-solid fa-chart-line"></i>
+            </span>
+            <div class="flex flex-col">
+              <span class="text-xs font-bold text-dark font-space">Lead Capture</span>
+              <span class="text-[10px] text-green-600 font-bold">+52% conversions</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     ABOUT ME SECTION
+     ========================================================================== */ -->
+  <section id="about" class="py-24 bg-white relative border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left: Image with glows and badge -->
+        <div class="lg:col-span-5 flex justify-center relative reveal-left">
+          <div class="absolute w-[80%] h-[80%] bg-brand/5 blur-[100px] rounded-full -z-10"></div>
+          <div class="relative p-3 bg-gray-50 border border-gray-100/80 rounded-3xl shadow-xl max-w-md">
+            <img src="assets/images/workspace.jpg" alt="Sahariar Dev Portfolio Portrait" class="rounded-2xl w-full object-cover aspect-[4/3]" loading="lazy">
+            <div class="absolute -bottom-5 -right-5 bg-white backdrop-blur border border-gray-100 shadow-xl rounded-2xl p-3 flex items-center gap-3 animate-float-slow">
+              <span class="w-10 h-10 rounded-lg bg-green-500 text-white flex items-center justify-center text-lg shadow-md shadow-green-500/20">
+                <i class="fa-solid fa-circle-check"></i>
+              </span>
+              <div class="flex flex-col text-left">
+                <span class="text-xs font-bold text-dark font-space">Fiverr Pro Rated</span>
+                <span class="text-[10px] text-gray-400 font-semibold font-mono">100% Client Satisfaction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right: Introduction Copy & 4 Specializations Grid -->
+        <div class="lg:col-span-7 flex flex-col gap-6 text-left reveal-right">
+          <div>
+            <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Who I Am</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Professional About Me</h2>
+            <div class="w-16 h-1 bg-brand my-4 rounded-full"></div>
+          </div>
+          <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+            I am Sahariar, a full-time freelancer specializing in premium web layout design and custom front-end development. I help brands and businesses build high-performance, conversion-oriented websites that engage visitors and elevate credibility. By blending visual creativity with clean, modern code structures, I deliver industry-standard web pages built to scale.
+          </p>
+          
+          <!-- Core Specializations Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+            <div class="bg-gray-50 border border-gray-100 p-5 rounded-2xl flex gap-4">
+              <span class="text-brand text-xl mt-1"><i class="fa-solid fa-laptop-code"></i></span>
+              <div class="flex flex-col">
+                <h4 class="font-bold text-dark font-space text-sm">Web Designer & Developer</h4>
+                <p class="text-xs text-gray-400 mt-1 leading-relaxed">Creating clean, lightweight, and modern HTML/React landing pages.</p>
+              </div>
+            </div>
+            <div class="bg-gray-50 border border-gray-100 p-5 rounded-2xl flex gap-4">
+              <span class="text-brand text-xl mt-1"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+              <div class="flex flex-col">
+                <h4 class="font-bold text-dark font-space text-sm">UI/UX Designer</h4>
+                <p class="text-xs text-gray-400 mt-1 leading-relaxed">Structuring Figma wireframes and high-fidelity clickable prototypes.</p>
+              </div>
+            </div>
+            <div class="bg-gray-50 border border-gray-100 p-5 rounded-2xl flex gap-4">
+              <span class="text-brand text-xl mt-1"><i class="fa-brands fa-wordpress"></i></span>
+              <div class="flex flex-col">
+                <h4 class="font-bold text-dark font-space text-sm">WordPress Specialist</h4>
+                <p class="text-xs text-gray-400 mt-1 leading-relaxed">Developing custom editable blocks and Elementor theme designs.</p>
+              </div>
+            </div>
+            <div class="bg-gray-50 border border-gray-100 p-5 rounded-2xl flex gap-4">
+              <span class="text-brand text-xl mt-1"><i class="fa-solid fa-bug-slash"></i></span>
+              <div class="flex flex-col">
+                <h4 class="font-bold text-dark font-space text-sm">Bug Fix & Audit Expert</h4>
+                <p class="text-xs text-gray-400 mt-1 leading-relaxed">Resolving CSS responsiveness glitches and optimizing PageSpeed scores.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     SKILLS SECTION
+     ========================================================================== */ -->
+  <section id="skills" class="py-24 bg-lightBg/30 relative border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Technical Stack</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Professional Skills Directory</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Here are the core programming languages, frameworks, and design tools I use daily to engineer client solutions.
+        </p>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-4 reveal-up">
+        <!-- HTML5 -->
+        <div class="spotlight-card p-4 rounded-xl flex flex-col items-center text-center gap-3">
+          <span class="text-brand text-2xl"><i class="fa-brands fa-html5"></i></span>
+          <span class="text-xs font-bold text-dark font-space">HTML5</span>
+          <div class="w-full bg-gray-100 h-1 rounded-full overflow-hidden">
+            <div class="bg-brand h-full rounded-full" style="width: 95%;"></div>
+          </div>
+        </div>
+        <!-- CSS3 -->
+        <div class="spotlight-card p-4 rounded-xl flex flex-col items-center text-center gap-3">
+          <span class="text-brand text-2xl"><i class="fa-brands fa-css3-alt"></i></span>
+          <span class="text-xs font-bold text-dark font-space">CSS3</span>
+          <div class="w-full bg-gray-100 h-1 rounded-full overflow-hidden">
+            <div class="bg-brand h-full rounded-full" style="width: 92%;"></div>
+          </div>
+        </div>
+        <!-- JavaScript -->
+        <div class="spotlight-card p-4 rounded-xl flex flex-col items-center text-center gap-3">
+          <span class="text-brand text-2xl"><i class="fa-brands fa-js"></i></span>
+          <span class="text-xs font-bold text-dark font-space">JavaScript</span>
+          <div class="w-full bg-gray-100 h-1 rounded-full overflow-hidden">
+            <div class="bg-brand h-full rounded-full" style="width: 88%;"></div>
+          </div>
+        </div>
+        <!-- React -->
+        <div class="spotlight-card p-4 rounded-xl flex flex-col items-center text-center gap-3">
+          <span class="text-brand text-2xl"><i class="fa-brands fa-react"></i></span>
+          <span class="text-xs font-bold text-dark font-space">React</span>
+          <div class="w-full bg-gray-100 h-1 rounded-full overflow-hidden">
+            <div class="bg-brand h-full rounded-full" style="width: 85%;"></div>
+          </div>
+        </div>
+        <!-- Next.js -->
+        <div class="spotlight-card p-4 rounded-xl flex flex-col items-center text-center gap-3">
+          <span class="text-brand text-2xl"><i class="fa-solid fa-cubes"></i></span>
+          <span class="text-xs font-bold text-dark font-space">Next.js</span>
+          <div class="w-full bg-gray-100 h-1 rounded-full overflow-hidden">
+            <div class="bg-brand h-full rounded-full" style="width: 80%;"></div>
+          </div>
+        </div>
+        <!-- Tailwind CSS -->
+        <div class="spotlight-card p-4 rounded-xl flex flex-col items-center text-center gap-3">
+          <span class="text-brand text-2xl"><i class="fa-solid fa-wind"></i></span>
+          <span class="text-xs font-bold text-dark font-space">Tailwind</span>
+          <div class="w-full bg-gray-100 h-1 rounded-full overflow-hidden">
+            <div class="bg-brand h-full rounded-full" style="width: 95%;"></div>
+          </div>
+        </div>
+        <!-- WordPress -->
+        <div class="spotlight-card p-4 rounded-xl flex flex-col items-center text-center gap-3">
+          <span class="text-brand text-2xl"><i class="fa-brands fa-wordpress"></i></span>
+          <span class="text-xs font-bold text-dark font-space">WordPress</span>
+          <div class="w-full bg-gray-100 h-1 rounded-full overflow-hidden">
+            <div class="bg-brand h-full rounded-full" style="width: 90%;"></div>
+          </div>
+        </div>
+        <!-- Figma -->
+        <div class="spotlight-card p-4 rounded-xl flex flex-col items-center text-center gap-3">
+          <span class="text-brand text-2xl"><i class="fa-brands fa-figma"></i></span>
+          <span class="text-xs font-bold text-dark font-space">Figma</span>
+          <div class="w-full bg-gray-100 h-1 rounded-full overflow-hidden">
+            <div class="bg-brand h-full rounded-full" style="width: 85%;"></div>
+          </div>
+        </div>
+        <!-- UI/UX Design -->
+        <div class="spotlight-card p-4 rounded-xl flex flex-col items-center text-center gap-3">
+          <span class="text-brand text-2xl"><i class="fa-solid fa-bezier-curve"></i></span>
+          <span class="text-xs font-bold text-dark font-space">UI/UX Design</span>
+          <div class="w-full bg-gray-100 h-1 rounded-full overflow-hidden">
+            <div class="bg-brand h-full rounded-full" style="width: 88%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     SERVICES SECTION
+     ========================================================================== */ -->
+  <section id="services" class="py-24 bg-lightBg/50 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">My Expertise</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">
+          Services That Help Your <br />
+          Brand Stand Out
+        </h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+          I provide a full cycle of web creation steps, helping businesses and individuals launch platforms that scale.
+        </p>
+      </div>
+
+      <!-- Services Grid (6 Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Website Design -->
+        <div class="spotlight-card p-8 rounded-2xl flex flex-col gap-5 justify-between reveal-up delay-100">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-xl shadow-sm">
+              <i class="fa-solid fa-compass-drafting"></i>
+            </div>
+            <h3 class="text-xl font-bold font-space text-dark">Website Design</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Designing visually stunning UI structures in Figma that reflect your brand identity, keep users engaged, and simplify user journeys.
+            </p>
+          </div>
+          <span class="text-xs font-bold text-brand uppercase tracking-wider flex items-center gap-1.5 group cursor-none">
+            Figma Design <i class="fa-solid fa-angle-right transition-transform group-hover:translate-x-1"></i>
+          </span>
+        </div>
+
+        <!-- Card 2: Website Development -->
+        <div class="spotlight-card p-8 rounded-2xl flex flex-col gap-5 justify-between reveal-up delay-200">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-xl shadow-sm">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3 class="text-xl font-bold font-space text-dark">Website Development</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Converting layouts into pixel-perfect, clean code. Fast load speeds, semantic SEO schemas, and secure structural standards.
+            </p>
+          </div>
+          <span class="text-xs font-bold text-brand uppercase tracking-wider flex items-center gap-1.5 group cursor-none">
+            React / HTML5 / JS <i class="fa-solid fa-angle-right transition-transform group-hover:translate-x-1"></i>
+          </span>
+        </div>
+
+        <!-- Card 3: Landing Pages -->
+        <div class="spotlight-card p-8 rounded-2xl flex flex-col gap-5 justify-between reveal-up delay-300">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-xl shadow-sm">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h3 class="text-xl font-bold font-space text-dark">Landing Pages</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              High-converting design templates engineered specifically to convert visitors into customers, ideal for marketing campaigns & SaaS rollouts.
+            </p>
+          </div>
+          <span class="text-xs font-bold text-brand uppercase tracking-wider flex items-center gap-1.5 group cursor-none">
+            Conversion Optimized <i class="fa-solid fa-angle-right transition-transform group-hover:translate-x-1"></i>
+          </span>
+        </div>
+
+        <!-- Card 4: WordPress Development -->
+        <div class="spotlight-card p-8 rounded-2xl flex flex-col gap-5 justify-between reveal-up delay-400">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-xl shadow-sm">
+              <i class="fa-brands fa-wordpress-simple"></i>
+            </div>
+            <h3 class="text-xl font-bold font-space text-dark">WordPress Projects</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Flexible, responsive, and completely editable WordPress builds featuring customized drag-and-drop page builders like Elementor or Divi.
+            </p>
+          </div>
+          <span class="text-xs font-bold text-brand uppercase tracking-wider flex items-center gap-1.5 group cursor-none">
+            Custom Themes <i class="fa-solid fa-angle-right transition-transform group-hover:translate-x-1"></i>
+          </span>
+        </div>
+
+        <!-- Card 5: UI/UX Prototyping -->
+        <div class="spotlight-card p-8 rounded-2xl flex flex-col gap-5 justify-between reveal-up delay-500">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-xl shadow-sm">
+              <i class="fa-solid fa-object-group"></i>
+            </div>
+            <h3 class="text-xl font-bold font-space text-dark">UI/UX Design</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Mapping intuitive paths and layout structures to keep your conversion goals optimized, making the digital platform easy for anyone to browse.
+            </p>
+          </div>
+          <span class="text-xs font-bold text-brand uppercase tracking-wider flex items-center gap-1.5 group cursor-none">
+            Framer & Figma <i class="fa-solid fa-angle-right transition-transform group-hover:translate-x-1"></i>
+          </span>
+        </div>
+
+        <!-- Card 6: Bug Fix & Optimization -->
+        <div class="spotlight-card p-8 rounded-2xl flex flex-col gap-5 justify-between reveal-up delay-600">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-xl shadow-sm">
+              <i class="fa-solid fa-bug-slash"></i>
+            </div>
+            <h3 class="text-xl font-bold font-space text-dark">Bug Fix & Audit</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Resolving broken responsiveness, layouts, script issues, plugin errors, and executing page speed optimizations to hit 90+ score.
+            </p>
+          </div>
+          <span class="text-xs font-bold text-brand uppercase tracking-wider flex items-center gap-1.5 group cursor-none">
+            Speed Audit <i class="fa-solid fa-angle-right transition-transform group-hover:translate-x-1"></i>
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FEATURED PROJECTS SECTION
+     ========================================================================== */ -->
+  <section id="projects" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 reveal-up">
+        <div>
+          <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">My Works</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Featured Projects</h2>
+          <div class="w-16 h-1 bg-brand my-4 rounded-full"></div>
+        </div>
+        <p class="text-gray-500 text-sm md:text-base max-w-md leading-relaxed md:mb-2 text-left">
+          Explore realistic digital solutions engineered to achieve real results. Every build features custom UI details and lightning-fast load times.
+        </p>
+      </div>
+
+      <!-- Project Filter Tabs -->
+      <div class="flex flex-wrap gap-2 mb-12 reveal-up justify-start">
+        <button class="project-filter-btn px-5 py-2 rounded-full text-xs font-semibold bg-brand text-white border border-brand transition-all cursor-none" data-filter="all">All Projects</button>
+        <button class="project-filter-btn px-5 py-2 rounded-full text-xs font-semibold bg-gray-50 text-gray-500 border border-gray-150 hover:bg-gray-100 hover:text-dark transition-all cursor-none" data-filter="app">SaaS / App</button>
+        <button class="project-filter-btn px-5 py-2 rounded-full text-xs font-semibold bg-gray-50 text-gray-500 border border-gray-150 hover:bg-gray-100 hover:text-dark transition-all cursor-none" data-filter="portfolio">Agency & Portfolio</button>
+        <button class="project-filter-btn px-5 py-2 rounded-full text-xs font-semibold bg-gray-50 text-gray-500 border border-gray-150 hover:bg-gray-100 hover:text-dark transition-all cursor-none" data-filter="restaurant">Restaurant & Gym</button>
+        <button class="project-filter-btn px-5 py-2 rounded-full text-xs font-semibold bg-gray-50 text-gray-500 border border-gray-150 hover:bg-gray-100 hover:text-dark transition-all cursor-none" data-filter="realestate">Real Estate</button>
+      </div>
+
+      <!-- Projects Grid (Featured Demo Projects) -->
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1: NovaCam Pro (AI DSLR Camera App) -->
+        <div class="spotlight-card cursor-pointer rounded-2xl overflow-hidden border border-gray-100 flex flex-col reveal-up delay-100 transition-all duration-300" data-category="app">
+          <div class="relative overflow-hidden group h-48">
+            <img src="assets/novacam_ui.png" alt="NovaCam Pro Camera UI Viewfinder" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-4 left-4 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider font-space px-2.5 py-1 rounded-full shadow-md shadow-green-500/20">Mobile UI / Premium App</span>
+          </div>
+          <div class="p-6 flex flex-col gap-4 flex-grow justify-between">
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-2 flex-wrap">
+                <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">HTML5/JS</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">Vanilla CSS</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">AI & Web Audio</span>
+              </div>
+              <h3 class="text-lg font-bold font-space text-dark text-left">NovaCam Pro</h3>
+              <p class="text-gray-500 text-xs leading-relaxed text-left">
+                Futuristic AI-powered camera app UI with cinematic DSLR-style interface, 2K/4K/8K controls, neon overlays, manual dials, and real-time interactive adjustments.
+              </p>
+            </div>
+            <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-2">
+              <a href="novacam.html" class="text-xs font-semibold text-brand hover:underline flex items-center gap-1 cursor-none">
+                Live Preview <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+              <button class="view-case-study-btn text-xs font-semibold text-gray-500 hover:text-brand flex items-center gap-1 cursor-none" data-project-id="novacam">
+                View Case Study <i class="fa-solid fa-file-invoice text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: FlowSync AI (AI SaaS Landing Page) -->
+        <div class="spotlight-card cursor-pointer rounded-2xl overflow-hidden border border-gray-100 flex flex-col reveal-up delay-200 transition-all duration-300" data-category="app">
+          <div class="relative overflow-hidden group h-48">
+            <img src="assets/flowsync_ui.png" alt="FlowSync AI SaaS Interface Mockup" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-4 left-4 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider font-space px-2.5 py-1 rounded-full shadow-md shadow-green-500/20">SaaS / Dashboard</span>
+          </div>
+          <div class="p-6 flex flex-col gap-4 flex-grow justify-between">
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-2 flex-wrap">
+                <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">Next.js</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">Tailwind</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">Framer Motion</span>
+              </div>
+              <h3 class="text-lg font-bold font-space text-dark text-left">FlowSync AI</h3>
+              <p class="text-gray-500 text-xs leading-relaxed text-left">
+                Premium AI SaaS landing page featuring dynamic dashboard previews, interactive pricing cards, FAQs, and sleek glassmorphic controls.
+              </p>
+            </div>
+            <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-2">
+              <a href="flowsync.html" class="text-xs font-semibold text-brand hover:underline flex items-center gap-1 cursor-none">
+                Live Preview <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+              <button class="view-case-study-btn text-xs font-semibold text-gray-500 hover:text-brand flex items-center gap-1 cursor-none" data-project-id="flowsync">
+                View Case Study <i class="fa-solid fa-file-invoice text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: PixelForge Studio (Creative Agency) -->
+        <div class="spotlight-card cursor-pointer rounded-2xl overflow-hidden border border-gray-100 flex flex-col reveal-up delay-300 transition-all duration-300" data-category="portfolio">
+          <div class="relative overflow-hidden group h-48">
+            <img src="assets/pixelforge_ui.png" alt="PixelForge Agency Visual Portfolio Mockup" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-4 left-4 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider font-space px-2.5 py-1 rounded-full shadow-md shadow-green-500/20">Agency Portfolio</span>
+          </div>
+          <div class="p-6 flex flex-col gap-4 flex-grow justify-between">
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-2 flex-wrap">
+                <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">React JS</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">GSAP</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">Tailwind</span>
+              </div>
+              <h3 class="text-lg font-bold font-space text-dark text-left">PixelForge Studio</h3>
+              <p class="text-gray-500 text-xs leading-relaxed text-left">
+                Creative agency showcase website styled with responsive motion galleries, case studies, team overlays, and interactive spotlight tiles.
+              </p>
+            </div>
+            <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-2">
+              <a href="pixelforge.html" class="text-xs font-semibold text-brand hover:underline flex items-center gap-1 cursor-none">
+                Live Preview <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+              <button class="view-case-study-btn text-xs font-semibold text-gray-500 hover:text-brand flex items-center gap-1 cursor-none" data-project-id="pixelforge">
+                View Case Study <i class="fa-solid fa-file-invoice text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: GreenBite Restaurant (E-commerce/Restaurant) -->
+        <div class="spotlight-card cursor-pointer rounded-2xl overflow-hidden border border-gray-100 flex flex-col reveal-up delay-100 transition-all duration-300" data-category="restaurant">
+          <div class="relative overflow-hidden group h-48">
+            <img src="assets/greenbite_ui.png" alt="GreenBite Restaurant Menu Showcase" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-4 left-4 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider font-space px-2.5 py-1 rounded-full shadow-md shadow-green-500/20">Restaurant UI</span>
+          </div>
+          <div class="p-6 flex flex-col gap-4 flex-grow justify-between">
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-2 flex-wrap">
+                <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">HTML5/CSS3</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">JavaScript</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">AOS</span>
+              </div>
+              <h3 class="text-lg font-bold font-space text-dark text-left">GreenBite Restaurant</h3>
+              <p class="text-gray-500 text-xs leading-relaxed text-left">
+                Elegant organic food landing page highlighting chef galleries, menu configurations, dynamic cart popups, and online booking forms.
+              </p>
+            </div>
+            <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-2">
+              <a href="greenbite.html" class="text-xs font-semibold text-brand hover:underline flex items-center gap-1 cursor-none">
+                Live Preview <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+              <button class="view-case-study-btn text-xs font-semibold text-gray-500 hover:text-brand flex items-center gap-1 cursor-none" data-project-id="greenbite">
+                View Case Study <i class="fa-solid fa-file-invoice text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: PowerFit Gym (Fitness Landing Page) -->
+        <div class="spotlight-card cursor-pointer rounded-2xl overflow-hidden border border-gray-100 flex flex-col reveal-up delay-200 transition-all duration-300" data-category="restaurant">
+          <div class="relative overflow-hidden group h-48">
+            <img src="assets/powerfit_ui.png" alt="PowerFit Gym Dashboard mockup" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-4 left-4 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider font-space px-2.5 py-1 rounded-full shadow-md shadow-green-500/20">Fitness / Landing</span>
+          </div>
+          <div class="p-6 flex flex-col gap-4 flex-grow justify-between">
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-2 flex-wrap">
+                <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">Vite JS</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">Tailwind</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">Motion</span>
+              </div>
+              <h3 class="text-lg font-bold font-space text-dark text-left">PowerFit Gym</h3>
+              <p class="text-gray-500 text-xs leading-relaxed text-left">
+                Energetic dark-themed fitness platform featuring class schedules, trainer grids, membership pricing tables, and interactive BMI calculator.
+              </p>
+            </div>
+            <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-2">
+              <a href="powerfit.html" class="text-xs font-semibold text-brand hover:underline flex items-center gap-1 cursor-none">
+                Live Preview <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+              <button class="view-case-study-btn text-xs font-semibold text-gray-500 hover:text-brand flex items-center gap-1 cursor-none" data-project-id="powerfit">
+                View Case Study <i class="fa-solid fa-file-invoice text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: UrbanNest Realty (Real Estate Marketplace) -->
+        <div class="spotlight-card cursor-pointer rounded-2xl overflow-hidden border border-gray-100 flex flex-col reveal-up delay-300 transition-all duration-300" data-category="realestate">
+          <div class="relative overflow-hidden group h-48">
+            <img src="assets/urbannest_ui.png" alt="UrbanNest Luxury real estate landing mockup" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-4 left-4 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider font-space px-2.5 py-1 rounded-full shadow-md shadow-green-500/20">Real Estate</span>
+          </div>
+          <div class="p-6 flex flex-col gap-4 flex-grow justify-between">
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-2 flex-wrap">
+                <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">WordPress</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">Elementor</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">REST API</span>
+              </div>
+              <h3 class="text-lg font-bold font-space text-dark text-left">UrbanNest Realty</h3>
+              <p class="text-gray-500 text-xs leading-relaxed text-left">
+                Luxury real estate listing directory showing custom filtering UI, interactive maps, broker profiles, and dynamic inquiry contact forms.
+              </p>
+            </div>
+            <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-2">
+              <a href="urbannest.html" class="text-xs font-semibold text-brand hover:underline flex items-center gap-1 cursor-none">
+                Live Preview <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+              <button class="view-case-study-btn text-xs font-semibold text-gray-500 hover:text-brand flex items-center gap-1 cursor-none" data-project-id="urbannest">
+                View Case Study <i class="fa-solid fa-file-invoice text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7: Alex Carter Portfolio (Developer Portfolio) -->
+        <div class="spotlight-card cursor-pointer rounded-2xl overflow-hidden border border-gray-100 flex flex-col reveal-up delay-100 transition-all duration-300" data-category="portfolio">
+          <div class="relative overflow-hidden group h-48">
+            <img src="assets/alexcarter_ui.png" alt="Alex Carter Apple-style portfolio mockup" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-4 left-4 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider font-space px-2.5 py-1 rounded-full shadow-md shadow-green-500/20">Personal Portfolio</span>
+          </div>
+          <div class="p-6 flex flex-col gap-4 flex-grow justify-between">
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-2 flex-wrap">
+                <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">JavaScript</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">HTML5/CSS3</span>
+                <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md uppercase tracking-wider font-space">Vanilla</span>
+              </div>
+              <h3 class="text-lg font-bold font-space text-dark text-left">Alex Carter Portfolio</h3>
+              <p class="text-gray-500 text-xs leading-relaxed text-left">
+                Minimalist Apple-inspired portfolio UI presenting sleek timeline milestones, smooth scrolls, custom tech grids, and mail handlers.
+              </p>
+            </div>
+            <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-2">
+              <a href="alexcarter.html" class="text-xs font-semibold text-brand hover:underline flex items-center gap-1 cursor-none">
+                Live Preview <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+              <button class="view-case-study-btn text-xs font-semibold text-gray-500 hover:text-brand flex items-center gap-1 cursor-none" data-project-id="alexcarter">
+                View Case Study <i class="fa-solid fa-file-invoice text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     WHY CHOOSE ME SECTION
+     ========================================================================== */ -->
+  <section id="why-me" class="py-24 bg-lightBg/50 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">My Advantages</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Why Partner With Me?</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+          I combine modern design values, top performance parameters, and responsive architecture to help my clients secure high conversion rates.
+        </p>
+      </div>
+
+      <!-- Feature Grid (6 Items) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Feature 1: Fast Communication -->
+        <div class="spotlight-card p-8 rounded-2xl bg-white border border-gray-100 flex flex-col gap-4 reveal-up delay-100">
+          <div class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg">
+            <i class="fa-regular fa-comments"></i>
+          </div>
+          <h3 class="text-lg font-bold font-space text-dark text-left">Fast Communication</h3>
+          <p class="text-gray-500 text-xs leading-relaxed text-left">
+            Active alerts and daily project synchronization. Quick updates via Fiverr, email, or Slack messaging.
+          </p>
+        </div>
+
+        <!-- Feature 2: Clean Code -->
+        <div class="spotlight-card p-8 rounded-2xl bg-white border border-gray-100 flex flex-col gap-4 reveal-up delay-200">
+          <div class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3 class="text-lg font-bold font-space text-dark text-left">Clean Code</h3>
+          <p class="text-gray-500 text-xs leading-relaxed text-left">
+            Semantic W3C valid, responsive layouts, modular structures. Future developers will easily navigate it.
+          </p>
+        </div>
+
+        <!-- Feature 3: Fully Responsive -->
+        <div class="spotlight-card p-8 rounded-2xl bg-white border border-gray-100 flex flex-col gap-4 reveal-up delay-300">
+          <div class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg">
+            <i class="fa-solid fa-mobile-screen"></i>
+          </div>
+          <h3 class="text-lg font-bold font-space text-dark text-left">Responsive Design</h3>
+          <p class="text-gray-500 text-xs leading-relaxed text-left">
+            Flawless displays across mobile screens, tablets, standard desktop monitors, and large ultra-wide monitors.
+          </p>
+        </div>
+
+        <!-- Feature 4: SEO Friendly -->
+        <div class="spotlight-card p-8 rounded-2xl bg-white border border-gray-100 flex flex-col gap-4 reveal-up delay-400">
+          <div class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <h3 class="text-lg font-bold font-space text-dark text-left">SEO Friendly</h3>
+          <p class="text-gray-500 text-xs leading-relaxed text-left">
+            Optimized structured metadata tags, fast load architectures, semantic headings, and clean web sitemaps.
+          </p>
+        </div>
+
+        <!-- Feature 5: Modern UI -->
+        <div class="spotlight-card p-8 rounded-2xl bg-white border border-gray-100 flex flex-col gap-4 reveal-up delay-500">
+          <div class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <h3 class="text-lg font-bold font-space text-dark text-left">Modern UI / UX</h3>
+          <p class="text-gray-500 text-xs leading-relaxed text-left">
+            Minimal, sleek glassmorphic overlays, vibrant gradients, custom typography, and micro-animations.
+          </p>
+        </div>
+
+        <!-- Feature 6: Ongoing Support -->
+        <div class="spotlight-card p-8 rounded-2xl bg-white border border-gray-100 flex flex-col gap-4 reveal-up delay-600">
+          <div class="w-10 h-10 rounded-xl bg-green-500/10 text-brand flex items-center justify-center text-lg">
+            <i class="fa-solid fa-handshake-angle"></i>
+          </div>
+          <h3 class="text-lg font-bold font-space text-dark text-left">Ongoing Support</h3>
+          <p class="text-gray-500 text-xs leading-relaxed text-left">
+            30-day post-project deployment assistance, backup setups, and design tweak support loops.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     TESTIMONIALS SECTION — Hidden until real client reviews are collected
+     ========================================================================== */ -->
+  <section id="testimonials" class="py-24 bg-white relative border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">What Clients Say</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Fiverr Client Success Stories</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+          I build long-term relationships with clients across the globe. Here are reviews from business owners.
+        </p>
+      </div>
+
+      <!-- Testimonials Slider Wrapper -->
+      <div class="max-w-3xl mx-auto relative reveal-up">
+        
+        <!-- Navigation Arrows -->
+        <button id="slider-prev" class="absolute -left-4 md:-left-16 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-gray-200 text-gray-500 hover:text-brand hover:border-brand shadow-sm flex items-center justify-center transition-colors z-20 cursor-none" aria-label="Previous Slide">
+          <i class="fa-solid fa-chevron-left text-sm"></i>
+        </button>
+        <button id="slider-next" class="absolute -right-4 md:-right-16 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-gray-200 text-gray-500 hover:text-brand hover:border-brand shadow-sm flex items-center justify-center transition-colors z-20 cursor-none" aria-label="Next Slide">
+          <i class="fa-solid fa-chevron-right text-sm"></i>
+        </button>
+
+        <!-- Slider Container -->
+        <div class="slider-wrapper rounded-3xl border border-gray-100 bg-gray-50/50 p-6 md:p-10 shadow-sm backdrop-blur-sm">
+          <div id="testimonials-slider-inner" class="slider-inner">
+            
+            <!-- Slide 1 -->
+            <div class="slider-slide flex flex-col gap-6 md:gap-8">
+              <!-- Rating Stars -->
+              <div class="flex items-center gap-1">
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <span class="text-xs font-bold text-gray-400 ml-2 font-mono">5.0 / Fiverr Verified</span>
+              </div>
+              <p class="text-gray-600 text-base md:text-lg italic leading-relaxed">
+                "Sahariar Dev delivered my landing page 2 days ahead of schedule. The site speed index hits 99 on mobile, and our lead conversion rate climbed by 38% in the first week. Communication was extremely clear throughout the project. Highly recommended!"
+              </p>
+              <div class="flex items-center gap-4 border-t border-gray-100 pt-6">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop" alt="Sophia Chen" class="w-12 h-12 rounded-full object-cover">
+                <div class="flex flex-col">
+                  <span class="text-sm font-bold text-dark font-space">Sophia Chen</span>
+                  <span class="text-xs text-gray-400 font-semibold">Founder, BrightScale SaaS (USA)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slider-slide flex flex-col gap-6 md:gap-8">
+              <!-- Rating Stars -->
+              <div class="flex items-center gap-1">
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <span class="text-xs font-bold text-gray-400 ml-2 font-mono">5.0 / Fiverr Verified</span>
+              </div>
+              <p class="text-gray-600 text-base md:text-lg italic leading-relaxed">
+                "The Figma layouts Sahariar designed were beautiful, and the coded React/Tailwind frontend matched them pixel for pixel. Responsiveness is outstanding. This portfolio layout is a testimony of his professional skill set."
+              </p>
+              <div class="flex items-center gap-4 border-t border-gray-100 pt-6">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="Marcus Thompson" class="w-12 h-12 rounded-full object-cover">
+                <div class="flex flex-col">
+                  <span class="text-sm font-bold text-dark font-space">Marcus Thompson</span>
+                  <span class="text-xs text-gray-400 font-semibold">Product Manager, ApexFin (UK)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slider-slide flex flex-col gap-6 md:gap-8">
+              <!-- Rating Stars -->
+              <div class="flex items-center gap-1">
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <i class="fa-solid fa-star text-amber-400"></i>
+                <span class="text-xs font-bold text-gray-400 ml-2 font-mono">5.0 / Fiverr Verified</span>
+              </div>
+              <p class="text-gray-600 text-base md:text-lg italic leading-relaxed">
+                "I needed a custom WordPress site with complex page settings. Sahariar structured custom editor pages that make editing simple. The site loads fast, and the client UX details are top-tier. Great developer!"
+              </p>
+              <div class="flex items-center gap-4 border-t border-gray-100 pt-6">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=150&auto=format&fit=crop" alt="Emma Lehmann" class="w-12 h-12 rounded-full object-cover">
+                <div class="flex flex-col">
+                  <span class="text-sm font-bold text-dark font-space">Emma Lehmann</span>
+                  <span class="text-xs text-gray-400 font-semibold">CMO, ImmoLink (Germany)</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slider Pagination Dots -->
+        <div id="slider-dots" class="flex items-center justify-center gap-2 mt-8">
+          <!-- Dots will be populated by JavaScript -->
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     PROCESS SECTION
+     ========================================================================== */ -->
+  <section id="process" class="py-24 bg-lightBg/50 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Workflow</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Step-By-Step Process</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+          How we take your project from a basic idea to a high-converting, fully live website.
+        </p>
+      </div>
+
+      <!-- Process timeline structure -->
+      <div class="max-w-4xl mx-auto relative flex flex-col gap-16 md:gap-12">
+        
+        <!-- Center line helper for desktop -->
+        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 -translate-x-1/2 -z-10 hidden md:block"></div>
+        
+        <!-- Step 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start relative reveal-up">
+          <div class="md:col-span-5 flex md:justify-end text-left md:text-right order-2 md:order-1">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm spotlight-card">
+              <span class="text-2xl font-bold font-mono text-green-500/20">01</span>
+              <h3 class="text-lg font-bold font-space text-dark mt-1">Research & Discovery</h3>
+              <p class="text-gray-500 text-xs mt-2 leading-relaxed">
+                We align on your requirements, audience, competitors, and functional objectives to formulate a precise site structural layout.
+              </p>
+            </div>
+          </div>
+          <!-- Node Center -->
+          <div class="md:col-span-2 flex justify-start md:justify-center order-1 md:order-2">
+            <div class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm border-4 border-white shadow-md z-10">
+              1
+            </div>
+          </div>
+          <div class="md:col-span-5 hidden md:block order-3"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start relative reveal-up">
+          <div class="md:col-span-5 hidden md:block"></div>
+          <!-- Node Center -->
+          <div class="md:col-span-2 flex justify-start md:justify-center">
+            <div class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm border-4 border-white shadow-md z-10">
+              2
+            </div>
+          </div>
+          <div class="md:col-span-5 flex justify-start text-left">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm spotlight-card">
+              <span class="text-2xl font-bold font-mono text-green-500/20">02</span>
+              <h3 class="text-lg font-bold font-space text-dark mt-1">Figma Visual Design</h3>
+              <p class="text-gray-500 text-xs mt-2 leading-relaxed">
+                I draft premium UI prototypes on Figma and present them for review. We iterate colors and spacings until you approve.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start relative reveal-up">
+          <div class="md:col-span-5 flex md:justify-end text-left md:text-right order-2 md:order-1">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm spotlight-card">
+              <span class="text-2xl font-bold font-mono text-green-500/20">03</span>
+              <h3 class="text-lg font-bold font-space text-dark mt-1">Development & Code</h3>
+              <p class="text-gray-500 text-xs mt-2 leading-relaxed">
+                I translate approved Figma assets into semantic HTML/CSS/JS or modular WordPress. Fully responsive and speed optimized.
+              </p>
+            </div>
+          </div>
+          <!-- Node Center -->
+          <div class="md:col-span-2 flex justify-start md:justify-center order-1 md:order-2">
+            <div class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm border-4 border-white shadow-md z-10">
+              3
+            </div>
+          </div>
+          <div class="md:col-span-5 hidden md:block order-3"></div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start relative reveal-up">
+          <div class="md:col-span-5 hidden md:block"></div>
+          <!-- Node Center -->
+          <div class="md:col-span-2 flex justify-start md:justify-center">
+            <div class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm border-4 border-white shadow-md z-10">
+              4
+            </div>
+          </div>
+          <div class="md:col-span-5 flex justify-start text-left">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm spotlight-card">
+              <span class="text-2xl font-bold font-mono text-green-500/20">04</span>
+              <h3 class="text-lg font-bold font-space text-dark mt-1">QA & Project Launch</h3>
+              <p class="text-gray-500 text-xs mt-2 leading-relaxed">
+                Thorough cross-browser validation and speed checking before publishing files to hosting platforms or delivering source ZIPs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FAQ SECTION
+     ========================================================================== */ -->
+  <section id="faq" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full">Common Queries</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-space text-dark mt-4">Frequently Asked Questions</h2>
+        <div class="w-16 h-1 bg-brand mx-auto my-5 rounded-full"></div>
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+          Clarifying timeline structures, revision policies, deliverable file scopes, and coding frameworks.
+        </p>
+      </div>
+
+      <!-- FAQ Accordion list -->
+      <div class="max-w-3xl mx-auto flex flex-col gap-4 reveal-up">
+        
+        <!-- Item 1 -->
+        <div class="faq-item border border-gray-100 bg-gray-50/30 rounded-2xl p-5 hover:border-gray-200 transition-colors">
+          <button class="faq-header w-full flex items-center justify-between text-left font-semibold font-space text-sm md:text-base text-dark select-none" aria-expanded="false">
+            <span>What is your typical turnaround delivery timeline?</span>
+            <span class="faq-icon text-gray-400 text-sm"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body text-xs md:text-sm text-gray-500 leading-relaxed">
+            Standard landing pages are completed in 3-5 business days. Multipage corporate websites or complex Shopify stores generally take 7-14 business days. I also offer rush deliveries (24-48h) for urgent client requests.
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="faq-item border border-gray-100 bg-gray-50/30 rounded-2xl p-5 hover:border-gray-200 transition-colors">
+          <button class="faq-header w-full flex items-center justify-between text-left font-semibold font-space text-sm md:text-base text-dark select-none" aria-expanded="false">
+            <span>Will my website layout be fully editable on my own?</span>
+            <span class="faq-icon text-gray-400 text-sm"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body text-xs md:text-sm text-gray-500 leading-relaxed">
+            Absolutely. If built with WordPress or Webflow, I structure intuitive drag-and-drop dashboards. If coded with React/HTML5, I write clean, well-commented configuration files or hook it up to lightweight Headless CMS platforms.
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="faq-item border border-gray-100 bg-gray-50/30 rounded-2xl p-5 hover:border-gray-200 transition-colors">
+          <button class="faq-header w-full flex items-center justify-between text-left font-semibold font-space text-sm md:text-base text-dark select-none" aria-expanded="false">
+            <span>Do you deliver Figma design source documents?</span>
+            <span class="faq-icon text-gray-400 text-sm"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body text-xs md:text-sm text-gray-500 leading-relaxed">
+            Yes, all UI packages include the original, organized Figma files containing design components, text variables, style guides, layout grids, and clean asset groups ready for use.
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="faq-item border border-gray-100 bg-gray-50/30 rounded-2xl p-5 hover:border-gray-200 transition-colors">
+          <button class="faq-header w-full flex items-center justify-between text-left font-semibold font-space text-sm md:text-base text-dark select-none" aria-expanded="false">
+            <span>Can you fix responsive errors or speed scores on my old site?</span>
+            <span class="faq-icon text-gray-400 text-sm"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body text-xs md:text-sm text-gray-500 leading-relaxed">
+            Yes. I perform detailed speed audits. I clean up redundant scripts, optimize media assets, fix broken mobile responsive layouts, and configure cache policies to hit 90+ score on Google PageSpeed Insights.
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="faq-item border border-gray-100 bg-gray-50/30 rounded-2xl p-5 hover:border-gray-200 transition-colors">
+          <button class="faq-header w-full flex items-center justify-between text-left font-semibold font-space text-sm md:text-base text-dark select-none" aria-expanded="false">
+            <span>What is your customer revision policy?</span>
+            <span class="faq-icon text-gray-400 text-sm"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body text-xs md:text-sm text-gray-500 leading-relaxed">
+            I offer unlimited adjustments during the visual layout design phase. Post-development, I offer 3 revisions to refine code details. I do not consider a project closed until you are fully satisfied.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     CONTACT SECTION
+     ========================================================================== */ -->
+  <section id="contact" class="py-24 bg-lightBg/50 relative border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Side: Trust & Direct Connect -->
+        <div class="lg:col-span-5 flex flex-col gap-6 text-left reveal-left">
+          <div>
+            <span class="text-xs font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-3 py-1 rounded-full w-fit">Get In Touch</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold font-space text-dark leading-[1.1] mt-4">
+              Let's Build Something <br />
+              <span class="text-brand text-glow">Epic Together</span>
+            </h2>
+            <div class="w-16 h-1 bg-brand my-5 rounded-full"></div>
+          </div>
+          
+          <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+            Ready to grow your brand metrics? Connect with me directly or fill out the project brief form to receive a custom quote and implementation timeline within 12 hours.
+          </p>
+          
+          <!-- Location Info -->
+          <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl border border-gray-100 shadow-sm w-fit">
+            <div class="w-10 h-10 rounded-xl bg-green-50 border border-green-100/50 flex items-center justify-center text-brand">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="flex flex-col text-left">
+              <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Location</span>
+              <span class="text-sm font-semibold text-dark">Digital Workspace / Global Client Base</span>
+            </div>
+          </div>
+
+          <!-- Direct Connect Badges -->
+          <div class="flex flex-col gap-3 pt-6 border-t border-gray-200/60 mt-4 w-full">
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Or Connect Directly</span>
+            <div class="flex flex-col gap-3">
+              <a href="https://www.fiverr.com/sahariar_dev" target="_blank" rel="noopener" class="btn-spring flex items-center gap-3 px-5 py-3.5 rounded-xl bg-[#00B020] text-white text-xs font-bold shadow-md shadow-green-500/10 cursor-none w-fit">
+                <i class="fa-solid fa-circle-check text-sm"></i>
+                <span>Fiverr Order Profile</span>
+              </a>
+              <div class="flex flex-wrap gap-2.5">
+                <a href="https://linkedin.com/in/sahariar-dev" target="_blank" rel="noopener" class="btn-spring flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0A66C2] text-white text-xs font-bold shadow-md shadow-blue-500/10 cursor-none">
+                  <i class="fa-brands fa-linkedin-in text-sm"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/sahariar-dev" target="_blank" rel="noopener" class="btn-spring flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1a1a1a] text-white text-xs font-bold shadow-md shadow-black/10 cursor-none">
+                  <i class="fa-brands fa-github text-sm"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Upgraded Project Brief Form -->
+        <div class="lg:col-span-7 reveal-right">
+          <div class="spotlight-card rounded-3xl p-6 md:p-8 bg-white border border-gray-100/80 shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-brand/5 rounded-full blur-2xl"></div>
+            
+            <h3 class="text-lg font-bold font-space text-dark mb-6 text-left">Quick Project Brief</h3>
+            
+            <form id="contact-form" class="space-y-4 text-left">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-1.5">
+                  <label for="form-name" class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Your Name</label>
+                  <input type="text" id="form-name" placeholder="John Doe" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand bg-white/80 backdrop-blur-sm text-sm transition-all">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                  <label for="form-email" class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Email Address</label>
+                  <input type="email" id="form-email" placeholder="john@example.com" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand bg-white/80 backdrop-blur-sm text-sm transition-all">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-1.5">
+                  <label for="form-type" class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Project Type</label>
+                  <select id="form-type" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand bg-white/80 backdrop-blur-sm text-sm text-gray-600 transition-all">
+                    <option value="" disabled selected>Select service...</option>
+                    <option value="figma">Figma UI/UX Design</option>
+                    <option value="react">React / Next.js Web App</option>
+                    <option value="wordpress">WordPress Development</option>
+                    <option value="speed-audit">Speed Audit & Bug Fixing</option>
+                  </select>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                  <label for="form-budget" class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Estimated Budget</label>
+                  <select id="form-budget" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand bg-white/80 backdrop-blur-sm text-sm text-gray-600 transition-all">
+                    <option value="" disabled selected>Select budget range...</option>
+                    <option value="under-500">Under $500</option>
+                    <option value="500-1500">$500 - $1,500</option>
+                    <option value="1500-3000">$1,500 - $3,000</option>
+                    <option value="3000-plus">$3,000+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-1.5">
+                <label for="form-details" class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Project Scope & Details</label>
+                <textarea id="form-details" rows="4" placeholder="Describe your web goals, references, timelines..." required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand bg-white/80 backdrop-blur-sm text-sm resize-none transition-all"></textarea>
+              </div>
+
+              <button type="submit" id="contact-submit" class="btn-spring w-full py-3.5 rounded-xl bg-brand text-white font-bold text-sm shadow-lg shadow-green-500/20 hover:bg-brand-dark transition-all duration-200 flex items-center justify-center gap-2 cursor-none">
+                <span>Submit Project Request</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+            
+            <div id="contact-response-message" class="mt-4 text-sm font-medium hidden"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FOOTER
+     ========================================================================== */ -->
+  <footer class="py-12 bg-white border-t border-gray-100 relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center">
+        <img src="assets/logo_full.png" alt="Sahariar.Dev Logo" class="h-7 w-auto hover:scale-[1.03] transition-transform duration-200 [filter:drop-shadow(0px_1px_2px_rgba(0,0,0,0.1))]">
+      </a>
+
+      <!-- copyright -->
+      <p class="text-gray-400 text-xs font-medium order-3 md:order-2">
+        &copy; 2026 Sahariar Dev. All rights reserved. Designed & built with premium standards.
+      </p>
+
+      <!-- Socials -->
+      <div class="flex items-center gap-4 order-2 md:order-3">
+        <a href="https://github.com/sahariar-dev" target="_blank" rel="noopener" class="w-9 h-9 rounded-xl bg-gray-50 border border-gray-100 hover:text-brand hover:border-brand flex items-center justify-center text-sm text-gray-500 transition-colors cursor-none" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.fiverr.com/sahariar_dev" target="_blank" rel="noopener" class="w-9 h-9 rounded-xl bg-gray-50 border border-gray-100 hover:text-brand hover:border-brand flex items-center justify-center text-sm text-gray-500 transition-colors cursor-none" aria-label="Fiverr"><i class="fa-solid fa-circle-check"></i></a>
+        <a href="https://linkedin.com/in/sahariar-dev" target="_blank" rel="noopener" class="w-9 h-9 rounded-xl bg-gray-50 border border-gray-100 hover:text-brand hover:border-brand flex items-center justify-center text-sm text-gray-500 transition-colors cursor-none" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Case Study Dynamic Modal Drawer -->
+  <div id="case-study-modal" class="fixed inset-0 z-50 overflow-y-auto hidden animate-fade-in" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <!-- Backdrop overlay -->
+    <div class="fixed inset-0 bg-dark/60 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="modal-backdrop"></div>
+
+    <!-- Modal Content Drawer -->
+    <div class="flex min-h-screen items-center justify-center p-4 sm:p-6 text-center">
+      <div class="relative w-full max-w-3xl transform rounded-3xl bg-white border border-gray-100 p-6 md:p-8 text-left shadow-2xl transition-all duration-300 scale-95 opacity-0" id="modal-container">
+        
+        <!-- Close button -->
+        <button id="modal-close" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 hover:text-brand hover:border-brand transition-colors cursor-none" aria-label="Close modal">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+
+        <!-- Modal Header -->
+        <div class="flex flex-col gap-2 border-b border-gray-100 pb-4 mb-6">
+          <span id="modal-category" class="text-[10px] font-bold text-brand uppercase tracking-wider bg-green-50 border border-green-100/50 px-2.5 py-0.5 rounded-full w-fit">Category</span>
+          <h3 id="modal-title" class="text-2xl md:text-3xl font-extrabold font-space text-dark">Project Title</h3>
+        </div>
+
+        <!-- Two Column Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+          
+          <!-- Left Column (Visuals & Tech stack) -->
+          <div class="md:col-span-5 flex flex-col gap-5">
+            <div class="rounded-2xl overflow-hidden border border-gray-100 bg-gray-50 aspect-video md:aspect-[4/3] w-full relative">
+              <img id="modal-image" src="" alt="Project Visual Preview" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="flex flex-col gap-2">
+              <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Tech Stack</span>
+              <div id="modal-stack" class="flex flex-wrap gap-1.5">
+                <!-- Injected dynamically -->
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 border-t border-gray-100 pt-4">
+              <div class="flex flex-col">
+                <span class="text-[9px] font-bold text-gray-400 uppercase tracking-wider">Client Location</span>
+                <span id="modal-client" class="text-xs font-bold text-dark font-space">USA</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[9px] font-bold text-gray-400 uppercase tracking-wider">Duration</span>
+                <span id="modal-duration" class="text-xs font-bold text-dark font-space">5 Days</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column (Challenge, Solution, Results) -->
+          <div class="md:col-span-7 flex flex-col gap-5 justify-between">
+            <div class="space-y-4">
+              <!-- Challenge -->
+              <div>
+                <h4 class="text-xs font-bold text-dark font-space uppercase tracking-wider flex items-center gap-1.5 text-brand">
+                  <i class="fa-solid fa-triangle-exclamation"></i> The Challenge
+                </h4>
+                <p id="modal-challenge" class="text-xs text-gray-500 mt-1 leading-relaxed">
+                  Challenge details injected here.
+                </p>
+              </div>
+
+              <!-- Solution -->
+              <div>
+                <h4 class="text-xs font-bold text-dark font-space uppercase tracking-wider flex items-center gap-1.5 text-brand">
+                  <i class="fa-solid fa-compass-drafting"></i> The Solution
+                </h4>
+                <p id="modal-solution" class="text-xs text-gray-500 mt-1 leading-relaxed">
+                  Solution details injected here.
+                </p>
+              </div>
+
+              <!-- Results -->
+              <div>
+                <h4 class="text-xs font-bold text-dark font-space uppercase tracking-wider flex items-center gap-1.5 text-brand">
+                  <i class="fa-solid fa-chart-line"></i> Client Outcomes
+                </h4>
+                <p id="modal-results" class="text-xs text-gray-500 mt-1 leading-relaxed font-semibold">
+                  Results details injected here.
+                </p>
+              </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="flex flex-col sm:flex-row gap-3 pt-6 border-t border-gray-100 mt-4">
+              <a id="modal-live-link" href="" target="_blank" class="btn-spring px-5 py-2.5 rounded-xl bg-brand text-white font-bold text-xs shadow-md shadow-green-500/10 hover:bg-brand-dark flex items-center justify-center gap-1.5 flex-grow cursor-none">
+                <span>Launch Live Preview</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="https://www.fiverr.com/sahariar_dev" target="_blank" class="btn-spring px-5 py-2.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-600 hover:text-dark hover:border-gray-300 font-bold text-xs flex items-center justify-center gap-1.5 flex-grow cursor-none">
+                <span>Book Similar Project</span>
+                <i class="fa-solid fa-circle-check"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,447 @@
+/* ==========================================================================
+   SAHARIAR DEV - PREMIUM CSS STYLESHEET
+   Complementary styling for Tailwind CSS with advanced interactive states
+   ========================================================================== */
+
+/* Custom Typography & Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  cursor: none; /* Hide default cursor to use custom premium cursor */
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #111111;
+  cursor: none;
+}
+
+/* Custom Selection Highlight */
+::selection {
+  background-color: #00C853;
+  color: #FFFFFF;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #E0E0E0;
+  border-radius: 9999px;
+  border: 2px solid #F5F5F5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00C853;
+}
+
+/* Custom Cursor / Spotlight Cursor */
+.custom-cursor {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid #00C853;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.25s ease, height 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+  opacity: 0;
+  backface-visibility: hidden;
+}
+
+.custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #00C853;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+/* Hover active state for links/buttons */
+.custom-cursor.hovering {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 200, 83, 0.05);
+  border-color: #00C853;
+  box-shadow: 0 0 20px rgba(0, 200, 83, 0.2);
+}
+
+.custom-cursor.clicking {
+  width: 24px;
+  height: 24px;
+  background-color: rgba(0, 200, 83, 0.2);
+  border-color: #00C853;
+}
+
+/* Hide custom cursor on mobile touch interfaces */
+@media (max-width: 1024px) {
+  html, body {
+    cursor: auto !important;
+  }
+  .custom-cursor, .custom-cursor-dot {
+    display: none !important;
+  }
+}
+
+/* Ambient Floating Background Glows */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  transition: opacity 0.5s ease;
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(3px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+@keyframes float-medium {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(8px) translateX(-3px) rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(360deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 8s infinite ease-in-out;
+}
+
+.animate-float-medium {
+  animation: float-medium 12s infinite linear;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass-panel-dark {
+  background: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Interactive Cards with Spotlight Mouse Glow */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1), 
+              box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1),
+              border-color 0.4s ease;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(400px circle at var(--x, 0px) var(--y, 0px), rgba(0, 200, 83, 0.08), transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  border-color: rgba(0, 200, 83, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(0, 200, 83, 0.25), 
+              0 0 30px 2px rgba(0, 200, 83, 0.15);
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* Dark version of spotlight card for dark design details */
+.spotlight-card-dark {
+  position: relative;
+  overflow: hidden;
+  background: rgba(23, 23, 23, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1), 
+              box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1),
+              border-color 0.4s ease;
+}
+
+.spotlight-card-dark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(400px circle at var(--x, 0px) var(--y, 0px), rgba(0, 200, 83, 0.15), transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.spotlight-card-dark:hover {
+  transform: translateY(-6px) scale(1.015);
+  border-color: rgba(0, 200, 83, 0.5);
+  box-shadow: 0 20px 40px -15px rgba(0, 200, 83, 0.35), 
+              0 0 30px 2px rgba(0, 200, 83, 0.25);
+}
+
+.spotlight-card-dark:hover::before {
+  opacity: 1;
+}
+
+/* Framer Motion style scroll-reveal animations */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* Staggered Delay Helpers (supports up to 8 items) */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+.delay-700 { transition-delay: 700ms; }
+.delay-800 { transition-delay: 800ms; }
+
+/* Custom spring button hover animation */
+.btn-spring {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.4), 
+              box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.4),
+              background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-spring:hover {
+  transform: scale(1.04);
+}
+
+.btn-spring:active {
+  transform: scale(0.97);
+}
+
+/* Carousel Slider Utilities */
+.slider-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slider-inner {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.slider-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .slider-slide-2col {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slider-slide-3col {
+    flex: 0 0 33.333333%;
+    width: 33.333333%;
+  }
+}
+
+/* FAQ Accordion Styling */
+.faq-header {
+  cursor: pointer;
+}
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+}
+
+.faq-item.open .faq-body {
+  max-height: 1000px; /* high enough threshold for any text */
+  opacity: 1;
+  padding-top: 16px;
+}
+
+.faq-item .faq-icon {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Custom interactive background shapes */
+.bg-mesh-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+/* Hover glowing effects for text and images */
+.text-glow {
+  text-shadow: 0 0 15px rgba(0, 200, 83, 0.3);
+}
+
+.image-glow {
+  filter: drop-shadow(0 0 20px rgba(0, 200, 83, 0.15));
+  transition: filter 0.4s ease;
+}
+
+.image-glow:hover {
+  filter: drop-shadow(0 0 30px rgba(0, 200, 83, 0.3));
+}
+
+/* Tech badge subtle animation */
+.tech-badge {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.tech-badge:hover {
+  transform: translateY(-2px);
+  background-color: rgba(0, 200, 83, 0.1);
+}/* ==========================================================================
+   GLOBAL MOBILE RESPONSIVENESS FIXES
+   Ensures all pages have no horizontal scroll and images are contained
+   ========================================================================== */
+
+
+
+/* Prevent code blocks from causing horizontal overflow on mobile */
+pre, code, .font-mono {
+  overflow-x: auto;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+/* Hide floating UI badges/cards on very small screens to prevent overflow */
+@media (max-width: 480px) {
+  .animate-float-slow,
+  .animate-float-medium {
+    display: none !important;
+  }
+
+  /* Reduce section padding on small screens */
+  section {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* Ensure negative-margin floating cards (used in hero sections) don't break layout on small screens */
+@media (max-width: 768px) {
+  .-left-12, .-right-12, .-left-6, .-right-6 {
+    left: 0 !important;
+    right: 0 !important;
+    position: relative !important;
+    margin-top: 1rem;
+  }
+
+  /* Fixed floating cards that are children of relative containers */
+  [class*="absolute"][class*="animate-float"] {
+    display: none;
+  }
+}
+
+/* Ensure header nav is always contained */
+header {
+  overflow-x: hidden;
+}
+
+/* Touch-friendly minimum tap target */
+a, button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fix for asymmetrical hero card layouts on mobile (PixelForge, UrbanNest) */
+@media (max-width: 640px) {
+  .translate-y-4 {
+    transform: none !important;
+  }
+
+  .lg\:translate-x-12 {
+    transform: none !important;
+  }
+}
+
