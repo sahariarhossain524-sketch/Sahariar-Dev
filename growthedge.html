@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrowthEdge Consulting | Strategic Business Solutions</title>
+  <meta name="description" content="GrowthEdge Consulting provides premium strategic advisory, financial planning, and operational excellence services to help your business scale.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS Variables -->
+  <style>
+    :root {
+      --color-brand: #059669; /* Emerald 600 */
+      --color-brand-dark: #047857; /* Emerald 700 */
+      --color-brand-light: #10B981; /* Emerald 500 */
+      --color-brand-glow: rgba(5, 150, 105, 0.1);
+      --color-dark: #0F172A; /* Slate 900 */
+      --color-text: #334155; /* Slate 700 */
+      --color-bg-light: #F8FAFC; /* Slate 50 */
+      --color-border: #E2E8F0; /* Slate 200 */
+    }
+  </style>
+
+  <!-- External Tailwind Compiled CSS -->
+  <link rel="stylesheet" href="tailwind-built.css">
+
+  <!-- Additional Scoped CSS for Animations & Utilities -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--color-text);
+      background-color: #ffffff;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--color-dark);
+    }
+    
+    /* Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Clean Card Hover */
+    .corporate-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      transition: all 0.3s ease;
+    }
+    .corporate-card:hover {
+      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+      border-color: var(--color-brand-light);
+      transform: translateY(-5px);
+    }
+
+    /* Icon Box */
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-brand-glow);
+      color: var(--color-brand);
+      border-radius: 12px;
+      font-size: 1.25rem;
+      transition: all 0.3s ease;
+    }
+    .corporate-card:hover .icon-box {
+      background: var(--color-brand);
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* Primary Button */
+    .btn-primary {
+      background-color: var(--color-brand);
+      color: white;
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 14px 0 rgba(5, 150, 105, 0.2);
+    }
+    .btn-primary:hover {
+      background-color: var(--color-brand-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(5, 150, 105, 0.25);
+    }
+
+    /* Secondary Button */
+    .btn-outline {
+      background-color: transparent;
+      color: var(--color-dark);
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      border: 1px solid var(--color-border);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-outline:hover {
+      border-color: var(--color-brand);
+      color: var(--color-brand);
+      background-color: var(--color-brand-glow);
+    }
+
+    /* Custom Gradient Text */
+    .text-gradient {
+      background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Geometric Background Patterns */
+    .pattern-dots {
+      background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-emerald-600 selection:text-white">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md border-b border-slate-100 z-50 transition-all duration-300" id="header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 rounded-lg bg-emerald-600 flex items-center justify-center text-white shadow-md shadow-emerald-600/20 group-hover:bg-emerald-700 transition-colors">
+          <i class="fa-solid fa-chart-pie text-lg"></i>
+        </div>
+        <span class="font-heading font-bold text-xl tracking-tight text-slate-900">Growth<span class="text-emerald-600">Edge</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">About</a>
+        <a href="#services" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Services</a>
+        <a href="#why-us" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Why Us</a>
+        <a href="#team" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Team</a>
+        <a href="#pricing" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Pricing</a>
+      </nav>
+
+      <!-- Desktop CTA & Return Link -->
+      <div class="hidden md:flex items-center gap-4">
+        <!-- Return to Portfolio (Since it's part of the user's UIUX project) -->
+        <a href="https://github.com/sahariarhossain524-sketch/Sahariar-Dev" target="_blank" class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:text-emerald-600 hover:border-emerald-600 transition-colors" title="GitHub Profile">
+          <i class="fa-brands fa-github text-lg"></i>
+        </a>
+        <a href="#contact" class="btn-primary text-sm py-2.5 px-5">
+          Get Consultation
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="md:hidden w-10 h-10 flex items-center justify-center text-slate-600" id="mobile-menu-btn">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300" id="mobile-menu-overlay"></div>
+  <div class="fixed top-0 right-0 w-80 h-full bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col" id="mobile-menu-drawer">
+    <div class="p-6 flex justify-between items-center border-b border-slate-100">
+      <span class="font-heading font-bold text-xl text-slate-900">Growth<span class="text-emerald-600">Edge</span></span>
+      <button class="text-slate-500 hover:text-slate-900" id="mobile-menu-close">
+        <i class="fa-solid fa-xmark text-2xl"></i>
+      </button>
+    </div>
+    <nav class="flex-1 overflow-y-auto py-6 px-6 flex flex-col gap-6">
+      <a href="#about" class="text-lg font-medium text-slate-700 hover:text-emerald-600 mobile-link">About Us</a>
+      <a href="#services" class="text-lg font-medium text-slate-700 hover:text-emerald-600 mobile-link">Our Services</a>
+      <a href="#why-us" class="text-lg font-medium text-slate-700 hover:text-emerald-600 mobile-link">Why Choose Us</a>
+      <a href="#team" class="text-lg font-medium text-slate-700 hover:text-emerald-600 mobile-link">Leadership Team</a>
+      <a href="#testimonials" class="text-lg font-medium text-slate-700 hover:text-emerald-600 mobile-link">Client Reviews</a>
+      <a href="#pricing" class="text-lg font-medium text-slate-700 hover:text-emerald-600 mobile-link">Pricing Plans</a>
+    </nav>
+    <div class="p-6 border-t border-slate-100 flex flex-col gap-4">
+      <a href="#contact" class="btn-primary justify-center w-full mobile-link">
+        Contact Us Now
+      </a>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="pt-20">
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-20 pb-32 lg:pt-32 lg:pb-40 overflow-hidden pattern-dots">
+      <div class="absolute top-0 right-0 w-1/2 h-full bg-emerald-50/50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <!-- Hero Text -->
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs font-semibold mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            #1 Business Strategy Firm
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] mb-6">
+            Unlock Your Business Potential With <span class="text-gradient">Strategic Vision.</span>
+          </h1>
+          <p class="text-lg text-slate-600 mb-8 max-w-lg">
+            We partner with forward-thinking leaders to solve complex challenges, drive operational excellence, and ignite sustainable growth.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="btn-primary justify-center">
+              Schedule Free Strategy Session <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+            <a href="#services" class="btn-outline justify-center">
+              Explore Our Expertise
+            </a>
+          </div>
+          <div class="mt-10 flex items-center gap-4 text-sm text-slate-500 font-medium">
+            <div class="flex -space-x-2">
+              <img src="https://i.pravatar.cc/100?img=1" alt="Client" class="w-8 h-8 rounded-full border-2 border-white">
+              <img src="https://i.pravatar.cc/100?img=2" alt="Client" class="w-8 h-8 rounded-full border-2 border-white">
+              <img src="https://i.pravatar.cc/100?img=3" alt="Client" class="w-8 h-8 rounded-full border-2 border-white">
+              <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[10px] text-slate-600 font-bold">+5k</div>
+            </div>
+            <p>Trusted by 5,000+ executives worldwide</p>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="relative reveal delay-200">
+          <div class="absolute -inset-4 bg-gradient-to-r from-emerald-100 to-teal-50 rounded-2xl transform rotate-3 -z-10"></div>
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80" alt="Corporate Team Meeting" class="rounded-2xl shadow-2xl w-full object-cover h-[500px]">
+          
+          <!-- Floating Stats Badge -->
+          <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-xl shadow-xl border border-slate-100 flex items-center gap-4 animate-float-slow">
+            <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 text-xl">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+            <div>
+              <p class="text-2xl font-bold font-heading text-slate-900">245%</p>
+              <p class="text-xs text-slate-500 font-medium uppercase tracking-wide">Average ROI Growth</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT LOGOS -->
+    <section class="py-10 border-y border-slate-100 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-sm font-semibold text-slate-400 mb-6 uppercase tracking-widest">Partnering with Industry Leaders</p>
+        <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+          <i class="fa-brands fa-microsoft text-4xl hover:text-blue-500 transition-colors"></i>
+          <i class="fa-brands fa-aws text-4xl hover:text-orange-500 transition-colors"></i>
+          <i class="fa-brands fa-google text-4xl hover:text-green-500 transition-colors"></i>
+          <i class="fa-brands fa-salesforce text-4xl hover:text-blue-400 transition-colors"></i>
+          <i class="fa-brands fa-stripe text-4xl hover:text-indigo-500 transition-colors"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Images Grid -->
+        <div class="grid grid-cols-2 gap-4 reveal">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="Consultation" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="Analysis" class="rounded-2xl shadow-lg w-full h-64 object-cover mt-8">
+        </div>
+        
+        <!-- Text Content -->
+        <div class="reveal delay-200">
+          <span class="text-emerald-600 font-bold tracking-wider uppercase text-sm mb-2 block">About GrowthEdge</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Building the foundation for tomorrow's market leaders.</h2>
+          <p class="text-slate-600 mb-6 leading-relaxed">
+            Founded in 2012, GrowthEdge Consulting has been at the forefront of business transformation. We combine deep industry knowledge with rigorous analysis to provide actionable insights that create lasting value.
+          </p>
+          <p class="text-slate-600 mb-8 leading-relaxed">
+            Our mission is simple: To empower organizations to navigate complexity, optimize operations, and achieve sustainable competitive advantages in an ever-evolving global market.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6 pt-6 border-t border-slate-100">
+            <div>
+              <p class="text-4xl font-bold text-emerald-600 font-heading mb-1">10+</p>
+              <p class="text-sm text-slate-500 font-medium">Years of Excellence</p>
+            </div>
+            <div>
+              <p class="text-4xl font-bold text-emerald-600 font-heading mb-1">500+</p>
+              <p class="text-sm text-slate-500 font-medium">Projects Completed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 bg-slate-50 border-t border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-emerald-600 font-bold tracking-wider uppercase text-sm mb-2 block">Our Expertise</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Comprehensive Solutions for Complex Challenges</h2>
+          <p class="text-slate-600">We offer a full spectrum of consulting services designed to address the unique needs of modern enterprises.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div class="corporate-card p-8 rounded-2xl reveal delay-100">
+            <div class="icon-box mb-6">
+              <i class="fa-solid fa-chess-knight"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Strategic Planning</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Develop robust corporate strategies, define clear objectives, and identify new market opportunities to stay ahead of the competition.
+            </p>
+            <a href="#" class="text-emerald-600 font-semibold text-sm hover:text-emerald-700 flex items-center gap-1">Learn more <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="corporate-card p-8 rounded-2xl reveal delay-200">
+            <div class="icon-box mb-6">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Financial Advisory</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Optimize capital structure, manage financial risks, and improve profitability through comprehensive financial analysis and modeling.
+            </p>
+            <a href="#" class="text-emerald-600 font-semibold text-sm hover:text-emerald-700 flex items-center gap-1">Learn more <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="corporate-card p-8 rounded-2xl reveal delay-300">
+            <div class="icon-box mb-6">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Operational Excellence</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Streamline processes, reduce costs, and enhance supply chain efficiency through lean management and digital transformation.
+            </p>
+            <a href="#" class="text-emerald-600 font-semibold text-sm hover:text-emerald-700 flex items-center gap-1">Learn more <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="corporate-card p-8 rounded-2xl reveal delay-100">
+            <div class="icon-box mb-6">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Digital Transformation</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Modernize legacy systems, adopt cloud solutions, and leverage AI to create agile, future-proof digital architectures.
+            </p>
+            <a href="#" class="text-emerald-600 font-semibold text-sm hover:text-emerald-700 flex items-center gap-1">Learn more <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="corporate-card p-8 rounded-2xl reveal delay-200">
+            <div class="icon-box mb-6">
+              <i class="fa-solid fa-users-gear"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Human Capital</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Design effective organizational structures, manage change, and cultivate leadership programs to retain top talent.
+            </p>
+            <a href="#" class="text-emerald-600 font-semibold text-sm hover:text-emerald-700 flex items-center gap-1">Learn more <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="corporate-card p-8 rounded-2xl reveal delay-300">
+            <div class="icon-box mb-6">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Market Analysis</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Gain deep insights into consumer behavior, competitor movements, and emerging industry trends via data-driven research.
+            </p>
+            <a href="#" class="text-emerald-600 font-semibold text-sm hover:text-emerald-700 flex items-center gap-1">Learn more <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why-us" class="py-24 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Content -->
+        <div class="reveal">
+          <span class="text-emerald-600 font-bold tracking-wider uppercase text-sm mb-2 block">Why Choose Us</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">We don't just advise. We execute and deliver results.</h2>
+          <p class="text-slate-600 mb-8 leading-relaxed">
+            Our approach goes beyond theoretical frameworks. We embed ourselves within your team to ensure strategies are seamlessly executed and measurable outcomes are achieved.
+          </p>
+          
+          <ul class="space-y-6">
+            <li class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0 mt-1 border border-emerald-100">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold mb-1">Tailored Methodologies</h4>
+                <p class="text-slate-500 text-sm">No cookie-cutter solutions. We build custom frameworks adapted specifically to your industry context.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0 mt-1 border border-emerald-100">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold mb-1">Data-Driven Precision</h4>
+                <p class="text-slate-500 text-sm">Every recommendation is backed by rigorous quantitative analysis and verified market data.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0 mt-1 border border-emerald-100">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold mb-1">Global Perspective</h4>
+                <p class="text-slate-500 text-sm">Insights drawn from international markets to prepare your business for cross-border expansion.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Image/Graphic -->
+        <div class="relative reveal delay-200 lg:pl-10">
+          <div class="absolute inset-0 bg-emerald-600 rounded-3xl transform rotate-6 scale-95 opacity-20 -z-10"></div>
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Brainstorming Session" class="rounded-3xl shadow-2xl w-full object-cover h-[550px]">
+          
+          <!-- Experience Badge -->
+          <div class="absolute top-10 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 text-center">
+            <span class="block text-3xl font-black text-emerald-600 font-heading mb-1">98%</span>
+            <span class="text-xs font-bold text-slate-700 uppercase">Client Retention</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section id="team" class="py-24 bg-slate-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-emerald-400 font-bold tracking-wider uppercase text-sm mb-2 block">Our Leadership</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Meet the Minds Behind GrowthEdge</h2>
+          <p class="text-slate-400">Our senior partners bring decades of combined experience from top-tier firms and global Fortune 500 companies.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Team Member 1 -->
+          <div class="group reveal delay-100">
+            <div class="relative overflow-hidden rounded-2xl mb-4 aspect-[3/4]">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Marcus Chen" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6 gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-emerald-600 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-emerald-600 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="text-xl font-bold text-white mb-1">Marcus Chen</h3>
+              <p class="text-emerald-400 text-sm font-medium">Managing Partner</p>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="group reveal delay-200">
+            <div class="relative overflow-hidden rounded-2xl mb-4 aspect-[3/4]">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Sarah Jenkins" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6 gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-emerald-600 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-emerald-600 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="text-xl font-bold text-white mb-1">Sarah Jenkins</h3>
+              <p class="text-emerald-400 text-sm font-medium">Head of Financial Strategy</p>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="group reveal delay-300">
+            <div class="relative overflow-hidden rounded-2xl mb-4 aspect-[3/4]">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="David Russo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6 gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-emerald-600 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-emerald-600 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="text-xl font-bold text-white mb-1">David Russo</h3>
+              <p class="text-emerald-400 text-sm font-medium">Director of Operations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-24 bg-slate-50 border-y border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-emerald-600 font-bold tracking-wider uppercase text-sm mb-2 block">Client Success</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Trusted by Executives</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Testimonial 1 -->
+          <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow reveal delay-100">
+            <div class="flex text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 mb-6 italic">"GrowthEdge completely transformed our operational supply chain. Their strategic roadmap resulted in a 35% reduction in overhead costs within just six months."</p>
+            <div class="flex items-center gap-4">
+              <img src="https://i.pravatar.cc/150?img=11" alt="Reviewer" class="w-12 h-12 rounded-full object-cover">
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Michael Sterling</h4>
+                <p class="text-xs text-slate-500">CEO, Nexus Logistics</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow reveal delay-200">
+            <div class="flex text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 mb-6 italic">"The financial modeling and M&A advisory provided by their team was unparalleled. They guided us smoothly through our Series C funding round."</p>
+            <div class="flex items-center gap-4">
+              <img src="https://i.pravatar.cc/150?img=5" alt="Reviewer" class="w-12 h-12 rounded-full object-cover">
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Elena Rodriguez</h4>
+                <p class="text-xs text-slate-500">CFO, TechFlow Inc.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow reveal delay-300">
+            <div class="flex text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 mb-6 italic">"A truly professional and brilliant firm. Their market entry analysis saved us millions by identifying critical regulatory risks early in the process."</p>
+            <div class="flex items-center gap-4">
+              <img src="https://i.pravatar.cc/150?img=33" alt="Reviewer" class="w-12 h-12 rounded-full object-cover">
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Jonathan Hayes</h4>
+                <p class="text-xs text-slate-500">VP Expansion, GlobalRetail</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <span class="text-emerald-600 font-bold tracking-wider uppercase text-sm mb-2 block">Transparent Pricing</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Engagement Models</h2>
+          <p class="text-slate-600">Flexible consulting retainers tailored to the scale and needs of your organization.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Starter Plan -->
+          <div class="corporate-card rounded-2xl p-8 flex flex-col reveal delay-100 relative">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Strategy Assessment</h3>
+            <p class="text-slate-500 text-sm mb-6 h-10">Perfect for startups needing foundational direction.</p>
+            <div class="mb-6">
+              <span class="text-4xl font-black font-heading text-slate-900">$2,500</span>
+              <span class="text-slate-500 font-medium">/ flat fee</span>
+            </div>
+            <ul class="space-y-4 mb-8 flex-1">
+              <li class="flex items-center gap-3 text-sm text-slate-700"><i class="fa-solid fa-check text-emerald-500"></i> Comprehensive business audit</li>
+              <li class="flex items-center gap-3 text-sm text-slate-700"><i class="fa-solid fa-check text-emerald-500"></i> Competitor benchmarking</li>
+              <li class="flex items-center gap-3 text-sm text-slate-700"><i class="fa-solid fa-check text-emerald-500"></i> High-level strategic roadmap</li>
+              <li class="flex items-center gap-3 text-sm text-slate-400 line-through"><i class="fa-solid fa-xmark text-slate-300"></i> Dedicated account partner</li>
+            </ul>
+            <a href="#contact" class="w-full btn-outline justify-center">Get Started</a>
+          </div>
+
+          <!-- Pro Plan (Featured) -->
+          <div class="bg-slate-900 rounded-2xl p-8 flex flex-col reveal delay-200 relative transform lg:-translate-y-4 shadow-2xl border border-slate-800">
+            <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-t-2xl"></div>
+            <div class="absolute top-4 right-4 bg-emerald-600 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">Popular</div>
+            
+            <h3 class="text-xl font-bold text-white mb-2">Growth Retainer</h3>
+            <p class="text-slate-400 text-sm mb-6 h-10">Ideal for scaling businesses requiring active guidance.</p>
+            <div class="mb-6">
+              <span class="text-4xl font-black font-heading text-white">$6,000</span>
+              <span class="text-slate-400 font-medium">/ month</span>
+            </div>
+            <ul class="space-y-4 mb-8 flex-1">
+              <li class="flex items-center gap-3 text-sm text-slate-200"><i class="fa-solid fa-check text-emerald-500"></i> Everything in Assessment</li>
+              <li class="flex items-center gap-3 text-sm text-slate-200"><i class="fa-solid fa-check text-emerald-500"></i> Weekly advisory sessions</li>
+              <li class="flex items-center gap-3 text-sm text-slate-200"><i class="fa-solid fa-check text-emerald-500"></i> Financial modeling & analysis</li>
+              <li class="flex items-center gap-3 text-sm text-slate-200"><i class="fa-solid fa-check text-emerald-500"></i> Dedicated account partner</li>
+            </ul>
+            <a href="#contact" class="w-full btn-primary justify-center">Get Started</a>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="corporate-card rounded-2xl p-8 flex flex-col reveal delay-300 relative">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Enterprise Transformation</h3>
+            <p class="text-slate-500 text-sm mb-6 h-10">Full-scale operational & strategic overhaul.</p>
+            <div class="mb-6">
+              <span class="text-4xl font-black font-heading text-slate-900">Custom</span>
+              <span class="text-slate-500 font-medium"> pricing</span>
+            </div>
+            <ul class="space-y-4 mb-8 flex-1">
+              <li class="flex items-center gap-3 text-sm text-slate-700"><i class="fa-solid fa-check text-emerald-500"></i> Embedded execution team</li>
+              <li class="flex items-center gap-3 text-sm text-slate-700"><i class="fa-solid fa-check text-emerald-500"></i> M&A Due Diligence</li>
+              <li class="flex items-center gap-3 text-sm text-slate-700"><i class="fa-solid fa-check text-emerald-500"></i> Change management programs</li>
+              <li class="flex items-center gap-3 text-sm text-slate-700"><i class="fa-solid fa-check text-emerald-500"></i> Board-level presentations</li>
+            </ul>
+            <a href="#contact" class="w-full btn-outline justify-center">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-slate-50 border-t border-slate-100 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 flex flex-col lg:flex-row reveal">
+          
+          <!-- Contact Info -->
+          <div class="bg-slate-900 text-white p-10 lg:p-14 lg:w-2/5 flex flex-col justify-between relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-600/20 rounded-full blur-[80px] -z-0"></div>
+            
+            <div class="relative z-10">
+              <h3 class="text-3xl font-bold mb-4 text-white">Let's Talk Business.</h3>
+              <p class="text-slate-400 text-sm mb-10 leading-relaxed">Ready to elevate your organization? Contact our partners today to schedule a confidential preliminary consultation.</p>
+              
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-location-dot text-emerald-400"></i>
+                  </div>
+                  <div>
+                    <h5 class="text-sm font-semibold text-white mb-1">Corporate HQ</h5>
+                    <p class="text-sm text-slate-400">1200 Financial District Blvd, Suite 450<br>New York, NY 10004</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-envelope text-emerald-400"></i>
+                  </div>
+                  <div>
+                    <h5 class="text-sm font-semibold text-white mb-1">Email Us</h5>
+                    <p class="text-sm text-slate-400">partners@growthedge.com</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-phone text-emerald-400"></i>
+                  </div>
+                  <div>
+                    <h5 class="text-sm font-semibold text-white mb-1">Call Us</h5>
+                    <p class="text-sm text-slate-400">+1 (800) 555-0198</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="relative z-10 flex gap-4 mt-12 pt-8 border-t border-slate-800">
+              <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-emerald-600 flex items-center justify-center transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-emerald-600 flex items-center justify-center transition-colors"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="p-10 lg:p-14 lg:w-3/5">
+            <h3 class="text-2xl font-bold text-slate-900 mb-6">Send a Message</h3>
+            <form class="space-y-6" onsubmit="event.preventDefault(); alert('Message sent successfully! We will contact you soon.');">
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">First Name</label>
+                  <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-shadow bg-slate-50 focus:bg-white text-sm" placeholder="John">
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Last Name</label>
+                  <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-shadow bg-slate-50 focus:bg-white text-sm" placeholder="Doe">
+                </div>
+              </div>
+              
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Work Email</label>
+                  <input type="email" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-shadow bg-slate-50 focus:bg-white text-sm" placeholder="john@company.com">
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Company Name</label>
+                  <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-shadow bg-slate-50 focus:bg-white text-sm" placeholder="Acme Corp">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-2">Inquiry Type</label>
+                <select class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-shadow bg-slate-50 focus:bg-white text-sm appearance-none cursor-pointer">
+                  <option>General Strategy Assessment</option>
+                  <option>Financial Advisory</option>
+                  <option>Operational Restructuring</option>
+                  <option>M&A Due Diligence</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-2">Project Details</label>
+                <textarea rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-shadow bg-slate-50 focus:bg-white text-sm resize-none" placeholder="Briefly describe your objectives..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary w-full justify-center py-4">
+                Submit Inquiry
+              </button>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        
+        <!-- Branding -->
+        <div class="lg:col-span-1">
+          <a href="#" class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-md bg-emerald-600 flex items-center justify-center text-white text-sm">
+              <i class="fa-solid fa-chart-pie"></i>
+            </div>
+            <span class="font-heading font-bold text-lg text-slate-900">Growth<span class="text-emerald-600">Edge</span></span>
+          </a>
+          <p class="text-sm text-slate-500 leading-relaxed mb-6">Premium strategic consulting for market leaders. Navigating complexity to deliver measurable results.</p>
+        </div>
+
+        <!-- Links 1 -->
+        <div>
+          <h4 class="font-bold text-slate-900 mb-4">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#about" class="text-sm text-slate-500 hover:text-emerald-600 transition-colors">About Us</a></li>
+            <li><a href="#team" class="text-sm text-slate-500 hover:text-emerald-600 transition-colors">Leadership</a></li>
+            <li><a href="#" class="text-sm text-slate-500 hover:text-emerald-600 transition-colors">Careers</a></li>
+            <li><a href="#" class="text-sm text-slate-500 hover:text-emerald-600 transition-colors">News & Press</a></li>
+          </ul>
+        </div>
+
+        <!-- Links 2 -->
+        <div>
+          <h4 class="font-bold text-slate-900 mb-4">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-slate-500 hover:text-emerald-600 transition-colors">Strategy Formulation</a></li>
+            <li><a href="#" class="text-sm text-slate-500 hover:text-emerald-600 transition-colors">Financial Advisory</a></li>
+            <li><a href="#" class="text-sm text-slate-500 hover:text-emerald-600 transition-colors">Digital Transformation</a></li>
+            <li><a href="#" class="text-sm text-slate-500 hover:text-emerald-600 transition-colors">Private Equity</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h4 class="font-bold text-slate-900 mb-4">Insights Newsletter</h4>
+          <p class="text-sm text-slate-500 mb-4">Subscribe to receive monthly executive insights and market analysis.</p>
+          <form class="flex gap-2" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Email address" required class="w-full px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500 text-sm">
+            <button type="submit" class="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-emerald-600 transition-colors">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-slate-500">&copy; 2026 GrowthEdge Consulting LLC. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-sm text-slate-500 hover:text-emerald-600 transition-colors">Privacy Policy</a>
+          <a href="#" class="text-sm text-slate-500 hover:text-emerald-600 transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Mobile Menu Toggle Logic
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileClose = document.getElementById('mobile-menu-close');
+      const drawer = document.getElementById('mobile-menu-drawer');
+      const overlay = document.getElementById('mobile-menu-overlay');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      function toggleMenu() {
+        const isOpen = !drawer.classList.contains('translate-x-full');
+        if (isOpen) {
+          drawer.classList.add('translate-x-full');
+          overlay.classList.add('opacity-0');
+          setTimeout(() => overlay.classList.add('hidden'), 300);
+          document.body.style.overflow = '';
+        } else {
+          overlay.classList.remove('hidden');
+          setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+          drawer.classList.remove('translate-x-full');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      mobileBtn.addEventListener('click', toggleMenu);
+      mobileClose.addEventListener('click', toggleMenu);
+      overlay.addEventListener('click', toggleMenu);
+      mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+      // 2. Sticky Header Effects
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+          header.classList.add('shadow-sm', 'py-1');
+        } else {
+          header.classList.remove('shadow-sm', 'py-1');
+        }
+      });
+
+      // 3. Scroll Reveal Animation Logic (Intersection Observer)
+      const revealElements = document.querySelectorAll('.reveal');
+      
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Trigger once
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      // Trigger initial reveals immediately for above-the-fold content
+      setTimeout(() => {
+        revealElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if(rect.top < window.innerHeight) {
+            el.classList.add('active');
+          }
+        });
+      }, 100);
+      
+    });
+  </script>
+</body>
+</html>
