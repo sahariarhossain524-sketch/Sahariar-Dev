@@ -10,7 +10,7 @@ Professional Web Designer & Developer
 - UI/UX Design
 - Bug Fixes
 
-## Technologies
+## skills
 - HTML
 - CSS
 - JavaScript
