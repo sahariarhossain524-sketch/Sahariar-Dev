@@ -593,6 +593,18 @@ document.addEventListener('DOMContentLoaded', () => {
       solution: "I developed a highly interactive UI using Vanilla JavaScript for all cart logic and modals to ensure maximum performance. I used Tailwind CSS to rapidly build out the complex product grids, custom hover states, and smooth CSS transitions.",
       results: "The fast interface significantly improved the user shopping experience. The quick-view modal and smooth cart drawer reduced friction, leading to a projected 30% increase in cart completion rates.",
       liveUrl: "greencart.html"
+    },
+    crystaltech: {
+      title: "Crystal Tech",
+      category: "AI & Technology",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+      client: "Crystal Tech Solutions",
+      duration: "9 Days",
+      stack: ["React", "Vite", "Tailwind CSS"],
+      challenge: "Needed a highly modern, dark-themed AI network interface that conveys technical sophistication and innovation.",
+      solution: "I engineered a dynamic React and Vite application with Tailwind CSS, delivering a highly modern, dark-themed AI network interface. The sophisticated layout uses smooth interactions and responsive design principles.",
+      results: "The application provides a seamless and futuristic user experience, immediately capturing user attention and establishing strong technical credibility for the brand.",
+      liveUrl: "crystal-tech/index.html"
     }
   };
 
