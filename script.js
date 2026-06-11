@@ -1,5 +1,5 @@
 /**
- * SAHARIAR DEV - PREMIUM INTERACTION SCRIPT
+ * SMRITI - PREMIUM INTERACTION SCRIPT
  * High-performance UI interactions, custom cursors, animations, sliders,
  * and standard multi-page click delegations.
  */
