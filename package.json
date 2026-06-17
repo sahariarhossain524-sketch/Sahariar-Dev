@@ -1,7 +1,7 @@
 {
   "name": "sahariar-dev-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio of Smriti - Web Designer & Developer",
+  "description": "Portfolio of Sahariar - Web Designer & Developer",
   "main": "index.html",
   "scripts": {
     "build:css": "npx tailwindcss -i ./src/tailwind-input.css -o ./tailwind-built.css",
@@ -10,6 +10,6 @@
   "devDependencies": {
     "tailwindcss": "^3.4.1"
   },
-  "author": "Smriti",
+  "author": "Sahariar",
   "license": "ISC"
 }
